@@ -25,6 +25,9 @@ export default function Page() {
 
     try {
       const response = await axios.post('/api/register', { username, password })
+      console.log(username)
+      console.log(password)
+      return
       setMessage(response.data.message)
     } catch (error: any) {
       setMessage(error.response?.data?.message || 'Something went wrong')
@@ -65,7 +68,7 @@ export default function Page() {
             />
           </div>
           <Button type='submit' disabled={loading}>
-            {loading ? 'Registering...' : 'Sign Up'}
+            {loading ? 'Registering...' : 'Register'}
           </Button>
         </form>
         {message && <p className='mt-4 text-center text-red-500'>{message}</p>}
