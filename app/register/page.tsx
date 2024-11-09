@@ -4,6 +4,12 @@ import { useState } from 'react'
 import axios from 'axios'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
+import { Poppins } from 'next/font/google'
+
+const poppins = Poppins({
+  weight: '400',
+  subsets: ['latin'],
+})
 
 export default function Page() {
   const [username, setUsername] = useState('')
@@ -27,32 +33,34 @@ export default function Page() {
   }
 
   return (
-    <div className='max-w-md mx-auto mt-10 p-5 border rounded shadow'>
-      <h1 className='text-2xl font-bold mb-5'>Admin Registration</h1>
-      <form onSubmit={handleSubmit} className='space-y-4'>
-        <div>
-          <label className='block mb-2'>Username</label>
-          <Input
-            type='text'
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
-            required
-          />
-        </div>
-        <div>
-          <label className='block mb-2'>Password</label>
-          <Input
-            type='password'
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            required
-          />
-        </div>
-        <Button type='submit' disabled={loading}>
-          {loading ? 'Registering...' : 'Sign Up'}
-        </Button>
-      </form>
-      {message && <p className='mt-4 text-center text-red-500'>{message}</p>}
+    <div className={`${poppins.className} flex items-center h-screen`}>
+      <div className='max-w-md mx-auto mt-10 p-5 border rounded shadow w-[400px]'>
+        <h1 className='text-2xl font-bold mb-5'>Admin Registration</h1>
+        <form onSubmit={handleSubmit} className='space-y-4'>
+          <div>
+            <label className='block mb-2'>Username</label>
+            <Input
+              type='text'
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
+              required
+            />
+          </div>
+          <div>
+            <label className='block mb-2'>Password</label>
+            <Input
+              type='password'
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              required
+            />
+          </div>
+          <Button type='submit' disabled={loading}>
+            {loading ? 'Registering...' : 'Sign Up'}
+          </Button>
+        </form>
+        {message && <p className='mt-4 text-center text-red-500'>{message}</p>}
+      </div>
     </div>
   )
 }
