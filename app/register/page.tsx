@@ -5,6 +5,7 @@ import axios from 'axios'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Poppins } from 'next/font/google'
+import Image from 'next/image'
 
 const poppins = Poppins({
   weight: '400',
@@ -35,7 +36,15 @@ export default function Page() {
   return (
     <div className={`${poppins.className} flex items-center h-screen`}>
       <div className='max-w-md mx-auto mt-10 p-5 border rounded shadow w-[400px]'>
-        <h1 className='text-2xl font-bold mb-5'>Admin Registration</h1>
+        <Image
+          src='/images/eye-center-logo-2.png'
+          alt='Logo'
+          width={150}
+          height={150}
+          className='mx-auto w-full mb-5'
+        />
+        <h1 className='text-2xl font-extrabold my-4'>Admin Registration</h1>
+
         <form onSubmit={handleSubmit} className='space-y-4'>
           <div>
             <label className='block mb-2'>Username</label>
