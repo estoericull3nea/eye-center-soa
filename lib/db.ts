@@ -1,5 +1,7 @@
 import mongoose, { Schema, model, models } from 'mongoose';
 
+mongoose.set('strictQuery', true);
+
 const MONGO_URI = process.env.MONGO_URI;
 
 if (!MONGO_URI) {

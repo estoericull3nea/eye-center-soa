@@ -27,7 +27,6 @@ export default function Page() {
       const response = await axios.post('/api/register', { username, password })
       console.log(username)
       console.log(password)
-      return
       setMessage(response.data.message)
     } catch (error: any) {
       setMessage(error.response?.data?.message || 'Something went wrong')
