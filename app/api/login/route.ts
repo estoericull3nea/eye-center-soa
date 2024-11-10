@@ -1,6 +1,8 @@
 import { NextResponse } from 'next/server'
 import { compare } from 'bcryptjs'
 import { connectToDatabase, Admin } from '@/lib/db'
+import jwt from 'jsonwebtoken'
+const JWT_SECRET = process.env.JWT_SECRET || 'EYECENTERSOA'
 
 const MAX_ATTEMPTS = 5
 const BLOCK_TIME_MS = 10 * 60 * 1000 // 10 minutes
@@ -75,12 +77,16 @@ export async function POST(request: Request) {
       )
     }
 
+    // Generate a JWT token
+    const token = jwt.sign(
+      { id: existingAdmin._id, username: existingAdmin.username },
+      JWT_SECRET,
+      { expiresIn: '1h' } // Set token expiration as needed
+    )
+
     // Successful login - reset attempts for this IP
     loginAttempts.delete(ip)
-    return NextResponse.json(
-      { message: 'Login successful', username: existingAdmin.username },
-      { status: 200 }
-    )
+    return NextResponse.json({ message: 'token', token }, { status: 200 })
   } catch (error) {
     console.error('Error logging in:', error)
     return NextResponse.json({ message: 'Error logging in' }, { status: 500 })

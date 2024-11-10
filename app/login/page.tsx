@@ -42,8 +42,11 @@ export default function Page() {
       if (response.status === 200) {
         toast({
           title: 'Success',
-          description: response.data.message,
+          description: 'Successfully Login',
         })
+
+        const token = response.data.token
+        localStorage.setItem('authToken', token)
 
         setUsername('')
         setPassword('')
