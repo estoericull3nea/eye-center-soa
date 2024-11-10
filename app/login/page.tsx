@@ -9,7 +9,6 @@ import { Poppins } from 'next/font/google'
 import Image from 'next/image'
 import { useToast } from '@/hooks/use-toast'
 import { AlertCircle } from 'lucide-react'
-
 import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert'
 import { Skeleton } from '@/components/ui/skeleton'
 import { useRouter } from 'next/navigation'
@@ -25,7 +24,6 @@ export default function Page() {
   const [loading, setLoading] = useState(false)
   const [isFirstLoad, setIsFirstLoad] = useState(true)
   const [message, setMessage] = useState<string | null>(null)
-  const [passwordError, setPasswordError] = useState<string | null>(null)
   const { toast } = useToast()
   const router = useRouter()
 
@@ -34,27 +32,14 @@ export default function Page() {
     return () => clearTimeout(timer)
   }, [])
 
-  const validatePassword = (password: string) => {
-    if (
-      password.length < 8 ||
-      !/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).+$/.test(password)
-    ) {
-      setPasswordError(
-        'Password must be at least 8 characters long and include uppercase, lowercase, number, and special character.'
-      )
-    } else {
-      setPasswordError(null)
-    }
-  }
-
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setLoading(true)
     setMessage(null)
 
     try {
-      const response = await axios.post('/api/register', { username, password })
-      if (response.status === 201) {
+      const response = await axios.post('/api/login', { username, password })
+      if (response.status === 200) {
         toast({
           title: 'Success',
           description: response.data.message,
@@ -63,13 +48,20 @@ export default function Page() {
         setUsername('')
         setPassword('')
 
-        // Redirect to login page
-        router.push('/login')
+        // Redirect to dashboard or appropriate page on successful login
+        router.push('/dashboard')
       }
     } catch (error: any) {
       const errorMessage =
         error.response?.data?.message || 'Something went wrong'
       setMessage(errorMessage)
+      if (error.response?.status === 429) {
+        toast({
+          title: 'Rate Limit Exceeded',
+          description: 'Too many login attempts. Please try again later.',
+          variant: 'destructive',
+        })
+      }
     } finally {
       setLoading(false)
     }
@@ -98,13 +90,6 @@ export default function Page() {
                 <AlertDescription>{message}</AlertDescription>
               </Alert>
             )}
-            {passwordError && (
-              <Alert variant='destructive'>
-                <AlertCircle className='h-4 w-4' />
-                <AlertTitle>Password Error</AlertTitle>
-                <AlertDescription>{passwordError}</AlertDescription>
-              </Alert>
-            )}
 
             <h1 className='text-2xl font-extrabold my-4'>Admin Login</h1>
 
@@ -124,14 +109,10 @@ export default function Page() {
                   value={password}
                   onChange={(e) => {
                     setPassword(e.target.value)
-                    validatePassword(e.target.value)
                   }}
                 />
               </div>
-              <Button
-                type='submit'
-                disabled={loading || passwordError !== null}
-              >
+              <Button type='submit' disabled={loading}>
                 {loading ? 'Logging in...' : 'Login'}
               </Button>
             </form>
