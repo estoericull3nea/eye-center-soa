@@ -1,7 +1,7 @@
-import NextAuth from 'next-auth';
-import CredentialsProvider from 'next-auth/providers/credentials';
-import { compare } from 'bcryptjs';
-import { connectToDatabase, Admin } from '@/lib/db';
+import NextAuth from 'next-auth'
+import CredentialsProvider from 'next-auth/providers/credentials'
+import { compare } from 'bcryptjs'
+import { connectToDatabase, Admin } from '@/lib/db'
 
 export default NextAuth({
   providers: [
@@ -12,20 +12,20 @@ export default NextAuth({
         password: { label: 'Password', type: 'password' },
       },
       async authorize(credentials) {
-        await connectToDatabase();
-        const user = await Admin.findOne({ username: credentials?.username });
+        await connectToDatabase()
+        const user = await Admin.findOne({ username: credentials?.username })
 
         if (!user) {
-          throw new Error('No user found');
+          throw new Error('No user found')
         }
 
-        const isValid = await compare(credentials!.password, user.password);
+        const isValid = await compare(credentials!.password, user.password)
 
         if (!isValid) {
-          throw new Error('Password is incorrect');
+          throw new Error('Password is incorrect')
         }
 
-        return { id: user._id.toString(), username: user.username };
+        return { id: user._id.toString(), username: user.username }
       },
     }),
   ],
@@ -36,18 +36,18 @@ export default NextAuth({
           ...session.user,
           id: token.user.id,
           username: token.user.username,
-        };
+        }
       }
-      return session;
+      return session
     },
     async jwt({ token, user }) {
       if (user) {
         token.user = {
           id: user.id,
           username: user.username,
-        };
+        }
       }
-      return token;
+      return token
     },
   },
   session: {
@@ -56,4 +56,4 @@ export default NextAuth({
   pages: {
     signIn: '/signin',
   },
-});
+})

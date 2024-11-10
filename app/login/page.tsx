@@ -55,13 +55,6 @@ export default function Page() {
       const errorMessage =
         error.response?.data?.message || 'Something went wrong'
       setMessage(errorMessage)
-      if (error.response?.status === 429) {
-        toast({
-          title: 'Rate Limit Exceeded',
-          description: 'Too many login attempts. Please try again later.',
-          variant: 'destructive',
-        })
-      }
     } finally {
       setLoading(false)
     }
