@@ -7,6 +7,9 @@ import { Input } from '@/components/ui/input'
 import { Poppins } from 'next/font/google'
 import Image from 'next/image'
 import { useToast } from '@/hooks/use-toast'
+import { AlertCircle } from 'lucide-react'
+
+import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert'
 
 const poppins = Poppins({
   weight: '400',
@@ -40,11 +43,6 @@ export default function Page() {
       const errorMessage =
         error.response?.data?.message || 'Something went wrong'
       setMessage(errorMessage)
-      toast({
-        title: 'Error',
-        description: errorMessage,
-        variant: 'destructive',
-      })
     } finally {
       setLoading(false)
     }
@@ -60,6 +58,14 @@ export default function Page() {
           height={150}
           className='mx-auto w-full mb-5'
         />
+        {message && (
+          <Alert variant='destructive'>
+            <AlertCircle className='h-4 w-4' />
+            <AlertTitle>Error</AlertTitle>
+            <AlertDescription>{message}</AlertDescription>
+          </Alert>
+        )}
+
         <h1 className='text-2xl font-extrabold my-4'>Admin Registration</h1>
 
         <form onSubmit={handleSubmit} className='space-y-4'>
@@ -83,7 +89,6 @@ export default function Page() {
             {loading ? 'Registering...' : 'Register'}
           </Button>
         </form>
-        {message && <p className='mt-4 text-center text-red-500'>{message}</p>}
       </div>
     </div>
   )
