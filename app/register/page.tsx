@@ -27,11 +27,15 @@ export default function Page() {
 
     try {
       const response = await axios.post('/api/register', { username, password })
-      setMessage(response.data.message)
-      toast({
-        title: 'Success',
-        description: response.data.message,
-      })
+      if (response.status === 201) {
+        toast({
+          title: 'Success',
+          description: response.data.message,
+        })
+
+        setUsername('')
+        setPassword('')
+      }
     } catch (error: any) {
       const errorMessage =
         error.response?.data?.message || 'Something went wrong'
@@ -65,7 +69,6 @@ export default function Page() {
               type='text'
               value={username}
               onChange={(e) => setUsername(e.target.value)}
-              required
             />
           </div>
           <div>
@@ -74,7 +77,6 @@ export default function Page() {
               type='password'
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              required
             />
           </div>
           <Button type='submit' disabled={loading}>
