@@ -12,6 +12,7 @@ import { AlertCircle } from 'lucide-react'
 
 import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert'
 import { Skeleton } from '@/components/ui/skeleton'
+import { useRouter } from 'next/navigation'
 
 const poppins = Poppins({
   weight: '400',
@@ -26,6 +27,7 @@ export default function Page() {
   const [message, setMessage] = useState<string | null>(null)
   const [passwordError, setPasswordError] = useState<string | null>(null)
   const { toast } = useToast()
+  const router = useRouter()
 
   useEffect(() => {
     const timer = setTimeout(() => setIsFirstLoad(false), 1800) // Adjust time as needed
@@ -60,6 +62,9 @@ export default function Page() {
 
         setUsername('')
         setPassword('')
+
+        // Redirect to login page
+        router.push('/login')
       }
     } catch (error: any) {
       const errorMessage =
