@@ -6,6 +6,7 @@ import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Poppins } from 'next/font/google'
 import Image from 'next/image'
+import { useToast } from '@/hooks/use-toast'
 
 const poppins = Poppins({
   weight: '400',
@@ -17,6 +18,7 @@ export default function Page() {
   const [password, setPassword] = useState('')
   const [loading, setLoading] = useState(false)
   const [message, setMessage] = useState<string | null>(null)
+  const { toast } = useToast()
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
@@ -25,11 +27,20 @@ export default function Page() {
 
     try {
       const response = await axios.post('/api/register', { username, password })
-      console.log(username)
-      console.log(password)
       setMessage(response.data.message)
+      toast({
+        title: 'Success',
+        description: response.data.message,
+      })
     } catch (error: any) {
-      setMessage(error.response?.data?.message || 'Something went wrong')
+      const errorMessage =
+        error.response?.data?.message || 'Something went wrong'
+      setMessage(errorMessage)
+      toast({
+        title: 'Error',
+        description: errorMessage,
+        variant: 'destructive',
+      })
     } finally {
       setLoading(false)
     }
