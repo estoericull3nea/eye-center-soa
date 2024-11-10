@@ -32,6 +32,15 @@ export default function Page() {
     return () => clearTimeout(timer)
   }, [])
 
+  useEffect(() => {
+    // Check if user is already logged in by looking for a token in localStorage
+    const token = localStorage.getItem('authToken')
+    if (token) {
+      // Redirect to the dashboard if the token is present
+      router.push('/dashboard')
+    }
+  }, [router])
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setLoading(true)

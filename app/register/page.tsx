@@ -30,6 +30,15 @@ export default function Page() {
   const router = useRouter()
 
   useEffect(() => {
+    // Check if user is already logged in by looking for a token in localStorage
+    const token = localStorage.getItem('authToken')
+    if (token) {
+      // Redirect to the dashboard if the token is present
+      router.push('/dashboard')
+    }
+  }, [router])
+
+  useEffect(() => {
     const timer = setTimeout(() => setIsFirstLoad(false), 1800) // Adjust time as needed
     return () => clearTimeout(timer)
   }, [])
