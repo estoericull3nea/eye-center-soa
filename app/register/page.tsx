@@ -28,8 +28,7 @@ export default function Page() {
   const { toast } = useToast()
 
   useEffect(() => {
-    // Simulate initial load delay
-    const timer = setTimeout(() => setIsFirstLoad(false), 1500) // Adjust time as needed
+    const timer = setTimeout(() => setIsFirstLoad(false), 1800) // Adjust time as needed
     return () => clearTimeout(timer)
   }, [])
 
