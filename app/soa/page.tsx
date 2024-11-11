@@ -38,6 +38,11 @@ type FeeRow = {
   secondCaseAmount: string
 }
 
+type ProfessionalFeeRow = {
+  name: string
+  amount: string
+}
+
 export default function DashboardPage() {
   const router = useRouter()
   const toast = useToast()
@@ -52,13 +57,21 @@ export default function DashboardPage() {
   // State to hold dynamic rows for HCI Fees
   const [dynamicRows, setDynamicRows] = useState<FeeRow[]>([])
 
+  // State for dynamic rows of Professional Fees
+  const [professionalFeeRows, setProfessionalFeeRows] = useState<
+    ProfessionalFeeRow[]
+  >([{ name: 'DR AUREO FRANCIS C. SANCHEZ', amount: '' }])
+
   // State to control the visibility of the new fee input field
   const [showNewFeeInput, setShowNewFeeInput] = useState(false)
+  const [showNewProfessionalFeeInput, setShowNewProfessionalFeeInput] =
+    useState(false)
 
   // State for the name of the new fee being added
   const [newFeeName, setNewFeeName] = useState('')
+  const [newProfessionalFeeName, setNewProfessionalFeeName] = useState('')
 
-  // Function to add a new row
+  // Function to add a new row for HCI Fees
   const handleAddRow = () => {
     if (newFeeName.trim() === '') {
       toast.toast({
@@ -86,16 +99,44 @@ export default function DashboardPage() {
     setShowNewFeeInput(false)
   }
 
-  // Function to remove a row by index
+  // Function to add a new row for Professional Fees
+  const handleAddProfessionalFeeRow = () => {
+    if (newProfessionalFeeName.trim() === '') {
+      toast.toast({
+        description: 'Please enter a professional fee name',
+      })
+      return
+    }
+
+    // Add the new row to the professionalFeeRows state
+    setProfessionalFeeRows([
+      ...professionalFeeRows,
+      {
+        name: newProfessionalFeeName,
+        amount: '',
+      },
+    ])
+
+    // Reset the professional fee name and hide the input field
+    setNewProfessionalFeeName('')
+    setShowNewProfessionalFeeInput(false)
+  }
+
+  // Function to remove a row from HCI Fees
   const handleRemoveRow = (index: number) => {
     setDynamicRows(dynamicRows.filter((_, i) => i !== index))
+  }
+
+  // Function to remove a row from Professional Fees
+  const handleRemoveProfessionalFeeRow = (index: number) => {
+    setProfessionalFeeRows(professionalFeeRows.filter((_, i) => i !== index))
   }
 
   return (
     <div className={`${poppins.className} flex justify-center w-screen`}>
       <div className='flex flex-col text-center w-full items-center'>
         <Image
-          src='/images/eye-center-logo-2.png'
+          src='/eye-center-main-logo.png'
           alt='Logo'
           width={500}
           height={500}
@@ -210,22 +251,70 @@ export default function DashboardPage() {
                   <TableRow key={index}>
                     <TableCell className='font-medium'>{row.name}</TableCell>
                     <TableCell>
-                      <Input type='text' value={row.actualCharges} />
+                      <Input
+                        type='text'
+                        value={row.actualCharges}
+                        onChange={(e) => {
+                          const updatedRows = [...dynamicRows]
+                          updatedRows[index].actualCharges = e.target.value
+                          setDynamicRows(updatedRows)
+                        }}
+                      />
                     </TableCell>
                     <TableCell>
-                      <Input type='text' value={row.vat} />
+                      <Input
+                        type='text'
+                        value={row.vat}
+                        onChange={(e) => {
+                          const updatedRows = [...dynamicRows]
+                          updatedRows[index].vat = e.target.value
+                          setDynamicRows(updatedRows)
+                        }}
+                      />
                     </TableCell>
                     <TableCell>
-                      <Input type='text' value={row.discountSC} />
+                      <Input
+                        type='text'
+                        value={row.discountSC}
+                        onChange={(e) => {
+                          const updatedRows = [...dynamicRows]
+                          updatedRows[index].discountSC = e.target.value
+                          setDynamicRows(updatedRows)
+                        }}
+                      />
                     </TableCell>
                     <TableCell>
-                      <Input type='text' value={row.discountNonSC} />
+                      <Input
+                        type='text'
+                        value={row.discountNonSC}
+                        onChange={(e) => {
+                          const updatedRows = [...dynamicRows]
+                          updatedRows[index].discountNonSC = e.target.value
+                          setDynamicRows(updatedRows)
+                        }}
+                      />
                     </TableCell>
                     <TableCell>
-                      <Input type='text' value={row.firstCaseAmount} />
+                      <Input
+                        type='text'
+                        value={row.firstCaseAmount}
+                        onChange={(e) => {
+                          const updatedRows = [...dynamicRows]
+                          updatedRows[index].firstCaseAmount = e.target.value
+                          setDynamicRows(updatedRows)
+                        }}
+                      />
                     </TableCell>
                     <TableCell>
-                      <Input type='text' value={row.secondCaseAmount} />
+                      <Input
+                        type='text'
+                        value={row.secondCaseAmount}
+                        onChange={(e) => {
+                          const updatedRows = [...dynamicRows]
+                          updatedRows[index].secondCaseAmount = e.target.value
+                          setDynamicRows(updatedRows)
+                        }}
+                      />
                     </TableCell>
                     <TableCell>
                       <button
@@ -299,17 +388,74 @@ export default function DashboardPage() {
                   </TableCell>
                 </TableRow>
 
-                {/* Professional Fee Details */}
+                {/* Render dynamic rows for each Professional fee */}
+                {professionalFeeRows.map((row, index) => (
+                  <TableRow key={index}>
+                    <TableCell className='font-medium'>{row.name}</TableCell>
+                    <TableCell>
+                      <Input
+                        type='text'
+                        value={row.amount}
+                        onChange={(e) => {
+                          const updatedRows = [...professionalFeeRows]
+                          updatedRows[index].amount = e.target.value
+                          setProfessionalFeeRows(updatedRows)
+                        }}
+                      />
+                    </TableCell>
+                    <TableCell>
+                      <button
+                        onClick={() => handleRemoveProfessionalFeeRow(index)}
+                        className='text-red-500 hover:text-red-700'
+                      >
+                        Remove
+                      </button>
+                    </TableCell>
+                  </TableRow>
+                ))}
+
+                {/* Add Button to show the input field for a new professional fee */}
                 <TableRow>
-                  <TableCell className='font-medium'>
-                    DR AUREO FRANCIS C. SANCHEZ
-                  </TableCell>
-                  <TableCell>
-                    <Input type='text' />
+                  <TableCell colSpan={2}>
+                    <button
+                      onClick={() => setShowNewProfessionalFeeInput(true)}
+                      className='text-blue-500 underline'
+                    >
+                      + Add New Professional Fee
+                    </button>
                   </TableCell>
                 </TableRow>
 
-                {/* Total PF Fees */}
+                {/* Input field to add a new professional fee */}
+                {showNewProfessionalFeeInput && (
+                  <TableRow>
+                    <TableCell colSpan={2}>
+                      <div className='flex gap-2'>
+                        <Input
+                          type='text'
+                          value={newProfessionalFeeName}
+                          onChange={(e) =>
+                            setNewProfessionalFeeName(e.target.value)
+                          }
+                          placeholder='Enter Professional Fee Name'
+                        />
+                        <Button onClick={handleAddProfessionalFeeRow}>
+                          Add Fee
+                        </Button>
+                        <Button
+                          onClick={() => {
+                            setShowNewProfessionalFeeInput(false)
+                            setNewProfessionalFeeName('')
+                          }}
+                        >
+                          Cancel
+                        </Button>
+                      </div>
+                    </TableCell>
+                  </TableRow>
+                )}
+
+                {/* Total Professional Fees */}
                 <TableRow>
                   <TableCell className='font-bold text-green-700'>
                     Total PF Fees

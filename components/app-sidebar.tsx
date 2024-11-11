@@ -60,7 +60,7 @@ export function AppSidebar() {
       <SidebarContent>
         <SidebarGroup>
           <Image
-            src='/images/eye-center-logo-2.png'
+            src='/eye-center-main-logo.png'
             alt='Logo'
             width={150}
             height={150}
