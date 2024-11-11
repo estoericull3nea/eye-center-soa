@@ -7,7 +7,10 @@ import Image from 'next/image'
 
 import { Poppins } from 'next/font/google'
 import { Input } from '@/components/ui/input'
+import { Button } from '@/components/ui/button'
 import { Label } from '@/components/ui/label'
+import { useToast } from '@/hooks/use-toast'
+
 import { Separator } from '@/components/ui/separator'
 
 import {
@@ -25,8 +28,19 @@ const poppins = Poppins({
   subsets: ['latin'],
 })
 
+type FeeRow = {
+  name: string
+  actualCharges: string
+  vat: string
+  discountSC: string
+  discountNonSC: string
+  firstCaseAmount: string
+  secondCaseAmount: string
+}
+
 export default function DashboardPage() {
   const router = useRouter()
+  const toast = useToast()
 
   useEffect(() => {
     const token = localStorage.getItem('authToken')
@@ -36,7 +50,7 @@ export default function DashboardPage() {
   }, [router])
 
   // State to hold dynamic rows for HCI Fees
-  const [dynamicRows, setDynamicRows] = useState<any[]>([])
+  const [dynamicRows, setDynamicRows] = useState<FeeRow[]>([])
 
   // State to control the visibility of the new fee input field
   const [showNewFeeInput, setShowNewFeeInput] = useState(false)
@@ -47,7 +61,9 @@ export default function DashboardPage() {
   // Function to add a new row
   const handleAddRow = () => {
     if (newFeeName.trim() === '') {
-      alert('Please enter a fee name')
+      toast.toast({
+        description: 'Please enter a fee name',
+      })
       return
     }
 
@@ -70,8 +86,13 @@ export default function DashboardPage() {
     setShowNewFeeInput(false)
   }
 
+  // Function to remove a row by index
+  const handleRemoveRow = (index: number) => {
+    setDynamicRows(dynamicRows.filter((_, i) => i !== index))
+  }
+
   return (
-    <div className={`${poppins.className}  flex justify-center  w-screen`}>
+    <div className={`${poppins.className} flex justify-center w-screen`}>
       <div className='flex flex-col text-center w-full items-center'>
         <Image
           src='/images/eye-center-logo-2.png'
@@ -89,18 +110,19 @@ export default function DashboardPage() {
         <h4 className='font-bold mt-5'>STATEMENT OF ACCOUNT</h4>
 
         <div className='flex flex-col items-center p-10 rounded-2xl space-y-4 w-full max-w-[1400px] border border-black'>
+          {/* Patient Information Section */}
           <div className='flex gap-3 w-full'>
             <div className='text-start w-full'>
               <Label className='mb-10' htmlFor='patient_label'>
                 Patient Name
               </Label>
-              <Input className=' ' type='text' id='patient_label' />
+              <Input type='text' id='patient_label' />
             </div>
             <div className='text-start w-full'>
               <Label className='mb-10' htmlFor='age_label'>
                 Age
               </Label>
-              <Input className=' ' type='text' id='age_label' />
+              <Input type='text' id='age_label' />
             </div>
           </div>
           <div className='flex gap-3 w-full'>
@@ -108,44 +130,17 @@ export default function DashboardPage() {
               <Label className='mb-10' htmlFor='address_label'>
                 Address
               </Label>
-              <Input className=' ' type='text' id='address_label' />
+              <Input type='text' id='address_label' />
             </div>
             <div className='text-start w-full'>
               <Label className='mb-10' htmlFor='zip_code_label'>
                 Zip Code
               </Label>
-              <Input className=' ' type='text' id='zip_code_label' />
-            </div>
-          </div>
-          <div className='flex gap-3 w-full'>
-            <div className='text-start w-full'>
-              <Label className='mb-10' htmlFor='date_admitted_label'>
-                Date Admitted
-              </Label>
-              <Input className=' ' type='text' id='date_admitted_label' />
-            </div>
-            <div className='text-start w-full'>
-              <Label className='mb-10' htmlFor='time_admitted_label'>
-                Time Admittted
-              </Label>
-              <Input className=' ' type='text' id='time_admitted_label' />
-            </div>
-          </div>
-          <div className='flex gap-3 w-full'>
-            <div className='text-start w-full'>
-              <Label className='mb-10' htmlFor='date_discharged_label'>
-                Date Discharged
-              </Label>
-              <Input className=' ' type='text' id='date_discharged_label' />
-            </div>
-            <div className='text-start w-full'>
-              <Label className='mb-10' htmlFor='time_discharge_label'>
-                Time Discharge
-              </Label>
-              <Input className=' ' type='text' id='time_discharge_label' />
+              <Input type='text' id='zip_code_label' />
             </div>
           </div>
 
+          {/* Case Rates and Diagnosis */}
           <div className='flex gap-3 w-full'>
             <div className='text-start w-full'>
               <Label className='mb-10' htmlFor='first_case_rate_label'>
@@ -158,13 +153,11 @@ export default function DashboardPage() {
                 placeholder='67031'
               />
             </div>
-          </div>
-          <div className='flex gap-3 w-full'>
             <div className='text-start w-full'>
               <Label className='mb-10' htmlFor='second_case_rate_label'>
                 Second case rate:
               </Label>
-              <Input className=' ' type='text' id='second_case_rate_label' />
+              <Input type='text' id='second_case_rate_label' />
             </div>
           </div>
 
@@ -173,7 +166,7 @@ export default function DashboardPage() {
               <Label className='mb-10' htmlFor='admitting_diagnosis_label'>
                 Admitting Diagnosis
               </Label>
-              <Input className=' ' type='text' id='admitting_diagnosis_label' />
+              <Input type='text' id='admitting_diagnosis_label' />
             </div>
           </div>
           <div className='flex gap-3 w-full'>
@@ -181,10 +174,11 @@ export default function DashboardPage() {
               <Label className='mb-10' htmlFor='discharge_diagnosis_label'>
                 Discharge Diagnosis
               </Label>
-              <Input className=' ' type='text' id='discharge_diagnosis_label' />
+              <Input type='text' id='discharge_diagnosis_label' />
             </div>
           </div>
 
+          {/* SUMMARY OF FEES Section */}
           <div className='text-start w-full block mt-10'>
             <h1 className='font-bold text-3xl'>SUMMARY OF FEES</h1>
 
@@ -216,22 +210,30 @@ export default function DashboardPage() {
                   <TableRow key={index}>
                     <TableCell className='font-medium'>{row.name}</TableCell>
                     <TableCell>
-                      <Input type='text' />
+                      <Input type='text' value={row.actualCharges} />
                     </TableCell>
                     <TableCell>
-                      <Input type='text' />
+                      <Input type='text' value={row.vat} />
                     </TableCell>
                     <TableCell>
-                      <Input type='text' />
+                      <Input type='text' value={row.discountSC} />
                     </TableCell>
                     <TableCell>
-                      <Input type='text' />
+                      <Input type='text' value={row.discountNonSC} />
                     </TableCell>
                     <TableCell>
-                      <Input type='text' />
+                      <Input type='text' value={row.firstCaseAmount} />
                     </TableCell>
                     <TableCell>
-                      <Input type='text' />
+                      <Input type='text' value={row.secondCaseAmount} />
+                    </TableCell>
+                    <TableCell>
+                      <button
+                        onClick={() => handleRemoveRow(index)}
+                        className='text-red-500 hover:text-red-700'
+                      >
+                        Remove
+                      </button>
                     </TableCell>
                   </TableRow>
                 ))}
@@ -259,12 +261,15 @@ export default function DashboardPage() {
                           onChange={(e) => setNewFeeName(e.target.value)}
                           placeholder='Enter Fee Name'
                         />
-                        <button
-                          onClick={handleAddRow}
-                          className='bg-green-500 text-white p-2 rounded'
+                        <Button onClick={handleAddRow}>Add Fee</Button>
+                        <Button
+                          onClick={() => {
+                            setShowNewFeeInput(false)
+                            setNewFeeName('')
+                          }}
                         >
-                          Add Fee
-                        </button>
+                          Cancel
+                        </Button>
                       </div>
                     </TableCell>
                   </TableRow>
