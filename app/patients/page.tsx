@@ -1,19 +1,25 @@
-import { Poppins } from 'next/font/google'
+import { Payment, columns } from './columns'
+import { DataTable } from './data-table'
 
-const poppins = Poppins({
-  weight: '400',
-  subsets: ['latin'],
-})
+async function getData(): Promise<Payment[]> {
+  // Fetch data from your API here.
+  return [
+    {
+      id: '728ed52f',
+      amount: 100,
+      status: 'pending',
+      email: 'm@example.com',
+    },
+    // ...
+  ]
+}
 
-export default function Page() {
+export default async function DemoPage() {
+  const data = await getData()
+
   return (
-    <div className={`${poppins.className} flex ml-36 mb-10`}>
-      <div className='flex flex-col text-center w-full items-center'>
-        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magni ipsa,
-        officia corporis officiis quia ad, aliquid consectetur consequuntur sed
-        debitis rerum, cum molestias deleniti error soluta dolore quaerat?
-        Voluptate, illo.
-      </div>
+    <div className='container mx-auto py-10'>
+      <DataTable columns={columns} data={data} />
     </div>
   )
 }
