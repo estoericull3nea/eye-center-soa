@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { useRouter } from 'next/navigation'
 
 import Image from 'next/image'
@@ -35,9 +35,44 @@ export default function DashboardPage() {
     }
   }, [router])
 
+  // State to hold dynamic rows for HCI Fees
+  const [dynamicRows, setDynamicRows] = useState<any[]>([])
+
+  // State to control the visibility of the new fee input field
+  const [showNewFeeInput, setShowNewFeeInput] = useState(false)
+
+  // State for the name of the new fee being added
+  const [newFeeName, setNewFeeName] = useState('')
+
+  // Function to add a new row
+  const handleAddRow = () => {
+    if (newFeeName.trim() === '') {
+      alert('Please enter a fee name')
+      return
+    }
+
+    // Add the new row to the dynamicRows state
+    setDynamicRows([
+      ...dynamicRows,
+      {
+        name: newFeeName,
+        actualCharges: '',
+        vat: '',
+        discountSC: '',
+        discountNonSC: '',
+        firstCaseAmount: '',
+        secondCaseAmount: '',
+      },
+    ])
+
+    // Reset the fee name and hide the input field
+    setNewFeeName('')
+    setShowNewFeeInput(false)
+  }
+
   return (
     <div className={`${poppins.className}  flex justify-center  w-screen`}>
-      <div className=' flex flex-col text-center w-full items-center'>
+      <div className='flex flex-col text-center w-full items-center'>
         <Image
           src='/images/eye-center-logo-2.png'
           alt='Logo'
@@ -53,36 +88,36 @@ export default function DashboardPage() {
         </h3>
         <h4 className='font-bold mt-5'>STATEMENT OF ACCOUNT</h4>
 
-        <div className='flex flex-col items-center  p-10 rounded-2xl space-y-4 w-full max-w-[1400px] border border-black'>
-          <div className='flex  gap-3 w-full'>
+        <div className='flex flex-col items-center p-10 rounded-2xl space-y-4 w-full max-w-[1400px] border border-black'>
+          <div className='flex gap-3 w-full'>
             <div className='text-start w-full'>
               <Label className='mb-10' htmlFor='patient_label'>
                 Patient Name
               </Label>
               <Input className=' ' type='text' id='patient_label' />
             </div>
-            <div className='text-start   w-full'>
+            <div className='text-start w-full'>
               <Label className='mb-10' htmlFor='age_label'>
                 Age
               </Label>
               <Input className=' ' type='text' id='age_label' />
             </div>
           </div>
-          <div className='flex  gap-3 w-full'>
-            <div className='text-start  w-full'>
+          <div className='flex gap-3 w-full'>
+            <div className='text-start w-full'>
               <Label className='mb-10' htmlFor='address_label'>
                 Address
               </Label>
               <Input className=' ' type='text' id='address_label' />
             </div>
-            <div className='text-start  w-full'>
+            <div className='text-start w-full'>
               <Label className='mb-10' htmlFor='zip_code_label'>
                 Zip Code
               </Label>
               <Input className=' ' type='text' id='zip_code_label' />
             </div>
           </div>
-          <div className='flex  gap-3 w-full'>
+          <div className='flex gap-3 w-full'>
             <div className='text-start w-full'>
               <Label className='mb-10' htmlFor='date_admitted_label'>
                 Date Admitted
@@ -96,7 +131,7 @@ export default function DashboardPage() {
               <Input className=' ' type='text' id='time_admitted_label' />
             </div>
           </div>
-          <div className='flex  gap-3 w-full'>
+          <div className='flex gap-3 w-full'>
             <div className='text-start w-full'>
               <Label className='mb-10' htmlFor='date_discharged_label'>
                 Date Discharged
@@ -111,7 +146,7 @@ export default function DashboardPage() {
             </div>
           </div>
 
-          <div className='flex  gap-3 w-full'>
+          <div className='flex gap-3 w-full'>
             <div className='text-start w-full'>
               <Label className='mb-10' htmlFor='first_case_rate_label'>
                 First case rate:
@@ -119,12 +154,12 @@ export default function DashboardPage() {
               <Input
                 className=' '
                 type='text'
-                id='first_case_rae_labele'
+                id='first_case_rate_label'
                 placeholder='67031'
               />
             </div>
           </div>
-          <div className='flex  gap-3 w-full'>
+          <div className='flex gap-3 w-full'>
             <div className='text-start w-full'>
               <Label className='mb-10' htmlFor='second_case_rate_label'>
                 Second case rate:
@@ -133,7 +168,7 @@ export default function DashboardPage() {
             </div>
           </div>
 
-          <div className='flex  gap-3 w-full'>
+          <div className='flex gap-3 w-full'>
             <div className='text-start w-full'>
               <Label className='mb-10' htmlFor='admitting_diagnosis_label'>
                 Admitting Diagnosis
@@ -141,16 +176,16 @@ export default function DashboardPage() {
               <Input className=' ' type='text' id='admitting_diagnosis_label' />
             </div>
           </div>
-          <div className='flex  gap-3 w-full'>
+          <div className='flex gap-3 w-full'>
             <div className='text-start w-full'>
               <Label className='mb-10' htmlFor='discharge_diagnosis_label'>
                 Discharge Diagnosis
               </Label>
-              <Input className=' ' type='text' id='discharge_diagnosi_labels' />
+              <Input className=' ' type='text' id='discharge_diagnosis_label' />
             </div>
           </div>
 
-          <div className='text-start  w-full block mt-10'>
+          <div className='text-start w-full block mt-10'>
             <h1 className='font-bold text-3xl'>SUMMARY OF FEES</h1>
 
             <Table>
@@ -176,72 +211,64 @@ export default function DashboardPage() {
                   <TableCell className='font-medium'>HCI FEES</TableCell>
                 </TableRow>
 
-                {/* Laser Fee, Supplies, and Medicines as child rows of HCI FEES */}
+                {/* Render dynamic rows for each HCI fee */}
+                {dynamicRows.map((row, index) => (
+                  <TableRow key={index}>
+                    <TableCell className='font-medium'>{row.name}</TableCell>
+                    <TableCell>
+                      <Input type='text' />
+                    </TableCell>
+                    <TableCell>
+                      <Input type='text' />
+                    </TableCell>
+                    <TableCell>
+                      <Input type='text' />
+                    </TableCell>
+                    <TableCell>
+                      <Input type='text' />
+                    </TableCell>
+                    <TableCell>
+                      <Input type='text' />
+                    </TableCell>
+                    <TableCell>
+                      <Input type='text' />
+                    </TableCell>
+                  </TableRow>
+                ))}
+
+                {/* Add Button to show the input field for a new fee */}
                 <TableRow>
-                  <TableCell className='font-medium'>Laser Fee</TableCell>
-                  <TableCell>
-                    <Input type='text' />
-                  </TableCell>
-                  <TableCell>
-                    <Input type='text' />
-                  </TableCell>
-                  <TableCell>
-                    <Input type='text' />
-                  </TableCell>
-                  <TableCell>
-                    <Input type='text' />
-                  </TableCell>
-                  <TableCell>
-                    <Input type='text' />
-                  </TableCell>
-                  <TableCell>
-                    <Input type='text' />
+                  <TableCell colSpan={7}>
+                    <button
+                      onClick={() => setShowNewFeeInput(true)}
+                      className='text-blue-500 underline'
+                    >
+                      + Add New HCI Fee
+                    </button>
                   </TableCell>
                 </TableRow>
 
-                <TableRow>
-                  <TableCell className='font-medium'>Supplies</TableCell>
-                  <TableCell>
-                    <Input type='text' />
-                  </TableCell>
-                  <TableCell>
-                    <Input type='text' />
-                  </TableCell>
-                  <TableCell>
-                    <Input type='text' />
-                  </TableCell>
-                  <TableCell>
-                    <Input type='text' />
-                  </TableCell>
-                  <TableCell>
-                    <Input type='text' />
-                  </TableCell>
-                  <TableCell>
-                    <Input type='text' />
-                  </TableCell>
-                </TableRow>
-
-                <TableRow>
-                  <TableCell className='font-medium'>Medicines</TableCell>
-                  <TableCell>
-                    <Input type='text' />
-                  </TableCell>
-                  <TableCell>
-                    <Input type='text' />
-                  </TableCell>
-                  <TableCell>
-                    <Input type='text' />
-                  </TableCell>
-                  <TableCell>
-                    <Input type='text' />
-                  </TableCell>
-                  <TableCell>
-                    <Input type='text' />
-                  </TableCell>
-                  <TableCell>
-                    <Input type='text' />
-                  </TableCell>
-                </TableRow>
+                {/* Input field to add a new fee */}
+                {showNewFeeInput && (
+                  <TableRow>
+                    <TableCell colSpan={7}>
+                      <div className='flex gap-2'>
+                        <Input
+                          type='text'
+                          value={newFeeName}
+                          onChange={(e) => setNewFeeName(e.target.value)}
+                          placeholder='Enter Fee Name'
+                        />
+                        <button
+                          onClick={handleAddRow}
+                          className='bg-green-500 text-white p-2 rounded'
+                        >
+                          Add Fee
+                        </button>
+                      </div>
+                    </TableCell>
+                  </TableRow>
+                )}
 
                 {/* Total HCI Fees */}
                 <TableRow>
