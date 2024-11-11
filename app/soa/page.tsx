@@ -8,6 +8,7 @@ import Image from 'next/image'
 import { Poppins } from 'next/font/google'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
+import { Separator } from '@/components/ui/separator'
 
 import {
   Table,
@@ -58,13 +59,13 @@ export default function DashboardPage() {
               <Label className='mb-10' htmlFor='patient_label'>
                 Patient Name
               </Label>
-              <Input className=' ' type='email' id='patient_label' />
+              <Input className=' ' type='text' id='patient_label' />
             </div>
             <div className='text-start   w-full'>
               <Label className='mb-10' htmlFor='age_label'>
                 Age
               </Label>
-              <Input className=' ' type='email' id='age_label' />
+              <Input className=' ' type='text' id='age_label' />
             </div>
           </div>
           <div className='flex  gap-3 w-full'>
@@ -72,13 +73,13 @@ export default function DashboardPage() {
               <Label className='mb-10' htmlFor='address_label'>
                 Address
               </Label>
-              <Input className=' ' type='email' id='address_label' />
+              <Input className=' ' type='text' id='address_label' />
             </div>
             <div className='text-start  w-full'>
               <Label className='mb-10' htmlFor='zip_code_label'>
                 Zip Code
               </Label>
-              <Input className=' ' type='email' id='zip_code_label' />
+              <Input className=' ' type='text' id='zip_code_label' />
             </div>
           </div>
           <div className='flex  gap-3 w-full'>
@@ -86,13 +87,13 @@ export default function DashboardPage() {
               <Label className='mb-10' htmlFor='date_admitted_label'>
                 Date Admitted
               </Label>
-              <Input className=' ' type='email' id='date_admitted_label' />
+              <Input className=' ' type='text' id='date_admitted_label' />
             </div>
             <div className='text-start w-full'>
               <Label className='mb-10' htmlFor='time_admitted_label'>
                 Time Admittted
               </Label>
-              <Input className=' ' type='email' id='time_admitted_label' />
+              <Input className=' ' type='text' id='time_admitted_label' />
             </div>
           </div>
           <div className='flex  gap-3 w-full'>
@@ -100,13 +101,13 @@ export default function DashboardPage() {
               <Label className='mb-10' htmlFor='date_discharged_label'>
                 Date Discharged
               </Label>
-              <Input className=' ' type='email' id='date_discharged_label' />
+              <Input className=' ' type='text' id='date_discharged_label' />
             </div>
             <div className='text-start w-full'>
               <Label className='mb-10' htmlFor='time_discharge_label'>
                 Time Discharge
               </Label>
-              <Input className=' ' type='email' id='time_discharge_label' />
+              <Input className=' ' type='text' id='time_discharge_label' />
             </div>
           </div>
 
@@ -117,7 +118,7 @@ export default function DashboardPage() {
               </Label>
               <Input
                 className=' '
-                type='email'
+                type='text'
                 id='first_case_rae_labele'
                 placeholder='67031'
               />
@@ -128,7 +129,7 @@ export default function DashboardPage() {
               <Label className='mb-10' htmlFor='second_case_rate_label'>
                 Second case rate:
               </Label>
-              <Input className=' ' type='email' id='second_case_rate_label' />
+              <Input className=' ' type='text' id='second_case_rate_label' />
             </div>
           </div>
 
@@ -137,11 +138,7 @@ export default function DashboardPage() {
               <Label className='mb-10' htmlFor='admitting_diagnosis_label'>
                 Admitting Diagnosis
               </Label>
-              <Input
-                className=' '
-                type='email'
-                id='admitting_diagnosis_label'
-              />
+              <Input className=' ' type='text' id='admitting_diagnosis_label' />
             </div>
           </div>
           <div className='flex  gap-3 w-full'>
@@ -149,11 +146,7 @@ export default function DashboardPage() {
               <Label className='mb-10' htmlFor='discharge_diagnosis_label'>
                 Discharge Diagnosis
               </Label>
-              <Input
-                className=' '
-                type='email'
-                id='discharge_diagnosi_labels'
-              />
+              <Input className=' ' type='text' id='discharge_diagnosi_labels' />
             </div>
           </div>
 
@@ -164,7 +157,7 @@ export default function DashboardPage() {
               <TableCaption>Statement of Accounts</TableCaption>
               <TableHeader>
                 <TableRow>
-                  <TableHead className='w-[150px]'>Particulars</TableHead>
+                  <TableHead className='w-[200px]'>Particulars</TableHead>
                   <TableHead className='w-[150px]'>Actual Charges</TableHead>
                   <TableHead className='w-[150px]'>12% VAT</TableHead>
                   <TableHead className='w-[150px]'>20% SC Discount</TableHead>
@@ -178,35 +171,135 @@ export default function DashboardPage() {
                 </TableRow>
               </TableHeader>
               <TableBody>
+                {/* HCI FEES Parent Row */}
                 <TableRow>
                   <TableCell className='font-medium'>HCI FEES</TableCell>
                 </TableRow>
 
+                {/* Laser Fee, Supplies, and Medicines as child rows of HCI FEES */}
                 <TableRow>
                   <TableCell className='font-medium'>Laser Fee</TableCell>
+                  <TableCell>
+                    <Input type='text' />
+                  </TableCell>
+                  <TableCell>
+                    <Input type='text' />
+                  </TableCell>
+                  <TableCell>
+                    <Input type='text' />
+                  </TableCell>
+                  <TableCell>
+                    <Input type='text' />
+                  </TableCell>
+                  <TableCell>
+                    <Input type='text' />
+                  </TableCell>
+                  <TableCell>
+                    <Input type='text' />
+                  </TableCell>
                 </TableRow>
+
                 <TableRow>
                   <TableCell className='font-medium'>Supplies</TableCell>
+                  <TableCell>
+                    <Input type='text' />
+                  </TableCell>
+                  <TableCell>
+                    <Input type='text' />
+                  </TableCell>
+                  <TableCell>
+                    <Input type='text' />
+                  </TableCell>
+                  <TableCell>
+                    <Input type='text' />
+                  </TableCell>
+                  <TableCell>
+                    <Input type='text' />
+                  </TableCell>
+                  <TableCell>
+                    <Input type='text' />
+                  </TableCell>
                 </TableRow>
+
                 <TableRow>
-                  <TableCell className='font-medium'>MEDICINES</TableCell>
+                  <TableCell className='font-medium'>Medicines</TableCell>
+                  <TableCell>
+                    <Input type='text' />
+                  </TableCell>
+                  <TableCell>
+                    <Input type='text' />
+                  </TableCell>
+                  <TableCell>
+                    <Input type='text' />
+                  </TableCell>
+                  <TableCell>
+                    <Input type='text' />
+                  </TableCell>
+                  <TableCell>
+                    <Input type='text' />
+                  </TableCell>
+                  <TableCell>
+                    <Input type='text' />
+                  </TableCell>
                 </TableRow>
+
+                {/* Total HCI Fees */}
                 <TableRow>
-                  <TableCell className='font-medium'>Total HCI Fees</TableCell>
+                  <TableCell className='font-bold text-green-700'>
+                    Total HCI Fees
+                  </TableCell>
+                  <TableCell>
+                    <Input type='text' readOnly />
+                  </TableCell>
                 </TableRow>
+
+                {/* Separator after Laser Fee, Supplies, and Medicines */}
+                <TableRow>
+                  <TableCell colSpan={7}>
+                    <Separator className='my-4' />
+                  </TableCell>
+                </TableRow>
+
+                {/* PROFESSIONAL FEES Parent Row */}
                 <TableRow>
                   <TableCell className='font-medium'>
                     PROFESSIONAL FEES
                   </TableCell>
                 </TableRow>
+
+                {/* Professional Fee Details */}
                 <TableRow>
                   <TableCell className='font-medium'>
                     DR AUREO FRANCIS C. SANCHEZ
                   </TableCell>
+                  <TableCell>
+                    <Input type='text' />
+                  </TableCell>
                 </TableRow>
-                <TableRow></TableRow>
+
+                {/* Total PF Fees */}
+                <TableRow>
+                  <TableCell className='font-bold text-green-700'>
+                    Total PF Fees
+                  </TableCell>
+                  <TableCell>
+                    <Input type='text' readOnly />
+                  </TableCell>
+                </TableRow>
+
+                {/* Separator after Professional Fees */}
+                <TableRow>
+                  <TableCell colSpan={7}>
+                    <Separator className='my-4' />
+                  </TableCell>
+                </TableRow>
+
+                {/* GRAND TOTAL Row */}
                 <TableRow>
                   <TableCell className='font-medium'>GRAND TOTAL</TableCell>
+                  <TableCell colSpan={6}>
+                    <Input type='text' />
+                  </TableCell>
                 </TableRow>
               </TableBody>
             </Table>
