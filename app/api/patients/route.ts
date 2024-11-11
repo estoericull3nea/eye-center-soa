@@ -34,10 +34,7 @@ export async function POST(req: NextRequest) {
 
     await newPatient.save()
 
-    return NextResponse.json(
-      { message: 'Patient created successfully', patient: newPatient },
-      { status: 201 }
-    )
+    return NextResponse.json({ data: newPatient }, { status: 201 })
   } catch (error) {
     return NextResponse.json(
       { message: 'Error creating patient', error },

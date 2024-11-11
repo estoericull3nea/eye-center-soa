@@ -38,12 +38,12 @@ const items = [
     icon: AiOutlineInbox,
   },
   {
-    title: 'Patient',
+    title: 'Patients',
     url: '/patients',
     icon: AiOutlineCalendar,
   },
   {
-    title: 'Admin',
+    title: 'Admins',
     url: '/admins',
     icon: AiOutlineUser,
   },
