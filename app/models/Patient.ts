@@ -6,10 +6,6 @@ interface IPatient {
   age: number
   address: string
   zipCode: string
-  firstCaseRate: number
-  secondCaseRate: number
-  admittingDiagnosis: string
-  dischargeDiagnosis: string
 }
 
 const patientSchema = new Schema<IPatient>({
@@ -18,10 +14,6 @@ const patientSchema = new Schema<IPatient>({
   age: { type: Number, required: true },
   address: { type: String, required: true },
   zipCode: { type: String, required: true },
-  firstCaseRate: { type: Number, required: true },
-  secondCaseRate: { type: Number, required: true },
-  admittingDiagnosis: { type: String, required: true },
-  dischargeDiagnosis: { type: String, required: true },
 })
 
 export default models.Patient || model<IPatient>('Patient', patientSchema)

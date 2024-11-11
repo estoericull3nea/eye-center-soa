@@ -32,10 +32,6 @@ export interface Patient {
   age: number
   address: string
   zipCode: string
-  firstCaseRate: number
-  secondCaseRate: number
-  admittingDiagnosis: string
-  dischargeDiagnosis: string
 }
 
 export default function Page() {
@@ -51,10 +47,6 @@ export default function Page() {
     age: '',
     address: '',
     zipCode: '',
-    firstCaseRate: '',
-    secondCaseRate: '',
-    admittingDiagnosis: '',
-    dischargeDiagnosis: '',
   }) // Form state
   const { toast } = useToast()
 
@@ -111,33 +103,45 @@ export default function Page() {
 
   const handleAddPatient = async () => {
     try {
-      const response = await axios.post<Patient>('/api/patients', {
+      const age = parseInt(formData.age, 10)
+      if (isNaN(age)) {
+        toast({
+          title: 'Invalid age',
+          description: 'Please enter a valid number for age.',
+          variant: 'destructive',
+        })
+        return
+      }
+
+      const response = await axios.post('/api/patients', {
         ...formData,
-        age: parseInt(formData.age),
-        firstCaseRate: parseFloat(formData.firstCaseRate),
-        secondCaseRate: parseFloat(formData.secondCaseRate),
+        age,
       })
+
       if (response.status === 201) {
         toast({
           title: 'Patient Added',
         })
-        setData((prev) => [...prev, response.data])
 
-        setOpen(false) // Close modal after adding patient
+        setData((prev) => [...prev, response.data.data])
+        setOpen(false)
+
+        // Reset the form
         setFormData({
           firstName: '',
           lastName: '',
           age: '',
           address: '',
           zipCode: '',
-          firstCaseRate: '',
-          secondCaseRate: '',
-          admittingDiagnosis: '',
-          dischargeDiagnosis: '',
         })
       }
     } catch (error) {
       console.error('Error adding patient:', error)
+      toast({
+        title: 'Error',
+        description: 'An error occurred while adding the patient.',
+        variant: 'destructive',
+      })
     }
   }
 
@@ -164,13 +168,7 @@ export default function Page() {
                       <Input
                         id={field}
                         name={field}
-                        type={
-                          field === 'age' ||
-                          field === 'firstCaseRate' ||
-                          field === 'secondCaseRate'
-                            ? 'number'
-                            : 'text'
-                        }
+                        type={field === 'age' ? 'number' : 'text'} // Fix here
                         value={editPatientData[field as keyof Patient] || ''}
                         onChange={handleEditInputChange}
                       />
@@ -195,39 +193,25 @@ export default function Page() {
                 </DialogHeader>
                 <div className='space-y-4'>
                   {/* Form fields for adding a new patient */}
-                  {[
-                    'firstName',
-                    'lastName',
-                    'age',
-                    'address',
-                    'zipCode',
-                    'firstCaseRate',
-                    'secondCaseRate',
-                    'admittingDiagnosis',
-                    'dischargeDiagnosis',
-                  ].map((field) => (
-                    <div key={field} className='flex flex-col space-y-1'>
-                      <Label htmlFor={field}>
-                        {field
-                          .replace(/([A-Z])/g, ' $1')
-                          .replace(/^./, (str) => str.toUpperCase())}
-                      </Label>
-                      <Input
-                        id={field}
-                        name={field}
-                        type={
-                          field === 'age' ||
-                          field === 'firstCaseRate' ||
-                          field === 'secondCaseRate'
-                            ? 'number'
-                            : 'text'
-                        }
-                        value={formData[field as keyof typeof formData]}
-                        onChange={handleInputChange}
-                        required
-                      />
-                    </div>
-                  ))}
+                  {['firstName', 'lastName', 'age', 'address', 'zipCode'].map(
+                    (field) => (
+                      <div key={field} className='flex flex-col space-y-1'>
+                        <Label htmlFor={field}>
+                          {field
+                            .replace(/([A-Z])/g, ' $1')
+                            .replace(/^./, (str) => str.toUpperCase())}
+                        </Label>
+                        <Input
+                          id={field}
+                          name={field}
+                          type={field === 'age' ? 'number' : 'text'} // Fix here
+                          value={formData[field as keyof typeof formData]}
+                          onChange={handleInputChange}
+                          required
+                        />
+                      </div>
+                    )
+                  )}
                 </div>
                 <Button onClick={handleAddPatient} className='mt-4 w-full'>
                   Save

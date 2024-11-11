@@ -8,33 +8,19 @@ await connectToDatabase()
 export async function POST(req: NextRequest) {
   try {
     const body = await req.json()
-    const {
-      firstName,
-      lastName,
-      age,
-      address,
-      zipCode,
-      firstCaseRate,
-      secondCaseRate,
-      admittingDiagnosis,
-      dischargeDiagnosis,
-    } = body
+    const { firstName, lastName, age, address, zipCode } = body
 
-    const newPatient = new Patient({
+    const data = new Patient({
       firstName,
       lastName,
       age,
       address,
       zipCode,
-      firstCaseRate,
-      secondCaseRate,
-      admittingDiagnosis,
-      dischargeDiagnosis,
     })
 
-    await newPatient.save()
+    await data.save()
 
-    return NextResponse.json({ data: newPatient }, { status: 201 })
+    return NextResponse.json({ data }, { status: 201 })
   } catch (error) {
     return NextResponse.json(
       { message: 'Error creating patient', error },
@@ -107,10 +93,6 @@ export async function PATCH(req: NextRequest) {
       age: body.age,
       address: body.address,
       zipCode: body.zipCode,
-      firstCaseRate: body.firstCaseRate,
-      secondCaseRate: body.secondCaseRate,
-      admittingDiagnosis: body.admittingDiagnosis,
-      dischargeDiagnosis: body.dischargeDiagnosis,
     }
 
     const updatedPatient = await Patient.findByIdAndUpdate(id, updatedFields, {

@@ -42,22 +42,6 @@ export const columns = (
     header: 'Zip Code',
   },
   {
-    accessorKey: 'firstCaseRate',
-    header: 'First Case Rate',
-  },
-  {
-    accessorKey: 'secondCaseRate',
-    header: 'Second Case Rate',
-  },
-  {
-    accessorKey: 'admittingDiagnosis',
-    header: 'Admitting Diagnosis',
-  },
-  {
-    accessorKey: 'dischargeDiagnosis',
-    header: 'Discharge Diagnosis',
-  },
-  {
     id: 'actions',
     header: 'Actions',
     cell: ({ row }) => {
