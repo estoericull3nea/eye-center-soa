@@ -1,20 +1,18 @@
+// app/dashboard/page.tsx
 'use client'
 
 import { useEffect } from 'react'
 import { useRouter } from 'next/navigation'
 
-export default function Page() {
+export default function DashboardPage() {
   const router = useRouter()
 
   useEffect(() => {
-    // Check for JWT token in localStorage
     const token = localStorage.getItem('authToken')
-
-    // Redirect to login if token is not found
     if (!token) {
       router.push('/login')
     }
   }, [router])
 
-  return <h1>Dashboard</h1>
+  return <h1 className='text-3xl font-bold'>Dashboard</h1>
 }
