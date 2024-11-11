@@ -1,5 +1,11 @@
 import { Payment, columns } from './columns'
 import { DataTable } from './data-table'
+import { Poppins } from 'next/font/google'
+
+const poppins = Poppins({
+  weight: '400',
+  subsets: ['latin'],
+})
 
 async function getData(): Promise<Payment[]> {
   // Fetch data from your API here.
@@ -18,8 +24,10 @@ export default async function DemoPage() {
   const data = await getData()
 
   return (
-    <div className='container mx-auto py-10'>
-      <DataTable columns={columns} data={data} />
+    <div className={`${poppins.className} flex ml-36 mb-10`}>
+      <div className='flex flex-col text-center w-full items-center'>
+        <DataTable columns={columns} data={data} />
+      </div>
     </div>
   )
 }
