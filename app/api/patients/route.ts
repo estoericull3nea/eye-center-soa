@@ -87,3 +87,49 @@ export async function DELETE(req: NextRequest) {
     )
   }
 }
+
+export async function PATCH(req: NextRequest) {
+  try {
+    const { searchParams } = new URL(req.url)
+    const id = searchParams.get('id') // Get the patient ID from query parameters
+
+    if (!id) {
+      return NextResponse.json(
+        { message: 'Patient ID is required' },
+        { status: 400 }
+      )
+    }
+
+    const body = await req.json()
+    const updatedFields = {
+      firstName: body.firstName,
+      lastName: body.lastName,
+      age: body.age,
+      address: body.address,
+      zipCode: body.zipCode,
+      firstCaseRate: body.firstCaseRate,
+      secondCaseRate: body.secondCaseRate,
+      admittingDiagnosis: body.admittingDiagnosis,
+      dischargeDiagnosis: body.dischargeDiagnosis,
+    }
+
+    const updatedPatient = await Patient.findByIdAndUpdate(id, updatedFields, {
+      new: true, // Return the updated document
+      runValidators: true, // Ensure validation is applied to updated fields
+    })
+
+    if (!updatedPatient) {
+      return NextResponse.json(
+        { message: 'Patient not found' },
+        { status: 404 }
+      )
+    }
+
+    return NextResponse.json({ data: updatedPatient }, { status: 200 })
+  } catch (error) {
+    return NextResponse.json(
+      { message: 'Error updating patient', error },
+      { status: 500 }
+    )
+  }
+}

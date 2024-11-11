@@ -17,7 +17,9 @@ import {
 
 // Define columns for the DataTable component
 export const columns = (
-  setData: React.Dispatch<React.SetStateAction<Patient[]>>
+  setData: React.Dispatch<React.SetStateAction<Patient[]>>,
+  setEditOpen: React.Dispatch<React.SetStateAction<boolean>>,
+  setEditPatientData: React.Dispatch<React.SetStateAction<Patient | null>>
 ): ColumnDef<Patient>[] => [
   {
     accessorKey: 'firstName',
@@ -62,8 +64,8 @@ export const columns = (
       const patient = row.original
 
       const handleEdit = () => {
-        // Logic for handling edit action
-        console.log('Edit', patient)
+        setEditPatientData(patient) // Pass current patient data to modal
+        setEditOpen(true) // Open the edit modal
       }
 
       const handleDelete = async () => {

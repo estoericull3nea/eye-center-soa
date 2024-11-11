@@ -42,6 +42,9 @@ export default function Page() {
   const [data, setData] = useState<Patient[]>([])
   const [loading, setLoading] = useState(true) // Loading state
   const [open, setOpen] = useState(false) // Modal open state
+  const [editOpen, setEditOpen] = useState(false) // Edit modal state
+  const [editPatientData, setEditPatientData] = useState<Patient | null>(null) // Data for patient being edited
+
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
@@ -75,6 +78,35 @@ export default function Page() {
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target
     setFormData((prev) => ({ ...prev, [name]: value }))
+  }
+
+  const handleEditPatient = async () => {
+    if (!editPatientData) return
+
+    try {
+      const response = await axios.patch(
+        `/api/patients?id=${editPatientData._id}`,
+        editPatientData
+      )
+      if (response.status === 200) {
+        toast({
+          title: 'Patient updated successfully',
+        })
+        setData((prev) =>
+          prev.map((p) =>
+            p._id === editPatientData._id ? response.data.data : p
+          )
+        )
+        setEditOpen(false)
+      }
+    } catch (error) {
+      console.error('Error updating patient:', error)
+    }
+  }
+
+  const handleEditInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = e.target
+    setEditPatientData((prev) => (prev ? { ...prev, [name]: value } : null))
   }
 
   const handleAddPatient = async () => {
@@ -111,6 +143,44 @@ export default function Page() {
 
   return (
     <div className={`${poppins.className} flex flex-col items-center`}>
+      {/* Edit Patient Modal */}
+      <Dialog open={editOpen} onOpenChange={setEditOpen}>
+        <DialogContent>
+          <DialogHeader>
+            <DialogTitle>Edit Patient</DialogTitle>
+          </DialogHeader>
+          <div className='space-y-4'>
+            {/* Form fields for editing a patient */}
+            {editPatientData &&
+              Object.keys(editPatientData).map((field) => (
+                <div key={field} className='flex flex-col space-y-1'>
+                  <Label htmlFor={field}>
+                    {field
+                      .replace(/([A-Z])/g, ' $1')
+                      .replace(/^./, (str) => str.toUpperCase())}
+                  </Label>
+                  <Input
+                    id={field}
+                    name={field}
+                    type={
+                      field === 'age' ||
+                      field === 'firstCaseRate' ||
+                      field === 'secondCaseRate'
+                        ? 'number'
+                        : 'text'
+                    }
+                    value={editPatientData[field as keyof Patient] || ''}
+                    onChange={handleEditInputChange}
+                  />
+                </div>
+              ))}
+          </div>
+          <Button onClick={handleEditPatient} className='mt-4 w-full'>
+            Save Changes
+          </Button>
+        </DialogContent>
+      </Dialog>
+
       {/* Add Patient Button */}
       <div className='text-end w-full'>
         <Dialog open={open} onOpenChange={setOpen}>
@@ -167,7 +237,10 @@ export default function Page() {
         {loading ? (
           <SkeletonTable /> // Render skeleton if loading is true
         ) : (
-          <DataTable<Patient, unknown> columns={columns(setData)} data={data} />
+          <DataTable<Patient, unknown>
+            columns={columns(setData, setEditOpen, setEditPatientData)}
+            data={data}
+          />
         )}
       </div>
     </div>
