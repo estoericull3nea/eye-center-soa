@@ -9,6 +9,16 @@ import { Poppins } from 'next/font/google'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
 
+import {
+  Table,
+  TableBody,
+  TableCaption,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from '@/components/ui/table'
+
 const poppins = Poppins({
   weight: '400',
   subsets: ['latin'],
@@ -42,7 +52,7 @@ export default function DashboardPage() {
         </h3>
         <h4 className='font-bold mt-5'>STATEMENT OF ACCOUNT</h4>
 
-        <div className='flex flex-col items-center  p-10 rounded-2xl space-y-4 w-full max-w-[1000px] border border-black'>
+        <div className='flex flex-col items-center  p-10 rounded-2xl space-y-4 w-full max-w-[1400px] border border-black'>
           <div className='flex  gap-3 w-full'>
             <div className='text-start w-full'>
               <Label className='mb-10' htmlFor='patient_label'>
@@ -149,6 +159,57 @@ export default function DashboardPage() {
 
           <div className='text-start  w-full block mt-10'>
             <h1 className='font-bold text-3xl'>SUMMARY OF FEES</h1>
+
+            <Table>
+              <TableCaption>Statement of Accounts</TableCaption>
+              <TableHeader>
+                <TableRow>
+                  <TableHead className='w-[150px]'>Particulars</TableHead>
+                  <TableHead className='w-[150px]'>Actual Charges</TableHead>
+                  <TableHead className='w-[150px]'>12% VAT</TableHead>
+                  <TableHead className='w-[150px]'>20% SC Discount</TableHead>
+                  <TableHead className='w-[150px]'>
+                    32% Non-SC Discount
+                  </TableHead>
+                  <TableHead className='w-[150px]'>First Case Amount</TableHead>
+                  <TableHead className='w-[150px]'>
+                    Second Case Amount
+                  </TableHead>
+                </TableRow>
+              </TableHeader>
+              <TableBody>
+                <TableRow>
+                  <TableCell className='font-medium'>HCI FEES</TableCell>
+                </TableRow>
+
+                <TableRow>
+                  <TableCell className='font-medium'>Laser Fee</TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell className='font-medium'>Supplies</TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell className='font-medium'>MEDICINES</TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell className='font-medium'>Total HCI Fees</TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell className='font-medium'>
+                    PROFESSIONAL FEES
+                  </TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell className='font-medium'>
+                    DR AUREO FRANCIS C. SANCHEZ
+                  </TableCell>
+                </TableRow>
+                <TableRow></TableRow>
+                <TableRow>
+                  <TableCell className='font-medium'>GRAND TOTAL</TableCell>
+                </TableRow>
+              </TableBody>
+            </Table>
           </div>
         </div>
       </div>
