@@ -1,5 +1,3 @@
-// components/app-sidebar.tsx
-
 import {
   AiOutlineHome,
   AiOutlineInbox,
