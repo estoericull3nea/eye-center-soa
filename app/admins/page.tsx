@@ -11,6 +11,7 @@ import {
   TableHeader,
   TableRow,
 } from '@/components/ui/table'
+import { Poppins } from 'next/font/google'
 
 interface Admin {
   _id: string
@@ -23,6 +24,11 @@ interface Admin {
   admittingDiagnosis: string
   dischargeDiagnosis: string
 }
+
+const poppins = Poppins({
+  weight: '400',
+  subsets: ['latin'],
+})
 
 export default function AdminTable() {
   const [admins, setAdmins] = useState<Admin[]>([])
@@ -90,22 +96,28 @@ export default function AdminTable() {
   }
 
   return (
-    <div className='space-y-4'>
-      <Table>
-        <TableCaption>A list of your recent admins.</TableCaption>
-        <TableHeader>
-          <TableRow>
-            <TableHead className='w-[100px]'>Username</TableHead>
-          </TableRow>
-        </TableHeader>
-        <TableBody>
-          {admins.map((admin) => (
-            <TableRow key={admin._id}>
-              <TableCell className='font-medium'>{admin.username}</TableCell>
-            </TableRow>
-          ))}
-        </TableBody>
-      </Table>
+    <div className={`${poppins.className} flex ml-36 mb-10`}>
+      <div className='flex flex-col text-center w-full items-center'>
+        <div className='flex flex-col items-center p-10 rounded-2xl space-y-4 w-full max-w-[1400px] border border-black'>
+          <Table>
+            <TableCaption>A list of your recent admins.</TableCaption>
+            <TableHeader>
+              <TableRow>
+                <TableHead className='w-[100px]'>Username</TableHead>
+              </TableRow>
+            </TableHeader>
+            <TableBody>
+              {admins.map((admin) => (
+                <TableRow key={admin._id}>
+                  <TableCell className='font-medium'>
+                    {admin.username}
+                  </TableCell>
+                </TableRow>
+              ))}
+            </TableBody>
+          </Table>
+        </div>
+      </div>
     </div>
   )
 }
