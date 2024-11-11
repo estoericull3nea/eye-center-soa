@@ -54,3 +54,36 @@ export async function GET() {
     )
   }
 }
+
+export async function DELETE(req: NextRequest) {
+  try {
+    const { searchParams } = new URL(req.url)
+    const id = searchParams.get('id') // Get the patient ID from query parameters
+
+    if (!id) {
+      return NextResponse.json(
+        { message: 'Patient ID is required' },
+        { status: 400 }
+      )
+    }
+
+    const deletedPatient = await Patient.findByIdAndDelete(id) // Delete the patient by ID
+
+    if (!deletedPatient) {
+      return NextResponse.json(
+        { message: 'Patient not found' },
+        { status: 404 }
+      )
+    }
+
+    return NextResponse.json(
+      { message: 'Patient deleted successfully' },
+      { status: 200 }
+    )
+  } catch (error) {
+    return NextResponse.json(
+      { message: 'Error deleting patient', error },
+      { status: 500 }
+    )
+  }
+}

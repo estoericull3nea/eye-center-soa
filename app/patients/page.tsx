@@ -167,7 +167,7 @@ export default function Page() {
         {loading ? (
           <SkeletonTable /> // Render skeleton if loading is true
         ) : (
-          <DataTable<Patient, unknown> columns={columns} data={data} />
+          <DataTable<Patient, unknown> columns={columns(setData)} data={data} />
         )}
       </div>
     </div>
