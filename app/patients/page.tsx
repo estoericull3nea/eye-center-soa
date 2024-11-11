@@ -142,106 +142,110 @@ export default function Page() {
   }
 
   return (
-    <div className={`${poppins.className} flex flex-col items-center`}>
-      {/* Edit Patient Modal */}
-      <Dialog open={editOpen} onOpenChange={setEditOpen}>
-        <DialogContent>
-          <DialogHeader>
-            <DialogTitle>Edit Patient</DialogTitle>
-          </DialogHeader>
-          <div className='space-y-4'>
-            {/* Form fields for editing a patient */}
-            {editPatientData &&
-              Object.keys(editPatientData).map((field) => (
-                <div key={field} className='flex flex-col space-y-1'>
-                  <Label htmlFor={field}>
-                    {field
-                      .replace(/([A-Z])/g, ' $1')
-                      .replace(/^./, (str) => str.toUpperCase())}
-                  </Label>
-                  <Input
-                    id={field}
-                    name={field}
-                    type={
-                      field === 'age' ||
-                      field === 'firstCaseRate' ||
-                      field === 'secondCaseRate'
-                        ? 'number'
-                        : 'text'
-                    }
-                    value={editPatientData[field as keyof Patient] || ''}
-                    onChange={handleEditInputChange}
-                  />
-                </div>
-              ))}
-          </div>
-          <Button onClick={handleEditPatient} className='mt-4 w-full'>
-            Save Changes
-          </Button>
-        </DialogContent>
-      </Dialog>
+    <div className={`${poppins.className} flex ml-36 mb-10`}>
+      <div className='flex flex-col text-center w-full items-center'>
+        <div className={`${poppins.className} flex flex-col items-center`}>
+          {/* Edit Patient Modal */}
+          <Dialog open={editOpen} onOpenChange={setEditOpen}>
+            <DialogContent>
+              <DialogHeader>
+                <DialogTitle>Edit Patient</DialogTitle>
+              </DialogHeader>
+              <div className='space-y-4'>
+                {/* Form fields for editing a patient */}
+                {editPatientData &&
+                  Object.keys(editPatientData).map((field) => (
+                    <div key={field} className='flex flex-col space-y-1'>
+                      <Label htmlFor={field}>
+                        {field
+                          .replace(/([A-Z])/g, ' $1')
+                          .replace(/^./, (str) => str.toUpperCase())}
+                      </Label>
+                      <Input
+                        id={field}
+                        name={field}
+                        type={
+                          field === 'age' ||
+                          field === 'firstCaseRate' ||
+                          field === 'secondCaseRate'
+                            ? 'number'
+                            : 'text'
+                        }
+                        value={editPatientData[field as keyof Patient] || ''}
+                        onChange={handleEditInputChange}
+                      />
+                    </div>
+                  ))}
+              </div>
+              <Button onClick={handleEditPatient} className='mt-4 w-full'>
+                Save Changes
+              </Button>
+            </DialogContent>
+          </Dialog>
 
-      {/* Add Patient Button */}
-      <div className='text-end w-full'>
-        <Dialog open={open} onOpenChange={setOpen}>
-          <DialogTrigger asChild>
-            <Button>Add Patient</Button>
-          </DialogTrigger>
-          <DialogContent>
-            <DialogHeader>
-              <DialogTitle>Add New Patient</DialogTitle>
-            </DialogHeader>
-            <div className='space-y-4'>
-              {/* Form fields for adding a new patient */}
-              {[
-                'firstName',
-                'lastName',
-                'age',
-                'address',
-                'zipCode',
-                'firstCaseRate',
-                'secondCaseRate',
-                'admittingDiagnosis',
-                'dischargeDiagnosis',
-              ].map((field) => (
-                <div key={field} className='flex flex-col space-y-1'>
-                  <Label htmlFor={field}>
-                    {field
-                      .replace(/([A-Z])/g, ' $1')
-                      .replace(/^./, (str) => str.toUpperCase())}
-                  </Label>
-                  <Input
-                    id={field}
-                    name={field}
-                    type={
-                      field === 'age' ||
-                      field === 'firstCaseRate' ||
-                      field === 'secondCaseRate'
-                        ? 'number'
-                        : 'text'
-                    }
-                    value={formData[field as keyof typeof formData]}
-                    onChange={handleInputChange}
-                    required
-                  />
+          {/* Add Patient Button */}
+          <div className='text-end w-full'>
+            <Dialog open={open} onOpenChange={setOpen}>
+              <DialogTrigger asChild>
+                <Button>Add Patient</Button>
+              </DialogTrigger>
+              <DialogContent>
+                <DialogHeader>
+                  <DialogTitle>Add New Patient</DialogTitle>
+                </DialogHeader>
+                <div className='space-y-4'>
+                  {/* Form fields for adding a new patient */}
+                  {[
+                    'firstName',
+                    'lastName',
+                    'age',
+                    'address',
+                    'zipCode',
+                    'firstCaseRate',
+                    'secondCaseRate',
+                    'admittingDiagnosis',
+                    'dischargeDiagnosis',
+                  ].map((field) => (
+                    <div key={field} className='flex flex-col space-y-1'>
+                      <Label htmlFor={field}>
+                        {field
+                          .replace(/([A-Z])/g, ' $1')
+                          .replace(/^./, (str) => str.toUpperCase())}
+                      </Label>
+                      <Input
+                        id={field}
+                        name={field}
+                        type={
+                          field === 'age' ||
+                          field === 'firstCaseRate' ||
+                          field === 'secondCaseRate'
+                            ? 'number'
+                            : 'text'
+                        }
+                        value={formData[field as keyof typeof formData]}
+                        onChange={handleInputChange}
+                        required
+                      />
+                    </div>
+                  ))}
                 </div>
-              ))}
-            </div>
-            <Button onClick={handleAddPatient} className='mt-4 w-full'>
-              Save
-            </Button>
-          </DialogContent>
-        </Dialog>
-      </div>
-      <div className='w-full text-center'>
-        {loading ? (
-          <SkeletonTable /> // Render skeleton if loading is true
-        ) : (
-          <DataTable<Patient, unknown>
-            columns={columns(setData, setEditOpen, setEditPatientData)}
-            data={data}
-          />
-        )}
+                <Button onClick={handleAddPatient} className='mt-4 w-full'>
+                  Save
+                </Button>
+              </DialogContent>
+            </Dialog>
+          </div>
+          <div className='w-full text-center'>
+            {loading ? (
+              <SkeletonTable /> // Render skeleton if loading is true
+            ) : (
+              <DataTable<Patient, unknown>
+                columns={columns(setData, setEditOpen, setEditPatientData)}
+                data={data}
+              />
+            )}
+          </div>
+        </div>
       </div>
     </div>
   )
