@@ -133,7 +133,7 @@ export default function DashboardPage() {
   }
 
   return (
-    <div className={`${poppins.className} flex justify-center w-screen`}>
+    <div className={`${poppins.className} flex ml-36 mb-10`}>
       <div className='flex flex-col text-center w-full items-center'>
         <Image
           src='/eye-center-main-logo.png'
@@ -148,7 +148,7 @@ export default function DashboardPage() {
         <h3 className='text-sm text-gray-600'>
           Tel. no. (075) 568-4088 Mobile No. 0925-726-2439
         </h3>
-        <h4 className='font-bold mt-5'>STATEMENT OF ACCOUNT</h4>
+        <h2 className='font-bold my-5'>STATEMENT OF ACCOUNT</h2>
 
         <div className='flex flex-col items-center p-10 rounded-2xl space-y-4 w-full max-w-[1400px] border border-black'>
           {/* Patient Information Section */}

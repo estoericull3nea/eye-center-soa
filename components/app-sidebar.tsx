@@ -70,7 +70,7 @@ export function AppSidebar() {
           <SidebarGroupContent>
             <SidebarMenu>
               {items.map((item) => (
-                <SidebarMenuItem key={item.title} className='font-semibold'>
+                <SidebarMenuItem key={item.title} className='font-medium'>
                   <SidebarMenuButton asChild>
                     <a href={item.url} className='flex items-center space-x-2 '>
                       <item.icon className='w-5 h-5' /> {/* Icon */}
