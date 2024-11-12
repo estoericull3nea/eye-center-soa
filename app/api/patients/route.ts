@@ -29,9 +29,24 @@ export async function POST(req: NextRequest) {
   }
 }
 
-export async function GET() {
+export async function GET(request: Request) {
   try {
-    const patients = await Patient.find() // Fetch all patients from the database
+    const url = new URL(request.url)
+    const patientName = url.searchParams.get('name')?.trim()
+
+    // If a patient name is provided, search for matching patients
+    let patients = []
+    if (patientName) {
+      patients = await Patient.find({
+        $or: [
+          { firstName: { $regex: patientName, $options: 'i' } },
+          { lastName: { $regex: patientName, $options: 'i' } },
+        ],
+      })
+    } else {
+      patients = await Patient.find() // Fetch all patients if no name is provided
+    }
+
     return NextResponse.json(patients, { status: 200 })
   } catch (error) {
     return NextResponse.json(
@@ -40,6 +55,18 @@ export async function GET() {
     )
   }
 }
+
+// export async function GET() {
+//   try {
+//     const patients = await Patient.find() // Fetch all patients from the database
+//     return NextResponse.json(patients, { status: 200 })
+//   } catch (error) {
+//     return NextResponse.json(
+//       { message: 'Error fetching patients', error },
+//       { status: 500 }
+//     )
+//   }
+// }
 
 export async function DELETE(req: NextRequest) {
   try {

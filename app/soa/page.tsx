@@ -13,6 +13,14 @@ import { useToast } from '@/hooks/use-toast'
 
 import { Separator } from '@/components/ui/separator'
 
+interface IPatient {
+  name: string
+  age: string
+  address: string
+  zipCode: string
+  // Add other fields if needed based on your API response
+}
+
 import {
   Table,
   TableBody,
@@ -46,6 +54,8 @@ type ProfessionalFeeRow = {
 export default function DashboardPage() {
   const router = useRouter()
   const toast = useToast()
+  const [patientData, setPatientData] = useState<IPatient | null>(null)
+  const [patientName, setPatientName] = useState('')
 
   useEffect(() => {
     const token = localStorage.getItem('authToken')
@@ -53,6 +63,34 @@ export default function DashboardPage() {
       router.push('/login')
     }
   }, [router])
+
+  // Function to fetch patient data by name
+  const fetchPatientData = async (name: string) => {
+    if (!name.trim()) {
+      setPatientData(null) // Clear the data if the name is empty
+      return
+    }
+
+    try {
+      const response = await fetch(`/api/patients?name=${name}`)
+      const data = await response.json()
+
+      if (data.length > 0) {
+        setPatientData(data[0]) // Use the first patient in the list if found
+      } else {
+        setPatientData(null) // No patient found
+      }
+    } catch (error) {
+      console.error('Error fetching patient data:', error)
+    }
+  }
+
+  // Handle patient name input change
+  const handlePatientNameChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const name = e.target.value
+    setPatientName(name)
+    fetchPatientData(name) // Fetch data as the name is typed
+  }
 
   // State to hold dynamic rows for HCI Fees
   const [dynamicRows, setDynamicRows] = useState<FeeRow[]>([])
@@ -152,18 +190,30 @@ export default function DashboardPage() {
 
         <div className='flex flex-col items-center p-10 rounded-2xl space-y-4 w-full max-w-[1400px] border border-black'>
           {/* Patient Information Section */}
+          {/* Patient Information Section */}
           <div className='flex gap-3 w-full'>
             <div className='text-start w-full'>
               <Label className='mb-10' htmlFor='patient_label'>
                 Patient Name
               </Label>
-              <Input type='text' id='patient_label' />
+              <Input
+                type='text'
+                id='patient_label'
+                value={patientName}
+                onChange={handlePatientNameChange} // Handle name change
+                placeholder='Enter patient name'
+              />
             </div>
             <div className='text-start w-full'>
               <Label className='mb-10' htmlFor='age_label'>
                 Age
               </Label>
-              <Input type='text' id='age_label' />
+              <Input
+                type='text'
+                id='age_label'
+                value={patientData?.age || ''}
+                readOnly={!!patientData} // Make field readonly if autofilled
+              />
             </div>
           </div>
           <div className='flex gap-3 w-full'>
@@ -171,45 +221,26 @@ export default function DashboardPage() {
               <Label className='mb-10' htmlFor='address_label'>
                 Address
               </Label>
-              <Input type='text' id='address_label' />
+              <Input
+                type='text'
+                id='address_label'
+                value={patientData?.address || ''}
+                readOnly={!!patientData} // Make field readonly if autofilled
+              />
             </div>
             <div className='text-start w-full'>
               <Label className='mb-10' htmlFor='zip_code_label'>
                 Zip Code
               </Label>
-              <Input type='text' id='zip_code_label' />
-            </div>
-          </div>
-
-          {/* Case Rates and Diagnosis */}
-          <div className='flex gap-3 w-full'>
-            <div className='text-start w-full'>
-              <Label className='mb-10' htmlFor='first_case_rate_label'>
-                First case rate:
-              </Label>
               <Input
-                className=' '
                 type='text'
-                id='first_case_rate_label'
-                placeholder='67031'
+                id='zip_code_label'
+                value={patientData?.zipCode || ''}
+                readOnly={!!patientData} // Make field readonly if autofilled
               />
             </div>
-            <div className='text-start w-full'>
-              <Label className='mb-10' htmlFor='second_case_rate_label'>
-                Second case rate:
-              </Label>
-              <Input type='text' id='second_case_rate_label' />
-            </div>
           </div>
 
-          <div className='flex gap-3 w-full'>
-            <div className='text-start w-full'>
-              <Label className='mb-10' htmlFor='admitting_diagnosis_label'>
-                Admitting Diagnosis
-              </Label>
-              <Input type='text' id='admitting_diagnosis_label' />
-            </div>
-          </div>
           <div className='flex gap-3 w-full'>
             <div className='text-start w-full'>
               <Label className='mb-10' htmlFor='discharge_diagnosis_label'>
