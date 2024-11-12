@@ -43,6 +43,41 @@ export const columns = (
     header: 'Zip Code',
   },
   {
+    accessorKey: 'createdAt',
+    header: 'Registered At',
+    cell: ({ row }) => {
+      const createdAt = row.original.createdAt
+      const formattedDateTime = new Date(createdAt).toLocaleString('en-US', {
+        year: 'numeric',
+        month: 'short',
+        day: 'numeric',
+        hour: '2-digit',
+        minute: '2-digit',
+        second: '2-digit',
+        hour12: true, // Optionally set to false for 24-hour time format
+      })
+      return <span>{formattedDateTime}</span>
+    },
+  },
+  {
+    accessorKey: 'updatedAt',
+    header: 'Updated At',
+    cell: ({ row }) => {
+      const updatedAt = row.original.updatedAt
+      const formattedDateTime = new Date(updatedAt).toLocaleString('en-US', {
+        year: 'numeric',
+        month: 'short',
+        day: 'numeric',
+        hour: '2-digit',
+        minute: '2-digit',
+        second: '2-digit',
+        hour12: true, // Optionally set to false for 24-hour time format
+      })
+      return <span>{formattedDateTime}</span>
+    },
+  },
+
+  {
     id: 'actions',
     header: 'Actions',
     cell: ({ row }) => {

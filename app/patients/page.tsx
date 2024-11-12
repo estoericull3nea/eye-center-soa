@@ -32,6 +32,8 @@ export interface Patient {
   age: number
   address: string
   zipCode: string
+  createdAt: string
+  updatedAt: string
 }
 
 export default function Page() {
@@ -67,32 +69,6 @@ export default function Page() {
     fetchData()
   }, [])
 
-  useEffect(() => {
-    // Only bind the event listener if the modal is open
-    if (open) {
-      const handleKeyDown = (e: KeyboardEvent) => {
-        // Check if the pressed key is "Enter"
-        if (e.key === 'Enter') {
-          e.preventDefault() // Prevent default action (if any)
-          handleAddPatient() // Trigger the Add Patient function
-        }
-      }
-
-      // Add event listener for keydown
-      window.addEventListener('keydown', handleKeyDown)
-
-      // Cleanup the event listener when the modal closes
-      return () => {
-        window.removeEventListener('keydown', handleKeyDown)
-      }
-    }
-  }, [open]) // Re-run this effect whenever the modal state (`open`) changes
-
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const { name, value } = e.target
-    setFormData((prev) => ({ ...prev, [name]: value }))
-  }
-
   const handleEditPatient = async () => {
     if (!editPatientData) return
 
@@ -117,13 +93,9 @@ export default function Page() {
     }
   }
 
-  const handleEditInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const { name, value } = e.target
-    setEditPatientData((prev) => (prev ? { ...prev, [name]: value } : null))
-  }
-
   const handleAddPatient = async () => {
     try {
+      console.log(formData)
       const response = await axios.post('/api/patients', {
         ...formData,
       })
@@ -147,7 +119,6 @@ export default function Page() {
       }
     } catch (error: unknown) {
       if (axios.isAxiosError(error)) {
-        // AxiosError type guard
         console.log(error.response?.data?.message)
         toast({
           title: 'Error',
@@ -168,8 +139,18 @@ export default function Page() {
     }
   }
 
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = e.target
+    setFormData((prev) => ({ ...prev, [name]: value }))
+  }
+
+  const handleEditInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = e.target
+    setEditPatientData((prev) => (prev ? { ...prev, [name]: value } : null))
+  }
+
   return (
-    <div className={`${poppins.className} flex ml-36 mb-10`}>
+    <div className={`${poppins.className} flex ml-10 mb-10`}>
       <div className='flex flex-col text-center w-full items-center'>
         <div className={`${poppins.className} flex flex-col items-center`}>
           {/* Edit Patient Modal */}
@@ -181,22 +162,29 @@ export default function Page() {
               <div className='space-y-4'>
                 {/* Form fields for editing a patient */}
                 {editPatientData &&
-                  Object.keys(editPatientData).map((field) => (
-                    <div key={field} className='flex flex-col space-y-1'>
-                      <Label htmlFor={field}>
-                        {field
-                          .replace(/([A-Z])/g, ' $1')
-                          .replace(/^./, (str) => str.toUpperCase())}
-                      </Label>
-                      <Input
-                        id={field}
-                        name={field}
-                        type={field === 'age' ? 'number' : 'text'} // Fix here
-                        value={editPatientData[field as keyof Patient] || ''}
-                        onChange={handleEditInputChange}
-                      />
-                    </div>
-                  ))}
+                  Object.keys(editPatientData)
+                    .filter(
+                      (field) =>
+                        !['_id', 'createdAt', 'updatedAt', '__v'].includes(
+                          field
+                        )
+                    ) // Exclude unwanted fields
+                    .map((field) => (
+                      <div key={field} className='flex flex-col space-y-1'>
+                        <Label htmlFor={field}>
+                          {field
+                            .replace(/([A-Z])/g, ' $1')
+                            .replace(/^./, (str) => str.toUpperCase())}
+                        </Label>
+                        <Input
+                          id={field}
+                          name={field}
+                          type={field === 'age' ? 'number' : 'text'} // Handle age as a number
+                          value={editPatientData[field as keyof Patient] || ''}
+                          onChange={handleEditInputChange}
+                        />
+                      </div>
+                    ))}
               </div>
               <Button onClick={handleEditPatient} className='mt-4 w-full'>
                 Save Changes
