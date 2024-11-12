@@ -1,205 +1,2655 @@
 [
   {
-    "rvs_code": "58200",
-    "description": "TOTAL ABDOMINAL HYSTERECTOMY, INCLUDING PARTIAL VAGINECTOMY, W/ PARA-AORTIC AND PELVIC LYMPH NODE SAMPLING, W/ OR W/O REMOVAL OF TUBE(S), W/ OR W/O REMOVAL OF OVARY(S)",
-    "first_case_rate": 39000.0,
-    "health_facility_fee": 23400.0,
-    "professional_fee": 15600.0
+    "rvs_code": "64893",
+    "description": "NERVE GRAFT (INCLUDES OBTAINING GRAFT), SINGLE STRAND, ARM OR LEG; MORE THAN 4 CM LENGTH",
+    "first_case_rate": "41,054.00",
+    "health_facility_fee": "22,490.00",
+    "professional_fee": "18,564.00"
   },
   {
-    "rvs_code": "58210",
-    "description": "RADICAL ABDOMINAL HYSTERECTOMY, W/ BILATERAL TOTAL PELVIC LYMPHADENECTOMY AND PARA-AORTIC LYMPH NODE SAMPLING (BIOPSY), W/ OR W/O REMOVAL OF TUBE(S), W/ OR W/O REMOVAL OF OVARY(S)",
-    "first_case_rate": 71500.0,
-    "health_facility_fee": 27820.0,
-    "professional_fee": 43680.0
+    "rvs_code": "64895",
+    "description": "NERVE GRAFT (INCLUDES OBTAINING GRAFT), MULTIPLE STRANDS (CABLE), HAND OR FOOT; UP TO 4 CM LENGTH",
+    "first_case_rate": "35,256.00",
+    "health_facility_fee": "15,600.00",
+    "professional_fee": "19,656.00"
   },
   {
-    "rvs_code": "58240",
-    "description": "PELVIC EXENTERATION FOR GYNECOLOGIC MALIGNANCY, W/ TOTAL ABDOMINAL HYSTERECTOMY OR CERVICECTOMY, W/ OR W/O REMOVAL OF TUBE(S), W/ OR W/O REMOVAL OF OVARY(S), W/ REMOVAL OF BLADDER AND URETERAL TRANSPLANTATIONS, AND/OR ABDOMINOPERINEAL RESECTION OF RECTUM",
-    "first_case_rate": 92820.0,
-    "health_facility_fee": 27300.0,
-    "professional_fee": 65520.0
+    "rvs_code": "64896",
+    "description": "NERVE GRAFT (INCLUDES OBTAINING GRAFT), MULTIPLE STRANDS (CABLE), HAND OR FOOT; MORE THAN 4 CM LENGTH",
+    "first_case_rate": "39,390.00",
+    "health_facility_fee": "17,550.00",
+    "professional_fee": "21,840.00"
   },
   {
-    "rvs_code": "58260",
-    "description": "VAGINAL HYSTERECTOMY",
-    "first_case_rate": 39390.0,
-    "health_facility_fee": 17550.0,
-    "professional_fee": 21840.0
+    "rvs_code": "64897",
+    "description": "NERVE GRAFT (INCLUDES OBTAINING GRAFT), MULTIPLE STRANDS (CABLE), ARM OR LEG; UP TO 4 CM LENGTH",
+    "first_case_rate": "30,290.00",
+    "health_facility_fee": "13,910.00",
+    "professional_fee": "16,380.00"
   },
   {
-    "rvs_code": "58262",
-    "description": "VAGINAL HYSTERECTOMY; W/ REMOVAL OF TUBE(S), AND/OR OVARY(S)",
-    "first_case_rate": 39390.0,
-    "health_facility_fee": 17550.0,
-    "professional_fee": 21840.0
+    "rvs_code": "64898",
+    "description": "NERVE GRAFT (INCLUDES OBTAINING GRAFT), MULTIPLE STRANDS (CABLE), ARM OR LEG; MORE THAN 4 CM LENGTH",
+    "first_case_rate": "41,054.00",
+    "health_facility_fee": "22,490.00",
+    "professional_fee": "18,564.00"
   },
   {
-    "rvs_code": "58263",
-    "description": "VAGINAL HYSTERECTOMY; W/ REMOVAL OF TUBE(S), AND/OR OVARY(S), W/ REPAIR OF ENTEROCELE",
-    "first_case_rate": 49140.0,
-    "health_facility_fee": 21840.0,
-    "professional_fee": 27300.0
+    "rvs_code": "64901",
+    "description": "NERVE GRAFT, EACH ADDITIONAL NERVE; SINGLE STRAND",
+    "first_case_rate": "10,426.00",
+    "health_facility_fee": "7,150.00",
+    "professional_fee": "3,276.00"
   },
   {
-    "rvs_code": "58267",
-    "description": "VAGINAL HYSTERECTOMY; W/ COLPO-URETHROCYSTOPEXY (MARSHALL-MARCHETTI-KRANTZ TYPE, PEREYRA TYPE, W/ OR W/O ENDOSCOPIC CONTROL)",
-    "first_case_rate": 60450.0,
-    "health_facility_fee": 27690.0,
-    "professional_fee": 32760.0
+    "rvs_code": "64902",
+    "description": "NERVE GRAFT, EACH ADDITIONAL NERVE; MULTIPLE STRANDS (CABLE)",
+    "first_case_rate": "10,426.00",
+    "health_facility_fee": "7,150.00",
+    "professional_fee": "3,276.00"
   },
   {
-    "rvs_code": "58270",
-    "description": "VAGINAL HYSTERECTOMY; W/ REPAIR OF ENTEROCELE",
-    "first_case_rate": 60450.0,
-    "health_facility_fee": 27690.0,
-    "professional_fee": 32760.0
+    "rvs_code": "64905",
+    "description": "NERVE PEDICLE TRANSFER; FIRST STAGE",
+    "first_case_rate": "27,274.00",
+    "health_facility_fee": "14,170.00",
+    "professional_fee": "13,104.00"
   },
   {
-    "rvs_code": "58275",
-    "description": "VAGINAL HYSTERECTOMY, W/ TOTAL OR PARTIAL COLPECTOMY",
-    "first_case_rate": 49140.0,
-    "health_facility_fee": 21840.0,
-    "professional_fee": 27300.0
+    "rvs_code": "64907",
+    "description": "NERVE PEDICLE TRANSFER; SECOND STAGE",
+    "first_case_rate": "27,274.00",
+    "health_facility_fee": "14,170.00",
+    "professional_fee": "13,104.00"
   },
   {
-    "rvs_code": "58280",
-    "description": "VAGINAL HYSTERECTOMY, W/ TOTAL OR PARTIAL COLPECTOMY; W/ REPAIR OF ENTEROCELE",
-    "first_case_rate": 60450.0,
-    "health_facility_fee": 27690.0,
-    "professional_fee": 32760.0
+    "rvs_code": "65091",
+    "description": "EVISCERATION OF OCULAR CONTENTS; W/O IMPLANT",
+    "first_case_rate": "15,756.00",
+    "health_facility_fee": "7,020.00",
+    "professional_fee": "8,736.00"
   },
   {
-    "rvs_code": "58285",
-    "description": "VAGINAL HYSTERECTOMY, RADICAL (SCHAUTA TYPE OPERATION)",
-    "first_case_rate": 60450.0,
-    "health_facility_fee": 27690.0,
-    "professional_fee": 32760.0
+    "rvs_code": "65093",
+    "description": "EVISCERATION OF OCULAR CONTENTS; W/ IMPLANT",
+    "first_case_rate": "15,756.00",
+    "health_facility_fee": "7,020.00",
+    "professional_fee": "8,736.00"
   },
   {
-    "rvs_code": "58345",
-    "description": "TRANSCERVICAL INTRODUCTION OF FALLOPIAN TUBE CATHETER FOR DIAGNOSIS AND/OR RE-ESTABLISHING PATENCY (ANY METHOD), W/ OR W/O HYSTEROSALPINGOGRAPHY",
-    "first_case_rate": 23400.0,
-    "health_facility_fee": 12480.0,
-    "professional_fee": 10920.0
+    "rvs_code": "65101",
+    "description": "ENUCLEATION OF EYE; W/O IMPLANT",
+    "first_case_rate": "15,756.00",
+    "health_facility_fee": "7,020.00",
+    "professional_fee": "8,736.00"
   },
   {
-    "rvs_code": "58346",
-    "description": "INSERTION OF HEYMAN CAPSULES FOR BRACHYTHERAPY",
-    "first_case_rate": 12610.0,
-    "health_facility_fee": 7150.0,
-    "professional_fee": 5460.0
+    "rvs_code": "65103",
+    "description": "ENUCLEATION OF EYE; W/ IMPLANT, MUSCLES NOT ATTACHED TO IMPLANT",
+    "first_case_rate": "15,756.00",
+    "health_facility_fee": "7,020.00",
+    "professional_fee": "8,736.00"
   },
   {
-    "rvs_code": "58400",
-    "description": "UTERINE SUSPENSION, W/ OR W/O SHORTENING OF ROUND LIGAMENTS, W/ OR W/O SHORTENING OF SACROUTERINE LIGAMENTS",
-    "first_case_rate": 30290.0,
-    "health_facility_fee": 13910.0,
-    "professional_fee": 16380.0
+    "rvs_code": "65105",
+    "description": "ENUCLEATION OF EYE; W/ IMPLANT, MUSCLES ATTACHED TO IMPLANT",
+    "first_case_rate": "15,756.00",
+    "health_facility_fee": "7,020.00",
+    "professional_fee": "8,736.00"
   },
   {
-    "rvs_code": "58410",
-    "description": "UTERINE SUSPENSION, W/ OR W/O SHORTENING OF ROUND LIGAMENTS, W/ OR W/O SHORTENING OF SACROUTERINE LIGAMENTS; W/ PRESACRAL SYMPATHECTOMY",
-    "first_case_rate": 35256.0,
-    "health_facility_fee": 15600.0,
-    "professional_fee": 19656.0
+    "rvs_code": "65110",
+    "description": "EXENTERATION OF ORBIT WITHOUT SKIN GRAFT, REMOVAL OF ORBITAL CONTENTS; ONLY",
+    "first_case_rate": "49,140.00",
+    "health_facility_fee": "21,840.00",
+    "professional_fee": "27,300.00"
   },
   {
-    "rvs_code": "58520",
-    "description": "HYSTERORRHAPHY, REPAIR OF RUPTURED UTERUS (NONOBSTETRICAL)",
-    "first_case_rate": 30290.0,
-    "health_facility_fee": 13910.0,
-    "professional_fee": 16380.0
+    "rvs_code": "65112",
+    "description": "EXENTERATION OF ORBIT WITHOUT SKIN GRAFT, REMOVAL OF ORBITAL CONTENTS; W/ THERAPEUTIC REMOVAL OF BONE",
+    "first_case_rate": "50,232.00",
+    "health_facility_fee": "21,840.00",
+    "professional_fee": "28,392.00"
   },
   {
-    "rvs_code": "58540",
-    "description": "HYSTEROPLASTY, REPAIR OF UTERINE ANOMALY (STRASSMAN TYPE)",
-    "first_case_rate": 49140.0,
-    "health_facility_fee": 21840.0,
-    "professional_fee": 27300.0
+    "rvs_code": "65114",
+    "description": "EXENTERATION OF ORBIT WITHOUT SKIN GRAFT, REMOVAL OF ORBITAL CONTENTS; W/ MUSCLE OR MYOCUTANEOUS FLAP",
+    "first_case_rate": "51,324.00",
+    "health_facility_fee": "21,840.00",
+    "professional_fee": "29,484.00"
   },
   {
-    "rvs_code": "58545",
-    "description": "LAPAROSCOPY, SURGICAL, MYOMECTOMY, EXCISION; INTRAMURAL MYOMAS AND/OR REMOVAL OF SURFACE MYOMAS",
-    "first_case_rate": 30290.0,
-    "health_facility_fee": 13910.0,
-    "professional_fee": 16380.0
+    "rvs_code": "65130",
+    "description": "INSERTION OF OCULAR IMPLANT; AFTER EVISCERATION, IN SCLERAL SHELL",
+    "first_case_rate": "14,248.00",
+    "health_facility_fee": "7,150.00",
+    "professional_fee": "7,098.00"
   },
   {
-    "rvs_code": "58550",
-    "description": "LAPAROSCOPY SURGICAL, WITH VAGINAL HYSTERECTOMY",
-    "first_case_rate": 39390.0,
-    "health_facility_fee": 17550.0,
-    "professional_fee": 21840.0
+    "rvs_code": "65135",
+    "description": "INSERTION OF OCULAR IMPLANT; AFTER ENUCLEATION, MUSCLES NOT ATTACHED TO IMPLANT",
+    "first_case_rate": "14,248.00",
+    "health_facility_fee": "7,150.00",
+    "professional_fee": "7,098.00"
   },
   {
-    "rvs_code": "58552",
-    "description": "LAPAROSCOPY SURGICAL, WITH VAGINAL HYSTERECTOMY; WITH REMOVAL OF TUBE(S) AND/OR OVARY(S)",
-    "first_case_rate": 39390.0,
-    "health_facility_fee": 17550.0,
-    "professional_fee": 21840.0
+    "rvs_code": "65140",
+    "description": "INSERTION OF OCULAR IMPLANT; AFTER ENUCLEATION, MUSCLES ATTACHED TO IMPLANT",
+    "first_case_rate": "15,574.00",
+    "health_facility_fee": "7,930.00",
+    "professional_fee": "7,644.00"
   },
   {
-    "rvs_code": "58555",
-    "description": "HYSTEROSCOPY, DIAGNOSTIC",
-    "first_case_rate": 12610.0,
-    "health_facility_fee": 7150.0,
-    "professional_fee": 5460.0
+    "rvs_code": "65150",
+    "description": "REINSERTION OF OCULAR IMPLANT; WITH OR WITHOUT CONJUNCTIVAL GRAFT",
+    "first_case_rate": "15,574.00",
+    "health_facility_fee": "7,930.00",
+    "professional_fee": "7,644.00"
   },
   {
-    "rvs_code": "58558",
-    "description": "HYSTEROSCOPY, SURGICAL; WITH SAMPLING (BIOPSY) OF ENDOMETRIUM AND/OR POLYPECTOMY, WITH OR WITHOUT D&C",
-    "first_case_rate": 16770.0,
-    "health_facility_fee": 8580.0,
-    "professional_fee": 8190.0
+    "rvs_code": "65155",
+    "description": "REINSERTION OF OCULAR IMPLANT; WITH USE OF FOREIGN MATERIAL FOR REINFORCEMENT AND/OR ATTACHMENT OF MUSCLES TO IMPLANT",
+    "first_case_rate": "15,574.00",
+    "health_facility_fee": "7,930.00",
+    "professional_fee": "7,644.00"
   },
   {
-    "rvs_code": "58559",
-    "description": "HYSTEROSCOPY, SURGICAL; WITH LYSIS OF INTRAUTERINE ADHESIONS (ANY METHOD)",
-    "first_case_rate": 23400.0,
-    "health_facility_fee": 12480.0,
-    "professional_fee": 10920.0
+    "rvs_code": "65175",
+    "description": "REMOVAL OF OCULAR IMPLANT",
+    "first_case_rate": "12,610.00",
+    "health_facility_fee": "7,150.00",
+    "professional_fee": "5,460.00"
   },
   {
-    "rvs_code": "58560",
-    "description": "HYSTEROSCOPY, SURGICAL; WITH DIVISION OR RESECTION OF INTRAUTERINE SEPTUM (ANY METHOD)",
-    "first_case_rate": 23400.0,
-    "health_facility_fee": 12480.0,
-    "professional_fee": 10920.0
+    "rvs_code": "65205",
+    "description": "REMOVAL OF FOREIGN BODY, EXTERNAL EYE; CONJUNCTIVAL, SUPERFICIAL",
+    "first_case_rate": "650.00",
+    "health_facility_fee": "390.00",
+    "professional_fee": "260.00"
   },
   {
-    "rvs_code": "58561",
-    "description": "HYSTEROSCOPY, SURGICAL; WITH REMOVAL OF LEIOMYOMATA",
-    "first_case_rate": 30290.0,
-    "health_facility_fee": 13910.0,
-    "professional_fee": 16380.0
+    "rvs_code": "65210",
+    "description": "REMOVAL OF FOREIGN BODY, EXTERNAL EYE; SUBCONJUNCTIVAL OR SCLERAL, WITH SLIT LAMP",
+    "first_case_rate": "5,850.00",
+    "health_facility_fee": "3,250.00",
+    "professional_fee": "2,600.00"
   },
   {
-    "rvs_code": "58562",
-    "description": "HYSTEROSCOPY, SURGICAL; WITH REMOVAL OF IMPACTED FOREIGN BODY",
-    "first_case_rate": 16770.0,
-    "health_facility_fee": 8580.0,
-    "professional_fee": 8190.0
+    "rvs_code": "65222",
+    "description": "REMOVAL OF FOREIGN BODY, EXTERNAL EYE; CORNEA, WITH SLIT LAMP",
+    "first_case_rate": "5,434.00",
+    "health_facility_fee": "3,250.00",
+    "professional_fee": "2,184.00"
   },
   {
-    "rvs_code": "58563",
-    "description": "HYSTEROSCOPY, SURGICAL; WITH ENDOMETRIAL ABLATION (E.G., ENDOMETRIAL RESECTION, ELECTROSURGICAL ABLATION THERMOABLATION)",
-    "first_case_rate": 15756.0,
-    "health_facility_fee": 7020.0,
-    "professional_fee": 8736.0
+    "rvs_code": "65235",
+    "description": "REMOVAL OF FOREIGN BODY, INTRAOCULAR; FROM ANTERIOR CHAMBER OR LENS",
+    "first_case_rate": "23,400.00",
+    "health_facility_fee": "12,480.00",
+    "professional_fee": "10,920.00"
   },
   {
-    "rvs_code": "58565",
-    "description": "HYSTEROSCOPY, SURGICAL; WITH BILATERAL FALLOPIAN TUBE CANNULATION TO INDUCE OCCLUSION BY PLACEMENT OF PERMANENT IMPLANTS",
-    "first_case_rate": 7384.0,
-    "health_facility_fee": 5200.0,
-    "professional_fee": 2184.0
+    "rvs_code": "65260",
+    "description": "REMOVAL OF FOREIGN BODY, INTRAOCULAR; FROM POSTERIOR SEGMENT, MAGNETIC EXTRACTION, ANTERIOR OR POSTERIOR ROUTE",
+    "first_case_rate": "69,420.00",
+    "health_facility_fee": "31,200.00",
+    "professional_fee": "38,220.00"
   },
   {
-    "rvs_code": "58600",
-    "description": "LIGATION OR TRANSECTION OF FALLOPIAN TUBE(S), ABDOMINAL OR VAGINAL APPROACH, UNILATERAL OR BILATERAL",
-    "first_case_rate": 5200.0,
-    "health_facility_fee": 3900.0,
-    "professional_fee": 1300.0
+    "rvs_code": "65265",
+    "description": "REMOVAL OF FOREIGN BODY, INTRAOCULAR; FROM POSTERIOR SEGMENT, NONMAGNETIC EXTRACTION",
+    "first_case_rate": "71,500.00",
+    "health_facility_fee": "27,820.00",
+    "professional_fee": "43,680.00"
+  },
+  {
+    "rvs_code": "65270",
+    "description": "REPAIR OF LACERATION; CONJUNCTIVA, W/ OR W/O NONPERFORATING LACERATION SCLERA, DIRECT CLOSURE",
+    "first_case_rate": "10,426.00",
+    "health_facility_fee": "7,150.00",
+    "professional_fee": "3,276.00"
+  },
+  {
+    "rvs_code": "65273",
+    "description": "REPAIR OF LACERATION; CONJUNCTIVA, BY MOBILIZATION AND REARRANGEMENT",
+    "first_case_rate": "10,426.00",
+    "health_facility_fee": "7,150.00",
+    "professional_fee": "3,276.00"
+  },
+  {
+    "rvs_code": "65275",
+    "description": "REPAIR OF LACERATION; CORNEA, NONPERFORATING, W/ OR W/O REMOVAL FOREIGN BODY",
+    "first_case_rate": "12,610.00",
+    "health_facility_fee": "7,150.00",
+    "professional_fee": "5,460.00"
+  },
+  {
+    "rvs_code": "65280",
+    "description": "REPAIR OF LACERATION; CORNEA AND/OR SCLERA, PERFORATING, NOT INVOLVING UVEAL TISSUE",
+    "first_case_rate": "27,274.00",
+    "health_facility_fee": "14,170.00",
+    "professional_fee": "13,104.00"
+  },
+  {
+    "rvs_code": "65285",
+    "description": "REPAIR OF LACERATION; CORNEA AND/OR SCLERA, PERFORATING, W/ REPOSITION OR RESECTION OF UVEAL TISSUE",
+    "first_case_rate": "30,290.00",
+    "health_facility_fee": "13,910.00",
+    "professional_fee": "16,380.00"
+  },
+  {
+    "rvs_code": "65286",
+    "description": "REPAIR OF LACERATION; APPLICATION OF TISSUE GLUE, WOUNDS OF CORNEA AND/OR SCLERA",
+    "first_case_rate": "12,610.00",
+    "health_facility_fee": "7,150.00",
+    "professional_fee": "5,460.00"
+  },
+  {
+    "rvs_code": "65290",
+    "description": "REPAIR OF WOUND, EXTRAOCULAR MUSCLE, TENDON AND/OR TENONS CAPSULE",
+    "first_case_rate": "12,610.00",
+    "health_facility_fee": "7,150.00",
+    "professional_fee": "5,460.00"
+  },
+  {
+    "rvs_code": "65400",
+    "description": "EXCISION OF LESION, CORNEA (KERATECTOMY, LAMELLAR, PARTIAL), EXCEPT PTERYGIUM",
+    "first_case_rate": "10,738.00",
+    "health_facility_fee": "6,370.00",
+    "professional_fee": "4,368.00"
+  },
+  {
+    "rvs_code": "65410",
+    "description": "BIOPSY OF CORNEA",
+    "first_case_rate": "10,426.00",
+    "health_facility_fee": "7,150.00",
+    "professional_fee": "3,276.00"
+  },
+  {
+    "rvs_code": "65426",
+    "description": "EXCISION OR TRANSPOSITION OF PTERYGIUM; WITH GRAFT",
+    "first_case_rate": "12,610.00",
+    "health_facility_fee": "7,150.00",
+    "professional_fee": "5,460.00"
+  },
+  {
+    "rvs_code": "65450",
+    "description": "DESTRUCTION OF LESION OF CORNEA BY CRYOTHERAPY, PHOTOCOAGULATION OR THERMOCAUTERIZATION",
+    "first_case_rate": "10,426.00",
+    "health_facility_fee": "7,150.00",
+    "professional_fee": "3,276.00"
+  },
+  {
+    "rvs_code": "65710",
+    "description": "KERATOPLASTY (CORNEAL TRANSPLANT); LAMELLAR",
+    "first_case_rate": "39,390.00",
+    "health_facility_fee": "17,550.00",
+    "professional_fee": "21,840.00"
+  },
+  {
+    "rvs_code": "65730",
+    "description": "KERATOPLASTY (CORNEAL TRANSPLANT); PENETRATING (EXCEPT IN APHAKIA)",
+    "first_case_rate": "39,390.00",
+    "health_facility_fee": "17,550.00",
+    "professional_fee": "21,840.00"
+  },
+  {
+    "rvs_code": "65750",
+    "description": "KERATOPLASTY (CORNEAL TRANSPLANT); PENETRATING (IN APHAKIA)",
+    "first_case_rate": "39,390.00",
+    "health_facility_fee": "17,550.00",
+    "professional_fee": "21,840.00"
+  },
+  {
+    "rvs_code": "65755",
+    "description": "KERATOPLASTY (CORNEAL TRANSPLANT); PENETRATING (IN PSEUDOPHAKIA)",
+    "first_case_rate": "39,390.00",
+    "health_facility_fee": "17,550.00",
+    "professional_fee": "21,840.00"
+  },
+  {
+    "rvs_code": "65765",
+    "description": "KERATOPHAKIA",
+    "first_case_rate": "13,702.00",
+    "health_facility_fee": "7,150.00",
+    "professional_fee": "6,552.00"
+  },
+  {
+    "rvs_code": "65767",
+    "description": "EPIKERATOPLASTY",
+    "first_case_rate": "23,400.00",
+    "health_facility_fee": "12,480.00",
+    "professional_fee": "10,920.00"
+  },
+  {
+    "rvs_code": "65770",
+    "description": "KERATOPROSTHESIS",
+    "first_case_rate": "39,390.00",
+    "health_facility_fee": "17,550.00",
+    "professional_fee": "21,840.00"
+  },
+  {
+    "rvs_code": "65772",
+    "description": "CORNEAL RELAXING INCISION FOR CORRECTION OF SURGICALLY INDUCED ASTIGMATISM",
+    "first_case_rate": "13,000.00",
+    "health_facility_fee": "7,800.00",
+    "professional_fee": "5,200.00"
+  },
+  {
+    "rvs_code": "65775",
+    "description": "CORNEAL WEDGE RESECTION FOR CORRECTION OF SURGICALLY INDUCED ASTIGMATISM",
+    "first_case_rate": "19,448.00",
+    "health_facility_fee": "9,620.00",
+    "professional_fee": "9,828.00"
+  },
+  {
+    "rvs_code": "65780",
+    "description": "OCULAR SURFACE RECONSTRUCTION; AMNIOTIC MEMBRANE TRANSPLANTATION",
+    "first_case_rate": "39,390.00",
+    "health_facility_fee": "17,550.00",
+    "professional_fee": "21,840.00"
+  },
+  {
+    "rvs_code": "65781",
+    "description": "OCULAR SURFACE RECONSTRUCTION; LIMBAL STEM CELL ALLOGRAFT (EG, CADAVERIC OR LIVING DONOR)",
+    "first_case_rate": "39,390.00",
+    "health_facility_fee": "17,550.00",
+    "professional_fee": "21,840.00"
+  },
+  {
+    "rvs_code": "65782",
+    "description": "OCULAR SURFACE RECONSTRUCTION; LIMBAL CONJUNCTIVAL AUTOGRAFT (INCLUDES OBTAINING GRAFT)",
+    "first_case_rate": "39,390.00",
+    "health_facility_fee": "17,550.00",
+    "professional_fee": "21,840.00"
+  },
+  {
+    "rvs_code": "65805",
+    "description": "PARACENTESIS OF ANTERIOR CHAMBER OF EYE; W/ THERAPEUTIC RELEASE OF AQUEOUS",
+    "first_case_rate": "10,426.00",
+    "health_facility_fee": "7,150.00",
+    "professional_fee": "3,276.00"
+  },
+  {
+    "rvs_code": "65810",
+    "description": "PARACENTESIS OF ANTERIOR CHAMBER OF EYE; W/ REMOVAL OF VITREOUS AND/OR DISCISSION OF ANTERIOR HYALOID MEMBRANE, W/ OR W/O AIR INJECTION",
+    "first_case_rate": "12,610.00",
+    "health_facility_fee": "7,150.00",
+    "professional_fee": "5,460.00"
+  },
+  {
+    "rvs_code": "65815",
+    "description": "PARACENTESIS OF ANTERIOR CHAMBER OF EYE; W/ REMOVAL OF BLOOD, W/ OR W/O IRRIGATION AND/OR AIR INJECTION",
+    "first_case_rate": "12,610.00",
+    "health_facility_fee": "7,150.00",
+    "professional_fee": "5,460.00"
+  },
+  {
+    "rvs_code": "65820",
+    "description": "GONIOTOMY",
+    "first_case_rate": "30,290.00",
+    "health_facility_fee": "13,910.00",
+    "professional_fee": "16,380.00"
+  },
+  {
+    "rvs_code": "65850",
+    "description": "TRABECULOTOMY AB EXTERNO",
+    "first_case_rate": "30,290.00",
+    "health_facility_fee": "13,910.00",
+    "professional_fee": "16,380.00"
+  },
+  {
+    "rvs_code": "65855",
+    "description": "TRABECULOPLASTY BY LASER SURGERY, ONE OR MORE SESSIONS (DEFINED TREATMENT SERIES)",
+    "first_case_rate": "15,756.00",
+    "health_facility_fee": "7,020.00",
+    "professional_fee": "8,736.00"
+  },
+  {
+    "rvs_code": "65860",
+    "description": "SEVERING ADHESIONS OF ANTERIOR SEGMENT, LASER TECHNIQUE",
+    "first_case_rate": "13,702.00",
+    "health_facility_fee": "7,150.00",
+    "professional_fee": "6,552.00"
+  },
+  {
+    "rvs_code": "65865",
+    "description": "SEVERING ADHESIONS OF ANTERIOR SEGMENT OF EYE, INCISIONAL TECHNIQUE (W/ OR W/O INJECTION OF AIR OR LIQUID); GONIOSYNECHIAE",
+    "first_case_rate": "13,702.00",
+    "health_facility_fee": "7,150.00",
+    "professional_fee": "6,552.00"
+  },
+  {
+    "rvs_code": "65870",
+    "description": "SEVERING ADHESIONS OF ANTERIOR SEGMENT OF EYE, INCISIONAL TECHNIQUE (W/ OR W/O INJECTION OF AIR OR LIQUID); ANTERIOR SYNECHIAE, EXCEPT GONIOSYNECHIAE",
+    "first_case_rate": "13,702.00",
+    "health_facility_fee": "7,150.00",
+    "professional_fee": "6,552.00"
+  },
+  {
+    "rvs_code": "65875",
+    "description": "SEVERING ADHESIONS OF ANTERIOR SEGMENT OF EYE, INCISIONAL TECHNIQUE (W/ OR W/O INJECTION OF AIR OR LIQUID); POSTERIOR SYNECHIAE",
+    "first_case_rate": "13,702.00",
+    "health_facility_fee": "7,150.00",
+    "professional_fee": "6,552.00"
+  },
+  {
+    "rvs_code": "65880",
+    "description": "SEVERING ADHESIONS OF ANTERIOR SEGMENT OF EYE, INCISIONAL TECHNIQUE (W/ OR W/O INJECTION OF AIR OR LIQUID); CORNEOVITREAL ADHESIONS",
+    "first_case_rate": "13,702.00",
+    "health_facility_fee": "7,150.00",
+    "professional_fee": "6,552.00"
+  },
+  {
+    "rvs_code": "65900",
+    "description": "REMOVAL OF EPITHELIAL MATERIAL, ANTERIOR SEGMENT EYE",
+    "first_case_rate": "13,702.00",
+    "health_facility_fee": "7,150.00",
+    "professional_fee": "6,552.00"
+  },
+  {
+    "rvs_code": "65920",
+    "description": "REMOVAL OF IMPLANTED MATERIAL, ANTERIOR SEGMENT EYE",
+    "first_case_rate": "15,756.00",
+    "health_facility_fee": "7,020.00",
+    "professional_fee": "8,736.00"
+  },
+  {
+    "rvs_code": "65930",
+    "description": "REMOVAL OF BLOOD CLOT, ANTERIOR SEGMENT EYE",
+    "first_case_rate": "10,426.00",
+    "health_facility_fee": "7,150.00",
+    "professional_fee": "3,276.00"
+  },
+  {
+    "rvs_code": "66130",
+    "description": "EXCISION OF LESION, SCLERA",
+    "first_case_rate": "10,738.00",
+    "health_facility_fee": "6,370.00",
+    "professional_fee": "4,368.00"
+  },
+  {
+    "rvs_code": "66150",
+    "description": "FISTULIZATION OF SCALERA FOR GLAUCOMA; TREPHINATION W/ IRIDECTOMY",
+    "first_case_rate": "23,400.00",
+    "health_facility_fee": "12,480.00",
+    "professional_fee": "10,920.00"
+  },
+  {
+    "rvs_code": "66155",
+    "description": "FISTULIZATION OF SCALERA FOR GLAUCOMA; THERMOCAUTERIZATION W/ IRIDECTOMY",
+    "first_case_rate": "23,400.00",
+    "health_facility_fee": "12,480.00",
+    "professional_fee": "10,920.00"
+  },
+  {
+    "rvs_code": "66160",
+    "description": "FISTULIZATION OF SCALERA FOR GLAUCOMA; SCLERECTOMY W/ PUNCH OR SCISSORS, W/ IRIDECTOMY",
+    "first_case_rate": "23,400.00",
+    "health_facility_fee": "12,480.00",
+    "professional_fee": "10,920.00"
+  },
+  {
+    "rvs_code": "66165",
+    "description": "FISTULIZATION OF SCALERA FOR GLAUCOMA; IRIDENCLEISIS OR IRIDOTASIS",
+    "first_case_rate": "23,400.00",
+    "health_facility_fee": "12,480.00",
+    "professional_fee": "10,920.00"
+  },
+  {
+    "rvs_code": "66170",
+    "description": "FISTULIZATION OF SCALERA FOR GLAUCOMA; TRABECULECTOMY AB EXTERNO IN ABSENCE OF PREVIOUS SURGERY",
+    "first_case_rate": "23,400.00",
+    "health_facility_fee": "12,480.00",
+    "professional_fee": "10,920.00"
+  },
+  {
+    "rvs_code": "66172",
+    "description": "FISTULIZATION OF SCALERA FOR GLAUCOMA; TRABECULECTOMY AB EXTERNO W/ SCARRING FROM PREVIOUS OCULAR SURGERY OR TRAUMA (INCLUDES INJECTION OF ANTIFIBROTIC AGENTS)",
+    "first_case_rate": "35,256.00",
+    "health_facility_fee": "15,600.00",
+    "professional_fee": "19,656.00"
+  },
+  {
+    "rvs_code": "66180",
+    "description": "AQUENOUS SHUNT TO EXTRAOCULAR RESERVOIR (E.G., MOLTENO, SCHOCKET, DENVER-KRUPIN)",
+    "first_case_rate": "39,390.00",
+    "health_facility_fee": "17,550.00",
+    "professional_fee": "21,840.00"
+  },
+  {
+    "rvs_code": "66185",
+    "description": "REVISION OF AQUEOUS SHUNT TO EXTRAOCULAR RESERVOIR",
+    "first_case_rate": "39,390.00",
+    "health_facility_fee": "17,550.00",
+    "professional_fee": "21,840.00"
+  },
+  {
+    "rvs_code": "66220",
+    "description": "REPAIR OF SCLERAL STAPHYLOMA; W/O GRAFT",
+    "first_case_rate": "15,756.00",
+    "health_facility_fee": "7,020.00",
+    "professional_fee": "8,736.00"
+  },
+  {
+    "rvs_code": "66225",
+    "description": "REPAIR OF SCLERAL STAPHYLOMA; W/ GRAFT",
+    "first_case_rate": "30,290.00",
+    "health_facility_fee": "13,910.00",
+    "professional_fee": "16,380.00"
+  },
+  {
+    "rvs_code": "66250",
+    "description": "REVISION OR REPAIR OF OPERATIVE WOUND OF ANTERIOR SEGMENT, ANY TYPE, EARLY OR LATE, MAJOR OR MINOR PROCEDURE",
+    "first_case_rate": "19,448.00",
+    "health_facility_fee": "9,620.00",
+    "professional_fee": "9,828.00"
+  },
+  {
+    "rvs_code": "66500",
+    "description": "IRIDOTOMY BY STAB INCISION; EXCEPT TRANSFIXION",
+    "first_case_rate": "13,702.00",
+    "health_facility_fee": "7,150.00",
+    "professional_fee": "6,552.00"
+  },
+  {
+    "rvs_code": "66505",
+    "description": "IRIDOTOMY BY STAB INCISION; W/ TRANSFIXION AS FOR IRIS BOMBE",
+    "first_case_rate": "13,702.00",
+    "health_facility_fee": "7,150.00",
+    "professional_fee": "6,552.00"
+  },
+  {
+    "rvs_code": "66600",
+    "description": "IRIDECTOMY, W/ CORNEOSCLERAL OR CORNEAL SECTION; FOR REMOVAL OF LESION",
+    "first_case_rate": "15,756.00",
+    "health_facility_fee": "7,020.00",
+    "professional_fee": "8,736.00"
+  },
+  {
+    "rvs_code": "66605",
+    "description": "IRIDECTOMY, W/ CORNEOSCLERAL OR CORNEAL SECTION; W/ CYCLECTOMY",
+    "first_case_rate": "23,400.00",
+    "health_facility_fee": "12,480.00",
+    "professional_fee": "10,920.00"
+  },
+  {
+    "rvs_code": "66625",
+    "description": "IRIDECTOMY, W/ CORNEOSCLERAL OR CORNEAL SECTION; PERIPHERAL FOR GLAUCOMA",
+    "first_case_rate": "15,756.00",
+    "health_facility_fee": "7,020.00",
+    "professional_fee": "8,736.00"
+  },
+  {
+    "rvs_code": "66630",
+    "description": "IRIDECTOMY, W/ CORNEOSCLERAL OR CORNEAL SECTION; SECTOR FOR GLAUCOMA",
+    "first_case_rate": "15,756.00",
+    "health_facility_fee": "7,020.00",
+    "professional_fee": "8,736.00"
+  },
+  {
+    "rvs_code": "66680",
+    "description": "REPAIR OF IRIS, CILIARY BODY (AS FOR IRIDODIALYSIS)",
+    "first_case_rate": "23,400.00",
+    "health_facility_fee": "12,480.00",
+    "professional_fee": "10,920.00"
+  },
+  {
+    "rvs_code": "66682",
+    "description": "SUTURE OF IRIS, CILIARY BODY W/ RETRIEVAL OF SUTURE THROUGH SMALL INCISION (E.G., MCCANNEL SUTURE)",
+    "first_case_rate": "19,448.00",
+    "health_facility_fee": "9,620.00",
+    "professional_fee": "9,828.00"
+  },
+  {
+    "rvs_code": "66700",
+    "description": "CILIARY BODY DESTRUCTION; DIATHERMY",
+    "first_case_rate": "15,574.00",
+    "health_facility_fee": "7,930.00",
+    "professional_fee": "7,644.00"
+  },
+  {
+    "rvs_code": "66710",
+    "description": "CILIARY BODY DESTRUCTION; CYCLOPHOTOCOAGULATION",
+    "first_case_rate": "15,574.00",
+    "health_facility_fee": "7,930.00",
+    "professional_fee": "7,644.00"
+  },
+  {
+    "rvs_code": "66720",
+    "description": "CILIARY BODY DESTRUCTION; CRYOTHERAPY",
+    "first_case_rate": "15,574.00",
+    "health_facility_fee": "7,930.00",
+    "professional_fee": "7,644.00"
+  },
+  {
+    "rvs_code": "66740",
+    "description": "CILIARY BODY DESTRUCTION; CYCLODIALYSIS",
+    "first_case_rate": "15,574.00",
+    "health_facility_fee": "7,930.00",
+    "professional_fee": "7,644.00"
+  },
+  {
+    "rvs_code": "66761",
+    "description": "IRIDOTOMY/IRIDECTOMY BY LASER SURGERY (E.G., FOR GLAUCOMA) (ONE OR MORE SESSIONS)",
+    "first_case_rate": "13,702.00",
+    "health_facility_fee": "7,150.00",
+    "professional_fee": "6,552.00"
+  },
+  {
+    "rvs_code": "66762",
+    "description": "IRIDOPLASTY BY PHOTOCOAGULATION (ONE OR MORE SESSIONS) (E.G., FOR IMPROVEMENT OF VISION, FOR WIDENING OF ANTERIOR CHAMBER ANGLE)",
+    "first_case_rate": "15,756.00",
+    "health_facility_fee": "7,020.00",
+    "professional_fee": "8,736.00"
+  },
+  {
+    "rvs_code": "66770",
+    "description": "DESTRUCTION OF CYST OR LESION IRIS OR CILIARY BODY (NONEXCISIONAL PROCEDURE)",
+    "first_case_rate": "13,702.00",
+    "health_facility_fee": "7,150.00",
+    "professional_fee": "6,552.00"
+  },
+  {
+    "rvs_code": "66820",
+    "description": "DISCISSION OF SECONDARY MEMBRANOUS CATARACT (OPACIFIED POSTERIOR LENS CAPSULE AND/OR ANTERIOR HYALOID); STAB INCISION TECHNIQUE (ZIEGLER OR WHEELER KNIFE)",
+    "first_case_rate": "15,756.00",
+    "health_facility_fee": "7,020.00",
+    "professional_fee": "8,736.00"
+  },
+  {
+    "rvs_code": "66821",
+    "description": "DISCISSION OF SECONDARY MEMBRANOUS CATARACT (OPACIFIED POSTERIOR LENS CAPSULE AND/OR ANTERIOR HYALOID); LASER SURGERY (E.G., YAG LASER) (ONE OR MORE STAGES)",
+    "first_case_rate": "10,738.00",
+    "health_facility_fee": "6,370.00",
+    "professional_fee": "4,368.00"
+  },
+  {
+    "rvs_code": "66825",
+    "description": "REPOSITIONING OF INTRAOCULAR LENS PROSTHESIS, REQUIRING AN INCISION",
+    "first_case_rate": "23,400.00",
+    "health_facility_fee": "12,480.00",
+    "professional_fee": "10,920.00"
+  },
+  {
+    "rvs_code": "66830",
+    "description": "REMOVAL OF SECONDARY MEMBRANOUS CATARACT (OPACIFIED POSTERIOR LENS CAPSULE AND/OR ANTERIOR HYALOID) W/ CORNEO-SCLERAL SECTION, W/ OR W/O IRIDECTOMY (IRIDOCAPSULOTOMY, IRIDOCAPSULECTOMY)",
+    "first_case_rate": "15,756.00",
+    "health_facility_fee": "7,020.00",
+    "professional_fee": "8,736.00"
+  },
+  {
+    "rvs_code": "66840",
+    "description": "REMOVAL OF LENS MATERIAL; ASPIRATION TECHNIQUE, ONE OR MORE STAGES",
+    "first_case_rate": "20,800.00",
+    "health_facility_fee": "12,480.00",
+    "professional_fee": "8,320.00"
+  },
+  {
+    "rvs_code": "66850",
+    "description": "REMOVAL OF LENS MATERIAL; PHACOFRAGMENTATION TECHNIQUE (MECHANICAL OR ULTRASONIC) (E.G., PHACOEMULSIFICATION), W/ ASPIRATION",
+    "first_case_rate": "20,800.00",
+    "health_facility_fee": "12,480.00",
+    "professional_fee": "8,320.00"
+  },
+  {
+    "rvs_code": "66852",
+    "description": "REMOVAL OF LENS MATERIAL; PARS PLANA APPROACH, WITH OR WITHOUT VITRECTOMY",
+    "first_case_rate": "20,800.00",
+    "health_facility_fee": "12,480.00",
+    "professional_fee": "8,320.00"
+  },
+  {
+    "rvs_code": "66920",
+    "description": "REMOVAL OF LENS MATERIAL; INTRACAPSULAR",
+    "first_case_rate": "20,800.00",
+    "health_facility_fee": "12,480.00",
+    "professional_fee": "8,320.00"
+  },
+  {
+    "rvs_code": "66930",
+    "description": "REMOVAL OF LENS MATERIAL; INTRACAPSULAR, FOR DISLOCATED LENS",
+    "first_case_rate": "20,800.00",
+    "health_facility_fee": "12,480.00",
+    "professional_fee": "8,320.00"
+  },
+  {
+    "rvs_code": "66940",
+    "description": "REMOVAL OF LENS MATERIAL; EXTRACAPSULAR",
+    "first_case_rate": "20,800.00",
+    "health_facility_fee": "12,480.00",
+    "professional_fee": "8,320.00"
+  },
+  {
+    "rvs_code": "66982",
+    "description": "EXTRACAPSULAR CATARACT REMOVAL WITH INSERTION OF INTRAOCULAR LENS PROSTHESIS (ONE STAGE PROCEDURE), MANUAL OR MECHANICAL TECHNIQUE (EG, IRRIGATION AND ASPIRATION OR PHACOEMULSIFICATION), COMPLEX, REQUIRING DEVICES OR TECHNIQUES NOT GENERALLY USED IN ROUT",
+    "first_case_rate": "20,800.00",
+    "health_facility_fee": "12,480.00",
+    "professional_fee": "8,320.00"
+  },
+  {
+    "rvs_code": "66983",
+    "description": "INTRACAPSULAR CATARACT EXTRACTION W/ INSERTION OF INTRAOCULAR LENS PROSTHESIS (ONE STAGE PROCEDURE)",
+    "first_case_rate": "20,800.00",
+    "health_facility_fee": "12,480.00",
+    "professional_fee": "8,320.00"
+  },
+  {
+    "rvs_code": "66985",
+    "description": "INSERTION OF INTRAOCULAR LENS PROSTHESIS, NOT ASSOCIATED WITH CATARACT REMOVAL",
+    "first_case_rate": "20,800.00",
+    "health_facility_fee": "12,480.00",
+    "professional_fee": "8,320.00"
+  },
+  {
+    "rvs_code": "66986",
+    "description": "EXCHANGE OF INTRAOCULAR LENS",
+    "first_case_rate": "20,800.00",
+    "health_facility_fee": "12,480.00",
+    "professional_fee": "8,320.00"
+  },
+  {
+    "rvs_code": "66991",
+    "description": "REVISION OF FAILED FILTER; WITH OR WITHOUT EXPLANTATION/EXCHANGE OF SHUNT",
+    "first_case_rate": "49,140.00",
+    "health_facility_fee": "21,840.00",
+    "professional_fee": "27,300.00"
+  },
+  {
+    "rvs_code": "66992",
+    "description": "REVISION OF FAILED FILTER; WITH EXCISION OF BLEB CYST",
+    "first_case_rate": "49,140.00",
+    "health_facility_fee": "21,840.00",
+    "professional_fee": "27,300.00"
+  },
+  {
+    "rvs_code": "66993",
+    "description": "REVISION OF FAILED FILTER; WITH CHOROIDAL TAP",
+    "first_case_rate": "39,390.00",
+    "health_facility_fee": "17,550.00",
+    "professional_fee": "21,840.00"
+  },
+  {
+    "rvs_code": "66994",
+    "description": "REVISION OF FAILED FILTER; WITH POSTERIOR SCLEROTOMY",
+    "first_case_rate": "39,390.00",
+    "health_facility_fee": "17,550.00",
+    "professional_fee": "21,840.00"
+  },
+  {
+    "rvs_code": "66995",
+    "description": "REVISION OF FAILED FILTER; WITH ANTERIOR CHAMBER REFORMATION",
+    "first_case_rate": "39,390.00",
+    "health_facility_fee": "17,550.00",
+    "professional_fee": "21,840.00"
+  },
+  {
+    "rvs_code": "66996",
+    "description": "REVISION OF FILTERING BLEB, NEEDLING TECHNIQUE; WITHOUT INJECTION OF ANTI-METABOLITE",
+    "first_case_rate": "15,756.00",
+    "health_facility_fee": "7,020.00",
+    "professional_fee": "8,736.00"
+  },
+  {
+    "rvs_code": "66997",
+    "description": "REVISION OF FILTERING BLEB, NEEDLING TECHNIQUE; WITH INJECTION OF ANTI-METABOLITE",
+    "first_case_rate": "23,400.00",
+    "health_facility_fee": "12,480.00",
+    "professional_fee": "10,920.00"
+  },
+  {
+    "rvs_code": "66998",
+    "description": "RELEASE OF SCLERAL FLAP SUTURE BY LASER SUTURE LYSIS (NEW CODE)",
+    "first_case_rate": "12,610.00",
+    "health_facility_fee": "7,150.00",
+    "professional_fee": "5,460.00"
+  },
+  {
+    "rvs_code": "66999",
+    "description": "REVISION OF OVERFILTERING BLEB (INCLUDES AUTOLOGOUS BLOOD INJECTION, CRYOTHERAPY, MATTRESS SUTURES, ETC.)",
+    "first_case_rate": "23,400.00",
+    "health_facility_fee": "12,480.00",
+    "professional_fee": "10,920.00"
+  },
+  {
+    "rvs_code": "67005",
+    "description": "REMOVAL OF VITREOUS, ANTERIOR APPROACH (OPEN SKY TECHNIQUE OR LIMBAL INCISION); PARTIAL REMOVAL",
+    "first_case_rate": "49,140.00",
+    "health_facility_fee": "21,840.00",
+    "professional_fee": "27,300.00"
+  },
+  {
+    "rvs_code": "67010",
+    "description": "REMOVAL OF VITREOUS, ANTERIOR APPROACH (OPEN SKY TECHNIQUE OR LIMBAL INCISION); SUBTOTAL REMOVAL W/ MECHANICAL VITRECTOMY",
+    "first_case_rate": "58,500.00",
+    "health_facility_fee": "31,200.00",
+    "professional_fee": "27,300.00"
+  },
+  {
+    "rvs_code": "67015",
+    "description": "ASPIRATION OR RELEASE OF VITREOUS, SUBRETINAL OR CHOROIDAL FLUID, PARS PLANA APPROACH (POSTERIOR SCLEROTOMY)",
+    "first_case_rate": "12,610.00",
+    "health_facility_fee": "7,150.00",
+    "professional_fee": "5,460.00"
+  },
+  {
+    "rvs_code": "67025",
+    "description": "INJECTION OF VITREOUS SUBSTITUTE, PARS PLANA OR LIMBAL APPROACH, (FLUID-GAS EXCHANGE), W/ OR W/O ASPIRATION",
+    "first_case_rate": "15,756.00",
+    "health_facility_fee": "7,020.00",
+    "professional_fee": "8,736.00"
+  },
+  {
+    "rvs_code": "67027",
+    "description": "IMPLANTATION OF INTRAVITREAL DRUG DELIVERY SYSTEM (EG, GANCICLOVIR IMPLANT), INCLUDES CONCOMITANT REMOVAL OF VITREOUS",
+    "first_case_rate": "41,054.00",
+    "health_facility_fee": "22,490.00",
+    "professional_fee": "18,564.00"
+  },
+  {
+    "rvs_code": "67030",
+    "description": "DISCISSION OF VITREOUS STRANDS (W/O REMOVAL), PARS PLANA APPROACH",
+    "first_case_rate": "16,770.00",
+    "health_facility_fee": "8,580.00",
+    "professional_fee": "8,190.00"
+  },
+  {
+    "rvs_code": "67031",
+    "description": "SEVERING OF VITREOUS STRANDS, VITREOUS FACE ADHESIONS, SHEETS, MEMBRANES OR OPACITIES, LASER SURGERY (ONE OR MORE STAGES)",
+    "first_case_rate": "13,702.00",
+    "health_facility_fee": "7,150.00",
+    "professional_fee": "6,552.00"
+  },
+  {
+    "rvs_code": "67036",
+    "description": "VITRECTOMY, MECHANICAL, PARS PLANA APPROACH",
+    "first_case_rate": "60,450.00",
+    "health_facility_fee": "27,690.00",
+    "professional_fee": "32,760.00"
+  },
+  {
+    "rvs_code": "67038",
+    "description": "VITRECTOMY, MECHANICAL, PARS PLANA APPROACH; W/ EPIRETINAL MEMBRANE STRIPPING",
+    "first_case_rate": "60,450.00",
+    "health_facility_fee": "27,690.00",
+    "professional_fee": "32,760.00"
+  },
+  {
+    "rvs_code": "67039",
+    "description": "VITRECTOMY, MECHANICAL, PARS PLANA APPROACH; W/ FOCAL ENDOLASER PHOTOCOAGULATION",
+    "first_case_rate": "60,450.00",
+    "health_facility_fee": "27,690.00",
+    "professional_fee": "32,760.00"
+  },
+  {
+    "rvs_code": "67040",
+    "description": "VITRECTOMY, MECHANICAL, PARS PLANA APPROACH; W/ ENDOLASER PANRETINAL PHOTOCOAGULATION",
+    "first_case_rate": "60,450.00",
+    "health_facility_fee": "27,690.00",
+    "professional_fee": "32,760.00"
+  },
+  {
+    "rvs_code": "67041",
+    "description": "VITRECTOMY, MECHANICAL, PARS PLANA APPROACH; WITH INTERNAL LIMITING MEMBRANE (ILM) PEELING",
+    "first_case_rate": "60,450.00",
+    "health_facility_fee": "27,690.00",
+    "professional_fee": "32,760.00"
+  },
+  {
+    "rvs_code": "67046",
+    "description": "VITRECTOMY, MECHANICAL, PARS PLANA APPROACH; WITH REMOVAL OF SUBRETINAL MEMBRANES",
+    "first_case_rate": "60,450.00",
+    "health_facility_fee": "27,690.00",
+    "professional_fee": "32,760.00"
+  },
+  {
+    "rvs_code": "67047",
+    "description": "VITRECTOMY, MECHANICAL, PARS PLANA APPROACH; WITH REMOVAL OF CHOROIDAL NEOVASCULAR MEMBRANE",
+    "first_case_rate": "60,450.00",
+    "health_facility_fee": "27,690.00",
+    "professional_fee": "32,760.00"
+  },
+  {
+    "rvs_code": "67048",
+    "description": "VITRECTOMY, MECHANICAL, PARS PLANA APPROACH; WITH ENDODRAINAGE OF SUBRETINAL HEMORRHAGE (WITH OR WITHOUT TPA INJECTION)",
+    "first_case_rate": "60,450.00",
+    "health_facility_fee": "27,690.00",
+    "professional_fee": "32,760.00"
+  },
+  {
+    "rvs_code": "67049",
+    "description": "VITRECTOMY, MECHANICAL, PARS PLANA APPROACH; WITH REMOVAL OF DROPPED IOL",
+    "first_case_rate": "60,450.00",
+    "health_facility_fee": "27,690.00",
+    "professional_fee": "32,760.00"
+  },
+  {
+    "rvs_code": "67050",
+    "description": "VITRECTOMY, MECHANICAL, PARS PLANA APPROACH; WITH PHACOFRAGMENTATION FOR DROPPED LENS MATERIAL",
+    "first_case_rate": "60,450.00",
+    "health_facility_fee": "27,690.00",
+    "professional_fee": "32,760.00"
+  },
+  {
+    "rvs_code": "67051",
+    "description": "VITRECTOMY, MECHANICAL, PARS PLANA APPROACH; WITH INTERNAL TAMPONADE WITH AIR, GAS, SILICONE OIL, PERFLUOROCARBON LIQUID",
+    "first_case_rate": "60,450.00",
+    "health_facility_fee": "27,690.00",
+    "professional_fee": "32,760.00"
+  },
+  {
+    "rvs_code": "67052",
+    "description": "VITRECTOMY, MECHANICAL, PARS PLANA APPROACH; WITH INSERTION OF SCLERAL FIXATED INTRAOCULAR LENS, WITH OR WITHOUT ANTERIOR VITRECTOMY",
+    "first_case_rate": "49,140.00",
+    "health_facility_fee": "21,840.00",
+    "professional_fee": "27,300.00"
+  },
+  {
+    "rvs_code": "67101",
+    "description": "REPAIR OF RETINAL DETACHMENT, ONE OR MORE SESSIONS; CRYOTHERAPY OR DIATHERMY, W/ OR W/O DRAINAGE OF SUBRETINAL FLUID",
+    "first_case_rate": "60,450.00",
+    "health_facility_fee": "27,690.00",
+    "professional_fee": "32,760.00"
+  },
+  {
+    "rvs_code": "67105",
+    "description": "REPAIR OF RETINAL DETACHMENT, ONE OR MORE SESSIONS; PHOTOCOAGULATION, W/ OR W/O DRAINAGE OF SUBRETINAL FLUID",
+    "first_case_rate": "48,334.00",
+    "health_facility_fee": "24,310.00",
+    "professional_fee": "24,024.00"
+  },
+  {
+    "rvs_code": "67107",
+    "description": "REPAIR OF RETINAL DETACHMENT, ONE OR MORE SESSIONS; SCLERAL BUCKLING (SUCH AS LAMELLAR SCLERAL DISSECTION, IMBRICATION OR ENCIRCLING PROCEDURE), W/ OR W/O IMPLANT, W/ OR W/O CRYOTHERAPY, PHOTOCOAGULATION, AND DRAINAGE OF SUBRETINAL FLUID",
+    "first_case_rate": "60,450.00",
+    "health_facility_fee": "27,690.00",
+    "professional_fee": "32,760.00"
+  },
+  {
+    "rvs_code": "67108",
+    "description": "REPAIR OF RETINAL DETACHMENT, ONE OR MORE SESSIONS; W/ VITRECTOMY, ANY METHOD, W/ OR W/O AIR OR GAS TAMPONADE, FOCAL ENDOLASER PHOTOCOAGULATION, CRYOTHERAPY, DRAINAGE OF SUBRETINAL FLUID, SCLERAL BUCKLING, AND/OR REMOVAL OF LENS BY SAME TECHNIQUE",
+    "first_case_rate": "60,450.00",
+    "health_facility_fee": "27,690.00",
+    "professional_fee": "32,760.00"
+  },
+  {
+    "rvs_code": "67110",
+    "description": "REPAIR OF RETINAL DETACHMENT; BY INJECTION OF AIR OR OTHER GAS (E.G., PNEUMATIC RETINOPEXY)",
+    "first_case_rate": "39,390.00",
+    "health_facility_fee": "17,550.00",
+    "professional_fee": "21,840.00"
+  },
+  {
+    "rvs_code": "67112",
+    "description": "REPAIR OF RETINAL DETACHMENT; BY SCLERAL BUCKLING OR VITRECTOMY, ON PATIENT HAVING PREVIOUS IPSILATERAL RETINAL DETACHMENT REPAIR(S) USING SCLERAL BUCKLING OR VITRECTOMY TECHNIQUES",
+    "first_case_rate": "60,450.00",
+    "health_facility_fee": "27,690.00",
+    "professional_fee": "32,760.00"
+  },
+  {
+    "rvs_code": "67115",
+    "description": "RELEASE OF ENCIRCLING MATERIAL (POSTERIOR SEGMENT)",
+    "first_case_rate": "15,756.00",
+    "health_facility_fee": "7,020.00",
+    "professional_fee": "8,736.00"
+  },
+  {
+    "rvs_code": "67120",
+    "description": "REMOVAL OF IMPLANTED MATERIAL, POSTERIOR SEGMENT; EXTRAOCULAR",
+    "first_case_rate": "15,756.00",
+    "health_facility_fee": "7,020.00",
+    "professional_fee": "8,736.00"
+  },
+  {
+    "rvs_code": "67121",
+    "description": "REMOVAL OF IMPLANTED MATERIAL, POSTERIOR SEGMENT; INTRAOCULAR",
+    "first_case_rate": "27,274.00",
+    "health_facility_fee": "14,170.00",
+    "professional_fee": "13,104.00"
+  },
+  {
+    "rvs_code": "67208",
+    "description": "DESTRUCTION OF LOCALIZED LESION OF RETINA (E.G., MACULOPATHY, CHOROIDOPATHY, SMALL TUMORS), ONE OR MORE SESSIONS; CRYOTHERAPY, DIATHERMY",
+    "first_case_rate": "15,756.00",
+    "health_facility_fee": "7,020.00",
+    "professional_fee": "8,736.00"
+  },
+  {
+    "rvs_code": "67210",
+    "description": "DESTRUCTION OF LOCALIZED LESION OF RETINA (E.G., MACULOPATHY, CHOROIDOPATHY, SMALL TUMORS), ONE OR MORE SESSIONS; PHOTOCOAGULATION (LASER OR XENON ARC)",
+    "first_case_rate": "15,756.00",
+    "health_facility_fee": "7,020.00",
+    "professional_fee": "8,736.00"
+  },
+  {
+    "rvs_code": "67218",
+    "description": "DESTRUCTION OF LOCALIZED LESION OF RETINA (E.G., MACULOPATHY, CHOROIDOPATHY, SMALL TUMORS), ONE OR MORE SESSIONS; RADIATION BY IMPLANTATION OF SOURCE (INCLUDES REMOVAL OF SOURCE)",
+    "first_case_rate": "15,756.00",
+    "health_facility_fee": "7,020.00",
+    "professional_fee": "8,736.00"
+  },
+  {
+    "rvs_code": "67220",
+    "description": "DESTRUCTION OF LOCALIZED LESION OF CHOROID (E.G., CHOROIDAL NEOVASCULARIZATION); PHOTOCOAGULATION (E.G., LASER), ONE OR MORE SESSIONS",
+    "first_case_rate": "15,756.00",
+    "health_facility_fee": "7,020.00",
+    "professional_fee": "8,736.00"
+  },
+  {
+    "rvs_code": "67221",
+    "description": "DESTRUCTION OF LOCALIZED LESION OF CHOROID (E.G., CHOROIDAL NEOVASCULARIZATION); PHOTODYNAMIC THERAPY (INCLUDES INTRAVENOUS INFUSIONS)",
+    "first_case_rate": "15,756.00",
+    "health_facility_fee": "7,020.00",
+    "professional_fee": "8,736.00"
+  },
+  {
+    "rvs_code": "67222",
+    "description": "DESTRUCTION OF LOCALIZED LESION OF CHOROID (E.G., CHOROIDAL NEOVASCULARIZATION); TRANSPUPILLARY THERMOTHERAPY",
+    "first_case_rate": "15,756.00",
+    "health_facility_fee": "7,020.00",
+    "professional_fee": "8,736.00"
+  },
+  {
+    "rvs_code": "67227",
+    "description": "DESTRUCTION OF EXTENSIVE OR PROGRESSIVE RETINOPATHY (E.G., DIABETIC RETINOPATHY), ONE OR MORE SESSIONS; CRYOTHERAPY, DIATHERMY",
+    "first_case_rate": "15,756.00",
+    "health_facility_fee": "7,020.00",
+    "professional_fee": "8,736.00"
+  },
+  {
+    "rvs_code": "67228",
+    "description": "DESTRUCTION OF EXTENSIVE OR PROGRESSIVE RETINOPATHY (E.G., DIABETIC RETINOPATHY), ONE OR MORE SESSIONS; PHOTOCOAGULATION (LASER OR XENON ARC)",
+    "first_case_rate": "15,756.00",
+    "health_facility_fee": "7,020.00",
+    "professional_fee": "8,736.00"
+  },
+  {
+    "rvs_code": "67250",
+    "description": "SCLERAL REINFORCEMENT",
+    "first_case_rate": "15,756.00",
+    "health_facility_fee": "7,020.00",
+    "professional_fee": "8,736.00"
+  },
+  {
+    "rvs_code": "67311",
+    "description": "STRABISMUS SURGERY, RECESSION OR RESECTION PROCEDURE (PATIENT NOT PREVIOUSLY OPERATED ON); ONE HORIZONTAL MUSCLE",
+    "first_case_rate": "13,156.00",
+    "health_facility_fee": "7,150.00",
+    "professional_fee": "6,006.00"
+  },
+  {
+    "rvs_code": "67312",
+    "description": "STRABISMUS SURGERY, RECESSION OR RESECTION PROCEDURE (PATIENT NOT PREVIOUSLY OPERATED ON); TWO HORIZONTAL MUSCLES",
+    "first_case_rate": "15,756.00",
+    "health_facility_fee": "7,020.00",
+    "professional_fee": "8,736.00"
+  },
+  {
+    "rvs_code": "67314",
+    "description": "STRABISMUS SURGERY, RECESSION OR RESECTION PROCEDURE (PATIENT NOT PREVIOUSLY OPERATED ON); ONE VERTICAL MUSCLE (EXCLUDING SUPERIOR OBLIQUE)",
+    "first_case_rate": "15,756.00",
+    "health_facility_fee": "7,020.00",
+    "professional_fee": "8,736.00"
+  },
+  {
+    "rvs_code": "67316",
+    "description": "STRABISMUS SURGERY, RECESSION OR RESECTION PROCEDURE (PATIENT NOT PREVIOUSLY OPERATED ON); TWO OR MORE VERTICAL MUSCLES (EXCLUDING SUPERIOR OBLIQUE)",
+    "first_case_rate": "23,400.00",
+    "health_facility_fee": "12,480.00",
+    "professional_fee": "10,920.00"
+  },
+  {
+    "rvs_code": "67318",
+    "description": "STRABISMUS SURGERY, ANY PROCEDURE (PATIENT NOT PREVIOUSLY OPERATED ON), SUPERIOR OBLIQUE MUSCLE",
+    "first_case_rate": "23,400.00",
+    "health_facility_fee": "12,480.00",
+    "professional_fee": "10,920.00"
+  },
+  {
+    "rvs_code": "67320",
+    "description": "TRANSPOSITION PROCEDURE (E.G., FOR PARETIC EXTRAOCULAR MUSCLE), ANY EXTRAOCULAR MUSCLE (SPECIFY)",
+    "first_case_rate": "23,400.00",
+    "health_facility_fee": "12,480.00",
+    "professional_fee": "10,920.00"
+  },
+  {
+    "rvs_code": "67331",
+    "description": "STRABISMUS SURGERY ON PATIENT W/ PREVIOUS EYE SURGERY OR INJURY THAT DID NOT INVOLVE THE EXTRAOCULAR MUSCLES",
+    "first_case_rate": "23,400.00",
+    "health_facility_fee": "12,480.00",
+    "professional_fee": "10,920.00"
+  },
+  {
+    "rvs_code": "67332",
+    "description": "STRABISMUS SURGERY ON PATIENT W/ SCARING OF EXTRAOCULAR MUSCLES (E.G., PRIOR OCULAR INJURY, STRABISMUS OR RETINAL DETACHMENT SURGERY) OR RESTRICTIVE MYOPATHY (E.G., DYSTHYROID OPHTHALMOPATHY)",
+    "first_case_rate": "28,522.00",
+    "health_facility_fee": "16,510.00",
+    "professional_fee": "12,012.00"
+  },
+  {
+    "rvs_code": "67334",
+    "description": "STRABISMUS SURGERY BY POSTERIOR FIXATION SUTURE TECHNIQUE, W/ OR W/O MUSCLE RECESSION",
+    "first_case_rate": "15,574.00",
+    "health_facility_fee": "7,930.00",
+    "professional_fee": "7,644.00"
+  },
+  {
+    "rvs_code": "67340",
+    "description": "STRABISMUS SURGERY INVOLVING EXPLORATION AND/OR REPAIR OF DETACHED EXTRAOCULAR MUSCLE(S)",
+    "first_case_rate": "29,458.00",
+    "health_facility_fee": "14,170.00",
+    "professional_fee": "15,288.00"
+  },
+  {
+    "rvs_code": "67343",
+    "description": "RELEASE OF EXTENSIVE SCAR TISSUE W/O DETACHING EXTRAOCULAR MUSCLE",
+    "first_case_rate": "23,400.00",
+    "health_facility_fee": "12,480.00",
+    "professional_fee": "10,920.00"
+  },
+  {
+    "rvs_code": "67345",
+    "description": "CHEMODENERVATION OF EXTRAOCULAR MUSCLE",
+    "first_case_rate": "12,610.00",
+    "health_facility_fee": "7,150.00",
+    "professional_fee": "5,460.00"
+  },
+  {
+    "rvs_code": "67350",
+    "description": "BIOPSY OF EXTRAOCULAR MUSCLE",
+    "first_case_rate": "12,610.00",
+    "health_facility_fee": "7,150.00",
+    "professional_fee": "5,460.00"
+  },
+  {
+    "rvs_code": "67400",
+    "description": "ORBITOTOMY W/O BONE FLAP (FRONTAL OR TRANSCONJUNCTIVAL APPROACH); FOR EXPLORATION, W/ OR W/O BIOPSY",
+    "first_case_rate": "60,450.00",
+    "health_facility_fee": "27,690.00",
+    "professional_fee": "32,760.00"
+  },
+  {
+    "rvs_code": "67405",
+    "description": "ORBITOTOMY W/O BONE FLAP (FRONTAL OR TRANSCONJUNCTIVAL APPROACH); W/ DRAINAGE ONLY",
+    "first_case_rate": "60,450.00",
+    "health_facility_fee": "27,690.00",
+    "professional_fee": "32,760.00"
+  },
+  {
+    "rvs_code": "67412",
+    "description": "ORBITOTOMY W/O BONE FLAP (FRONTAL OR TRANSCONJUNCTIVAL APPROACH); W/ REMOVAL OF LESION",
+    "first_case_rate": "60,450.00",
+    "health_facility_fee": "27,690.00",
+    "professional_fee": "32,760.00"
+  },
+  {
+    "rvs_code": "67413",
+    "description": "ORBITOTOMY W/O BONE FLAP (FRONTAL OR TRANSCONJUNCTIVAL APPROACH); W/ REMOVAL OF FOREIGN BODY",
+    "first_case_rate": "60,450.00",
+    "health_facility_fee": "27,690.00",
+    "professional_fee": "32,760.00"
+  },
+  {
+    "rvs_code": "67414",
+    "description": "ORBITOTOMY W/O BONE FLAP (FRONTAL OR TRANSCONJUNCTIVAL APPROACH); W/ REMOVAL OF BONE FOR DECOMPRESSION",
+    "first_case_rate": "60,450.00",
+    "health_facility_fee": "27,690.00",
+    "professional_fee": "32,760.00"
+  },
+  {
+    "rvs_code": "67415",
+    "description": "FINE NEEDLE ASPIRATION OF ORBITAL CONTENTS",
+    "first_case_rate": "60,450.00",
+    "health_facility_fee": "27,690.00",
+    "professional_fee": "32,760.00"
+  },
+  {
+    "rvs_code": "67420",
+    "description": "ORBITOTOMY W/ BONE FLAP OR WINDOW, LATERAL APPROACH (E.G., KROENLEIN); W/ REMOVAL OF LESION",
+    "first_case_rate": "60,450.00",
+    "health_facility_fee": "27,690.00",
+    "professional_fee": "32,760.00"
+  },
+  {
+    "rvs_code": "67430",
+    "description": "ORBITOTOMY W/ BONE FLAP OR WINDOW, LATERAL APPROACH (E.G., KROENLEIN); W/ REMOVAL OF FOREIGN BODY",
+    "first_case_rate": "60,450.00",
+    "health_facility_fee": "27,690.00",
+    "professional_fee": "32,760.00"
+  },
+  {
+    "rvs_code": "67440",
+    "description": "ORBITOTOMY W/ BONE FLAP OR WINDOW, LATERAL APPROACH (E.G., KROENLEIN); W/ DRAINAGE",
+    "first_case_rate": "60,450.00",
+    "health_facility_fee": "27,690.00",
+    "professional_fee": "32,760.00"
+  },
+  {
+    "rvs_code": "67445",
+    "description": "ORBITOTOMY W/ BONE FLAP OR WINDOW, LATERAL APPROACH (E.G., KROENLEIN); W/ REMOVAL OF BONE FOR DECOMPRESSION",
+    "first_case_rate": "60,450.00",
+    "health_facility_fee": "27,690.00",
+    "professional_fee": "32,760.00"
+  },
+  {
+    "rvs_code": "67550",
+    "description": "ORBITAL IMPLANT (IMPLANT OUTSIDE MUSCLE CONE); INSERTION",
+    "first_case_rate": "14,248.00",
+    "health_facility_fee": "7,150.00",
+    "professional_fee": "7,098.00"
+  },
+  {
+    "rvs_code": "67560",
+    "description": "ORBITAL IMPLANT (IMPLANT OUTSIDE MUSCLE CONE); REMOVAL OR REVISION",
+    "first_case_rate": "14,248.00",
+    "health_facility_fee": "7,150.00",
+    "professional_fee": "7,098.00"
+  },
+  {
+    "rvs_code": "67570",
+    "description": "OPTIC NERVE DECOMPRESSION (E.G., INCISION OR FENESTRATION OF OPTIC NERVE SHEATH)",
+    "first_case_rate": "69,420.00",
+    "health_facility_fee": "31,200.00",
+    "professional_fee": "38,220.00"
+  },
+  {
+    "rvs_code": "67580",
+    "description": "REPAIR OF ANOPHTHALMIC SOCKET; WITH INSERTION OR REMOVAL OF ORBITAL IMPLANT WITHIN MUSCLE CONE",
+    "first_case_rate": "15,756.00",
+    "health_facility_fee": "7,020.00",
+    "professional_fee": "8,736.00"
+  },
+  {
+    "rvs_code": "67581",
+    "description": "REPAIR OF ANOPHTHALMIC SOCKET; WITH EXCHANGE OR ORBITAL IMPLANT",
+    "first_case_rate": "27,274.00",
+    "health_facility_fee": "14,170.00",
+    "professional_fee": "13,104.00"
+  },
+  {
+    "rvs_code": "67582",
+    "description": "REPAIR OF ANOPHTHALMIC SOCKET; WITH EXCHANGE OF ORBITAL IMPLANT AND REATTACHMENT OF MUSCLES",
+    "first_case_rate": "27,274.00",
+    "health_facility_fee": "14,170.00",
+    "professional_fee": "13,104.00"
+  },
+  {
+    "rvs_code": "67583",
+    "description": "REPAIR OF ANOPHTHALMIC SOCKET; WITH FORNIX RECONSTRUCTION USING SUTURES",
+    "first_case_rate": "27,274.00",
+    "health_facility_fee": "14,170.00",
+    "professional_fee": "13,104.00"
+  },
+  {
+    "rvs_code": "67584",
+    "description": "REPAIR OF ANOPHTHALMIC SOCKET; WITH FORNIX RECONSTRUCTION USING BUCCAL MUCOSAL GRAFT OR AMNION GRAFT, INCLUDING HARVESTING OF GRAFT",
+    "first_case_rate": "27,274.00",
+    "health_facility_fee": "14,170.00",
+    "professional_fee": "13,104.00"
+  },
+  {
+    "rvs_code": "67585",
+    "description": "REPAIR OF ANOPHTHALMIC SOCKET; WITH REVISION OF IMPLANT AND FORNIX RECONSTRUCTION USING SUTURES",
+    "first_case_rate": "27,274.00",
+    "health_facility_fee": "14,170.00",
+    "professional_fee": "13,104.00"
+  },
+  {
+    "rvs_code": "67586",
+    "description": "REPAIR OF ANOPHTHALMIC SOCKET; WITH REVISION OF IMPLANT AND FORNIX RECONSTRUCTION USING BUCCAL MUCOSAL GRAFT, OR AMNION GRAFT (INCLUDING HARVESTING OF GRAFT)",
+    "first_case_rate": "27,274.00",
+    "health_facility_fee": "14,170.00",
+    "professional_fee": "13,104.00"
+  },
+  {
+    "rvs_code": "67700",
+    "description": "BLEPHAROTOMY, DRAINAGE OF ABSCESS, EYELID",
+    "first_case_rate": "7,384.00",
+    "health_facility_fee": "5,200.00",
+    "professional_fee": "2,184.00"
+  },
+  {
+    "rvs_code": "67710",
+    "description": "SEVERING OF TARSORRHAPHY",
+    "first_case_rate": "7,384.00",
+    "health_facility_fee": "5,200.00",
+    "professional_fee": "2,184.00"
+  },
+  {
+    "rvs_code": "67715",
+    "description": "CANTHOTOMY",
+    "first_case_rate": "7,384.00",
+    "health_facility_fee": "5,200.00",
+    "professional_fee": "2,184.00"
+  },
+  {
+    "rvs_code": "67800",
+    "description": "EXCISION OF CHALAZION",
+    "first_case_rate": "7,384.00",
+    "health_facility_fee": "5,200.00",
+    "professional_fee": "2,184.00"
+  },
+  {
+    "rvs_code": "67810",
+    "description": "BIOPSY OF EYELID",
+    "first_case_rate": "7,384.00",
+    "health_facility_fee": "5,200.00",
+    "professional_fee": "2,184.00"
+  },
+  {
+    "rvs_code": "67825",
+    "description": "REPAIR OF TRICHIASIS; BY ELECTROEPILATION, ELECTROSURGERY, CRYOTHERAPY OR LASER SURGERY",
+    "first_case_rate": "7,384.00",
+    "health_facility_fee": "5,200.00",
+    "professional_fee": "2,184.00"
+  },
+  {
+    "rvs_code": "67830",
+    "description": "REPAIR OF TRICHIASIS; INCISION OF LID MARGIN",
+    "first_case_rate": "4,732.00",
+    "health_facility_fee": "3,640.00",
+    "professional_fee": "1,092.00"
+  },
+  {
+    "rvs_code": "67835",
+    "description": "REPAIR OF TRICHIASIS; INCISION OF LID MARGIN, WITH FREE MUCOUS MEMBRANE GRAFT",
+    "first_case_rate": "12,090.00",
+    "health_facility_fee": "9,360.00",
+    "professional_fee": "2,730.00"
+  },
+  {
+    "rvs_code": "67840",
+    "description": "EXCISION OF LESION OF EYELID (EXCEPT CHALAZION) WITHOUT CLOSURE OR WITH SIMPLE DIRECT CLOSURE",
+    "first_case_rate": "7,228.00",
+    "health_facility_fee": "5,590.00",
+    "professional_fee": "1,638.00"
+  },
+  {
+    "rvs_code": "67875",
+    "description": "TEMPORARY CLOSURE OF EYELIDS SUTURE (E.G., FROST SUTURE)",
+    "first_case_rate": "7,384.00",
+    "health_facility_fee": "5,200.00",
+    "professional_fee": "2,184.00"
+  },
+  {
+    "rvs_code": "67880",
+    "description": "CONSTRUCTION OF INTERMARGIN ADHESIONS, MEDIAN TARSORRHAPHY, OR CANTHORRHAPHY",
+    "first_case_rate": "7,384.00",
+    "health_facility_fee": "5,200.00",
+    "professional_fee": "2,184.00"
+  },
+  {
+    "rvs_code": "67882",
+    "description": "CONSTRUCTION OF INTERMARGIN ADHESIONS, MEDIAN TARSORRHAPHY, OR CANTHORRHAPHY; WITH TRANSPORTATION OF TARSAL PLATE",
+    "first_case_rate": "10,426.00",
+    "health_facility_fee": "7,150.00",
+    "professional_fee": "3,276.00"
+  },
+  {
+    "rvs_code": "67900",
+    "description": "REPAIR OF BROW PTOSIS (SUPRACILIARY, MIDFOREHEAD OR CORONAL APPROACH)",
+    "first_case_rate": "23,400.00",
+    "health_facility_fee": "12,480.00",
+    "professional_fee": "10,920.00"
+  },
+  {
+    "rvs_code": "67901",
+    "description": "REPAIR OF BLEPHAROPTOSIS; FRONTALIS MUSCLE TECHNIQUE WITH SUTURE OR OTHER MATERIAL",
+    "first_case_rate": "23,400.00",
+    "health_facility_fee": "12,480.00",
+    "professional_fee": "10,920.00"
+  },
+  {
+    "rvs_code": "67902",
+    "description": "REPAIR OF BLEPHAROPTOSIS; FRONTALIS MUSCLE TECHNIQUE WITH FASCIAL SLING (INCLUDES OBTAINING FASCIA)",
+    "first_case_rate": "27,274.00",
+    "health_facility_fee": "14,170.00",
+    "professional_fee": "13,104.00"
+  },
+  {
+    "rvs_code": "67903",
+    "description": "REPAIR OF BLEPHAROPTOSIS; (TARSO) LEVATOR RESECTION OR ADVANCEMENT, INTERNAL APPROACH",
+    "first_case_rate": "23,400.00",
+    "health_facility_fee": "12,480.00",
+    "professional_fee": "10,920.00"
+  },
+  {
+    "rvs_code": "67904",
+    "description": "REPAIR OF BLEPHAROPTOSIS; (TARSO) LEVATOR RESECTION OR ADVANCEMENT, EXTERNAL APPROACH",
+    "first_case_rate": "23,400.00",
+    "health_facility_fee": "12,480.00",
+    "professional_fee": "10,920.00"
+  },
+  {
+    "rvs_code": "67906",
+    "description": "REPAIR OF BLEPHAROPTOSIS; SUPERIOR RECTUS TECHNIQUE WITH FASCIAL SLING (INCLUDES OBTAINING FASCIA)",
+    "first_case_rate": "23,400.00",
+    "health_facility_fee": "12,480.00",
+    "professional_fee": "10,920.00"
+  },
+  {
+    "rvs_code": "67908",
+    "description": "REPAIR OF BLEPHAROPTOSIS; CONJUNCTIVO-TARSO-MULLERS MUSCLE-LEVATOR RESECTION (FASANELLA-SERVAT TYPE)",
+    "first_case_rate": "23,400.00",
+    "health_facility_fee": "12,480.00",
+    "professional_fee": "10,920.00"
+  },
+  {
+    "rvs_code": "67911",
+    "description": "REPAIR OF LID RETRACTION (EYELID RECESSION); WITHOUT SPACER",
+    "first_case_rate": "27,820.00",
+    "health_facility_fee": "14,170.00",
+    "professional_fee": "13,650.00"
+  },
+  {
+    "rvs_code": "67912",
+    "description": "CORRECTION OF LAGOPHTHALMOS, WITH IMPLANTATION OF UPPER EYELID LOAD",
+    "first_case_rate": "41,600.00",
+    "health_facility_fee": "22,490.00",
+    "professional_fee": "19,110.00"
+  },
+  {
+    "rvs_code": "67914",
+    "description": "REPAIR OF ECTROPION; SUTURE",
+    "first_case_rate": "10,426.00",
+    "health_facility_fee": "7,150.00",
+    "professional_fee": "3,276.00"
+  },
+  {
+    "rvs_code": "67915",
+    "description": "REPAIR OF ECTROPION; THERMOCAUTERIZATION",
+    "first_case_rate": "10,426.00",
+    "health_facility_fee": "7,150.00",
+    "professional_fee": "3,276.00"
+  },
+  {
+    "rvs_code": "67916",
+    "description": "BLEPHAROPLASTY, EXCISION TARSAL WEDGE",
+    "first_case_rate": "12,610.00",
+    "health_facility_fee": "7,150.00",
+    "professional_fee": "5,460.00"
+  },
+  {
+    "rvs_code": "67917",
+    "description": "BLEPHAROPLASTY, EXTENSIVE (E.G., KUHNT-SZYMANOWSKI OR TARSAL STRIP OPERATIONS)",
+    "first_case_rate": "16,770.00",
+    "health_facility_fee": "8,580.00",
+    "professional_fee": "8,190.00"
+  },
+  {
+    "rvs_code": "67921",
+    "description": "REPAIR OF ENTROPION; SUTURE",
+    "first_case_rate": "7,384.00",
+    "health_facility_fee": "5,200.00",
+    "professional_fee": "2,184.00"
+  },
+  {
+    "rvs_code": "67922",
+    "description": "REPAIR OF ENTROPION; THERMOCAUTERIZATION",
+    "first_case_rate": "7,384.00",
+    "health_facility_fee": "5,200.00",
+    "professional_fee": "2,184.00"
+  },
+  {
+    "rvs_code": "67923",
+    "description": "BLEPHAROPLASTY, EXCISION TARSAL WEDGE",
+    "first_case_rate": "12,610.00",
+    "health_facility_fee": "7,150.00",
+    "professional_fee": "5,460.00"
+  },
+  {
+    "rvs_code": "67924",
+    "description": "BLEPHAROPLASTY, EXTENSIVE (E.G., WHEELER OPERATION)",
+    "first_case_rate": "16,770.00",
+    "health_facility_fee": "8,580.00",
+    "professional_fee": "8,190.00"
+  },
+  {
+    "rvs_code": "67930",
+    "description": "SUTURE OF RECENT WOUND, EYELID, INVOLVING LID MARGIN, TARSUS, AND/ OR PALPEBRAL CONJUNCTIVA DIRECT CLOSURE; PARTIAL THICKNESS",
+    "first_case_rate": "12,610.00",
+    "health_facility_fee": "7,150.00",
+    "professional_fee": "5,460.00"
+  },
+  {
+    "rvs_code": "67935",
+    "description": "SUTURE OF RECENT WOUND, EYELID, INVOLVING LID MARGIN, TARSUS, AND/ OR PALPEBRAL CONJUNCTIVA DIRECT CLOSURE; FULL THICKNESS",
+    "first_case_rate": "15,756.00",
+    "health_facility_fee": "7,020.00",
+    "professional_fee": "8,736.00"
+  },
+  {
+    "rvs_code": "67950",
+    "description": "CANTHOPLASTY (RECONSTRUCTION OF CANTHUS)",
+    "first_case_rate": "15,756.00",
+    "health_facility_fee": "7,020.00",
+    "professional_fee": "8,736.00"
+  },
+  {
+    "rvs_code": "67961",
+    "description": "EXCISION AND REPAIR OF EYELID, INVOLVING LID MARGIN, TARSUS, CONJUNCTIVA, CANTHUS, OR FULL THICKNESS, MAY INCLUDE PREPARATION FOR SKIN GRAFT OR PEDICLE FLAP WITH ADJACENT TISSUE TRANSFER OR REARRANGEMENT; UP TO ONE-FOURTH OF LID MARGIN",
+    "first_case_rate": "39,962.00",
+    "health_facility_fee": "22,490.00",
+    "professional_fee": "17,472.00"
+  },
+  {
+    "rvs_code": "67966",
+    "description": "EXCISION AND REPAIR OF EYELID, INVOLVING LID MARGIN, TARSUS, CONJUNCTIVA, CANTHUS, OR FULL THICKNESS, MAY INCLUDE PREPARATION FOR SKIN GRAFT OR PEDICLE FLAP WITH ADJACENT TISSUE TRANSFER OR REARRANGEMENT; OVER ONE-FOURTH OF LID MARGIN",
+    "first_case_rate": "35,256.00",
+    "health_facility_fee": "15,600.00",
+    "professional_fee": "19,656.00"
+  },
+  {
+    "rvs_code": "67971",
+    "description": "RECONSTRUCTION OF EYELID, FULL THICKNESS BY TRANSFER OF TARSOCONJUNCTIVAL FLAP FROM OPPOSING EYELID; UP TO TWO-THIRDS OF EYELID, ONE STAGE OR FIRST STAGE",
+    "first_case_rate": "39,390.00",
+    "health_facility_fee": "17,550.00",
+    "professional_fee": "21,840.00"
+  },
+  {
+    "rvs_code": "67973",
+    "description": "RECONSTRUCTION OF EYELID, FULL THICKNESS BY TRANSFER OF TARSOCONJUNCTIVAL FLAP FROM OPPOSING EYELID; TOTAL EYELID, LOWER, ONE STAGE OR FIRST STAGE",
+    "first_case_rate": "49,140.00",
+    "health_facility_fee": "21,840.00",
+    "professional_fee": "27,300.00"
+  },
+  {
+    "rvs_code": "67974",
+    "description": "RECONSTRUCTION OF EYELID, FULL THICKNESS BY TRANSFER OF TARSOCONJUNCTIVAL FLAP FROM OPPOSING EYELID; TOTAL EYELID, UPPER, ONE STAGE OR FIRST STAGE",
+    "first_case_rate": "49,140.00",
+    "health_facility_fee": "21,840.00",
+    "professional_fee": "27,300.00"
+  },
+  {
+    "rvs_code": "67975",
+    "description": "RECONSTRUCTION OF EYELID, FULL THICKNESS BY TRANSFER OF TARSOCONJUNCTIVAL FLAP FROM OPPOSING EYELID; SECOND STAGE",
+    "first_case_rate": "39,390.00",
+    "health_facility_fee": "17,550.00",
+    "professional_fee": "21,840.00"
+  },
+  {
+    "rvs_code": "68100",
+    "description": "BIOPSY OF CONJUNCTIVA",
+    "first_case_rate": "7,384.00",
+    "health_facility_fee": "5,200.00",
+    "professional_fee": "2,184.00"
+  },
+  {
+    "rvs_code": "68110",
+    "description": "EXCISION OF LESION, CONJUNCTIVA; UP TO 1 CM",
+    "first_case_rate": "10,426.00",
+    "health_facility_fee": "7,150.00",
+    "professional_fee": "3,276.00"
+  },
+  {
+    "rvs_code": "68115",
+    "description": "EXCISION OF LESION, CONJUNCTIVA; OVER 1 CM",
+    "first_case_rate": "10,426.00",
+    "health_facility_fee": "7,150.00",
+    "professional_fee": "3,276.00"
+  },
+  {
+    "rvs_code": "68130",
+    "description": "EXCISION OF LESION, CONJUNCTIVA; WITH ADJACENT SCLERA",
+    "first_case_rate": "10,426.00",
+    "health_facility_fee": "7,150.00",
+    "professional_fee": "3,276.00"
+  },
+  {
+    "rvs_code": "68320",
+    "description": "CONJUNCTIVOPLASTY; WITH CONJUNCTIVAL GRAFT OR EXTENSIVE REARRANGEMENT",
+    "first_case_rate": "13,702.00",
+    "health_facility_fee": "7,150.00",
+    "professional_fee": "6,552.00"
+  },
+  {
+    "rvs_code": "68325",
+    "description": "CONJUNCTIVOPLASTY; WITH BUCCAL MUCOUS MEMBRANE GRAFT (INCLUDES OBTAINING GRAFT)",
+    "first_case_rate": "15,756.00",
+    "health_facility_fee": "7,020.00",
+    "professional_fee": "8,736.00"
+  },
+  {
+    "rvs_code": "68326",
+    "description": "CONJUNCTIVOPLASTY RECONSTRUCTION CUL-DE-SAC; WITH CONJUNCTIVAL GRAFT OR EXTENSIVE REARRANGEMENT",
+    "first_case_rate": "19,448.00",
+    "health_facility_fee": "9,620.00",
+    "professional_fee": "9,828.00"
+  },
+  {
+    "rvs_code": "68328",
+    "description": "CONJUNCTIVOPLASTY RECONSTRUCTION CUL-DE-SAC; WITH BUCCAL MUCOUS MEMBRANE GRAFT (INCLUDES OBTAINING GRAFT)",
+    "first_case_rate": "23,400.00",
+    "health_facility_fee": "12,480.00",
+    "professional_fee": "10,920.00"
+  },
+  {
+    "rvs_code": "68330",
+    "description": "REPAIR OF SYMBLEPHARON; CONJUNCTIVOPLASTY, WITHOUT GRAFT",
+    "first_case_rate": "19,448.00",
+    "health_facility_fee": "9,620.00",
+    "professional_fee": "9,828.00"
+  },
+  {
+    "rvs_code": "68335",
+    "description": "REPAIR OF SYMBLEPHARON; WITH FREE GRAFT CONJUNCTIVA OR BUCCAL MUCOUS MEMBRANE (INCLUDES OBTAINING GRAFT)",
+    "first_case_rate": "28,522.00",
+    "health_facility_fee": "16,510.00",
+    "professional_fee": "12,012.00"
+  },
+  {
+    "rvs_code": "68340",
+    "description": "REPAIR OF SYMBLEPHARON; DIVISION OF SYMBLEPHARON, WITH OR WITHOUT INSERTION OF CONFORMER OR CONTACT LENS",
+    "first_case_rate": "23,400.00",
+    "health_facility_fee": "12,480.00",
+    "professional_fee": "10,920.00"
+  },
+  {
+    "rvs_code": "68360",
+    "description": "CONJUNCTIVAL FLAP; BRIDGE OR PARTIAL",
+    "first_case_rate": "15,574.00",
+    "health_facility_fee": "7,930.00",
+    "professional_fee": "7,644.00"
+  },
+  {
+    "rvs_code": "68362",
+    "description": "CONJUNCTIVAL FLAP; TOTAL (SUCH AS GUNDERSON THIN FLAP OR PURSE STRING FLAP)",
+    "first_case_rate": "15,574.00",
+    "health_facility_fee": "7,930.00",
+    "professional_fee": "7,644.00"
+  },
+  {
+    "rvs_code": "68371",
+    "description": "HARVESTING CONJUNCTIVAL ALLOGRAFT, LIVING DONOR",
+    "first_case_rate": "27,274.00",
+    "health_facility_fee": "14,170.00",
+    "professional_fee": "13,104.00"
+  },
+  {
+    "rvs_code": "68400",
+    "description": "INCISION, DRAINAGE OF LACRIMAL GLAND",
+    "first_case_rate": "7,384.00",
+    "health_facility_fee": "5,200.00",
+    "professional_fee": "2,184.00"
+  },
+  {
+    "rvs_code": "68420",
+    "description": "INCISION, DRAINAGE OF LACRIMAL SAC (DACRYOCYSTOSTOMY)",
+    "first_case_rate": "7,384.00",
+    "health_facility_fee": "5,200.00",
+    "professional_fee": "2,184.00"
+  },
+  {
+    "rvs_code": "68440",
+    "description": "SNIP INCISION OF LACRIMAL PUNCTUM",
+    "first_case_rate": "7,384.00",
+    "health_facility_fee": "5,200.00",
+    "professional_fee": "2,184.00"
+  },
+  {
+    "rvs_code": "68500",
+    "description": "EXCISION OF LACRIMAL GLAND (DACRYOADENECTOMY), EXCEPT FOR TUMOR",
+    "first_case_rate": "15,756.00",
+    "health_facility_fee": "7,020.00",
+    "professional_fee": "8,736.00"
+  },
+  {
+    "rvs_code": "68510",
+    "description": "BIOPSY OF LACRIMAL GLAND",
+    "first_case_rate": "7,384.00",
+    "health_facility_fee": "5,200.00",
+    "professional_fee": "2,184.00"
+  },
+  {
+    "rvs_code": "68520",
+    "description": "EXCISION OF LACRIMAL SAC (DACRYOCYSTECTOMY)",
+    "first_case_rate": "15,756.00",
+    "health_facility_fee": "7,020.00",
+    "professional_fee": "8,736.00"
+  },
+  {
+    "rvs_code": "68525",
+    "description": "BIOPSY OF LACRIMAL SAC",
+    "first_case_rate": "7,384.00",
+    "health_facility_fee": "5,200.00",
+    "professional_fee": "2,184.00"
+  },
+  {
+    "rvs_code": "68540",
+    "description": "EXCISION OF LACRIMAL GLAND TUMOR; FRONTAL APPROACH",
+    "first_case_rate": "23,400.00",
+    "health_facility_fee": "12,480.00",
+    "professional_fee": "10,920.00"
+  },
+  {
+    "rvs_code": "68550",
+    "description": "EXCISION OF LACRIMAL GLAND TUMOR; INVOLVING OSTEOTOMY",
+    "first_case_rate": "23,400.00",
+    "health_facility_fee": "12,480.00",
+    "professional_fee": "10,920.00"
+  },
+  {
+    "rvs_code": "68700",
+    "description": "PLASTIC REPAIR OF CANALICULI",
+    "first_case_rate": "12,610.00",
+    "health_facility_fee": "7,150.00",
+    "professional_fee": "5,460.00"
+  },
+  {
+    "rvs_code": "68705",
+    "description": "CORRECTION OF EVERTED PUNCTUM, CAUTERY",
+    "first_case_rate": "4,732.00",
+    "health_facility_fee": "3,640.00",
+    "professional_fee": "1,092.00"
+  },
+  {
+    "rvs_code": "68720",
+    "description": "DACRYOCYSTORHINOSTOMY (FISTULIZATION OF LACRIMAL SAC TO NASAL CAVITY)",
+    "first_case_rate": "23,400.00",
+    "health_facility_fee": "12,480.00",
+    "professional_fee": "10,920.00"
+  },
+  {
+    "rvs_code": "68745",
+    "description": "CONJUNCTIVORHINOSTOMY (FISTULIZATION OF CONJUNCTIVA TO NASAL CAVITY); WITHOUT TUBE",
+    "first_case_rate": "23,400.00",
+    "health_facility_fee": "12,480.00",
+    "professional_fee": "10,920.00"
+  },
+  {
+    "rvs_code": "68750",
+    "description": "CONJUNCTIVORHINOSTOMY (FISTULIZATION OF CONJUNCTIVA TO NASAL CAVITY); WITH INSERTION OF TUBE OR STENT",
+    "first_case_rate": "27,274.00",
+    "health_facility_fee": "14,170.00",
+    "professional_fee": "13,104.00"
+  },
+  {
+    "rvs_code": "68760",
+    "description": "CLOSURE OF THE LACRIMAL PUNCTUM; BY THERMOCAUTERIZATION, LIGATION, OR LASER SURGERY",
+    "first_case_rate": "10,426.00",
+    "health_facility_fee": "7,150.00",
+    "professional_fee": "3,276.00"
+  },
+  {
+    "rvs_code": "68770",
+    "description": "CLOSURE OF LACRIMAL FISTULA",
+    "first_case_rate": "14,144.00",
+    "health_facility_fee": "9,230.00",
+    "professional_fee": "4,914.00"
+  },
+  {
+    "rvs_code": "68811",
+    "description": "PROBING OF NASOLACRIMAL DUCT; REQUIRING GENERAL ANESTHESIA",
+    "first_case_rate": "10,426.00",
+    "health_facility_fee": "7,150.00",
+    "professional_fee": "3,276.00"
+  },
+  {
+    "rvs_code": "68815",
+    "description": "PROBING OF NASOLACRIMAL DUCT; WITH INSERTION OF TUBE OR STENT",
+    "first_case_rate": "12,610.00",
+    "health_facility_fee": "7,150.00",
+    "professional_fee": "5,460.00"
+  },
+  {
+    "rvs_code": "69000",
+    "description": "DRAINAGE EXTERNAL EAR, ABSCESS OR HEMATOMA",
+    "first_case_rate": "4,773.60",
+    "health_facility_fee": "3,900.00",
+    "professional_fee": "873.60"
+  },
+  {
+    "rvs_code": "69020",
+    "description": "DRAINAGE EXTERNAL AUDITORY CANAL, ABSCESS",
+    "first_case_rate": "4,513.60",
+    "health_facility_fee": "4,186.00",
+    "professional_fee": "327.60"
+  },
+  {
+    "rvs_code": "69100",
+    "description": "BIOPSY EXTERNAL EAR",
+    "first_case_rate": "7,384.00",
+    "health_facility_fee": "5,200.00",
+    "professional_fee": "2,184.00"
+  },
+  {
+    "rvs_code": "69105",
+    "description": "BIOPSY EXTERNAL AUDITORY CANAL",
+    "first_case_rate": "7,384.00",
+    "health_facility_fee": "5,200.00",
+    "professional_fee": "2,184.00"
+  },
+  {
+    "rvs_code": "69110",
+    "description": "EXCISION EXTERNAL EAR; PARTIAL, SIMPLE REPAIR",
+    "first_case_rate": "10,738.00",
+    "health_facility_fee": "6,370.00",
+    "professional_fee": "4,368.00"
+  },
+  {
+    "rvs_code": "69120",
+    "description": "EXCISION EXTERNAL EAR; COMPLETE AMPUTATION",
+    "first_case_rate": "15,756.00",
+    "health_facility_fee": "7,020.00",
+    "professional_fee": "8,736.00"
+  },
+  {
+    "rvs_code": "69140",
+    "description": "EXCISION EXOSTOSIS(ES), EXTERNAL AUDITORY CANAL",
+    "first_case_rate": "12,610.00",
+    "health_facility_fee": "7,150.00",
+    "professional_fee": "5,460.00"
+  },
+  {
+    "rvs_code": "69145",
+    "description": "EXCISION SOFT TISSUE LESION, EXTERNAL AUDITORY CANAL",
+    "first_case_rate": "12,610.00",
+    "health_facility_fee": "7,150.00",
+    "professional_fee": "5,460.00"
+  },
+  {
+    "rvs_code": "69150",
+    "description": "RADICAL EXCISION EXTERNAL AUDITORY CANAL LESION; W/O NECK DISSECTION",
+    "first_case_rate": "30,290.00",
+    "health_facility_fee": "13,910.00",
+    "professional_fee": "16,380.00"
+  },
+  {
+    "rvs_code": "69155",
+    "description": "RADICAL EXCISION EXTERNAL AUDITORY CANAL LESION; W/ NECK DISSECTION",
+    "first_case_rate": "39,390.00",
+    "health_facility_fee": "17,550.00",
+    "professional_fee": "21,840.00"
+  },
+  {
+    "rvs_code": "69200",
+    "description": "REMOVAL FOREIGN BODY FROM EXTERNAL AUDITORY CANAL; W/ GENERAL ANESTHESIA",
+    "first_case_rate": "12,090.00",
+    "health_facility_fee": "9,360.00",
+    "professional_fee": "2,730.00"
+  },
+  {
+    "rvs_code": "69220",
+    "description": "DEBRIDEMENT, MASTOIDECTOMY CAVITY, SIMPLE (E.G., ROUTINE CLEANING)",
+    "first_case_rate": "10,426.00",
+    "health_facility_fee": "7,150.00",
+    "professional_fee": "3,276.00"
+  },
+  {
+    "rvs_code": "69222",
+    "description": "DEBRIDEMENT, MASTOIDECTOMY CAVITY, COMPLEX (E.G., W/ ANESTHESIA OR MORE THAN ROUTINE CLEANING)",
+    "first_case_rate": "12,610.00",
+    "health_facility_fee": "7,150.00",
+    "professional_fee": "5,460.00"
+  },
+  {
+    "rvs_code": "69310",
+    "description": "RECONSTRUCTION OF EXTERNAL AUDITORY CANAL (MEATOPLASTY) (E.G., FOR STENOSIS DUE TO TRAUMA, INFECTION)",
+    "first_case_rate": "30,290.00",
+    "health_facility_fee": "13,910.00",
+    "professional_fee": "16,380.00"
+  },
+  {
+    "rvs_code": "69320",
+    "description": "RECONSTRUCTION EXTERNAL AUDITORY CANAL FOR CONGENITAL ATRESIA, SINGLE STAGE",
+    "first_case_rate": "30,290.00",
+    "health_facility_fee": "13,910.00",
+    "professional_fee": "16,380.00"
+  },
+  {
+    "rvs_code": "69400",
+    "description": "EUSTACHIAN TUBE INFLATION, TRANSNASAL; W/ CATHETERIZATION",
+    "first_case_rate": "7,555.60",
+    "health_facility_fee": "5,590.00",
+    "professional_fee": "1,965.60"
+  },
+  {
+    "rvs_code": "69405",
+    "description": "EUSTACHIAN TUBE CATHETERIZATION, TRANSTYMPANIC",
+    "first_case_rate": "7,384.00",
+    "health_facility_fee": "5,200.00",
+    "professional_fee": "2,184.00"
+  },
+  {
+    "rvs_code": "69420",
+    "description": "MYRINGOTOMY INCLUDING ASPIRATION AND/OR EUSTACHIAN TUBE INFLATION",
+    "first_case_rate": "7,384.00",
+    "health_facility_fee": "5,200.00",
+    "professional_fee": "2,184.00"
+  },
+  {
+    "rvs_code": "69421",
+    "description": "MYRINGOTOMY INCLUDING ASPIRATION AND/OR EUSTACHIAN TUBE INFLATION REQUIRING GENERAL ANESTHESIA",
+    "first_case_rate": "10,426.00",
+    "health_facility_fee": "7,150.00",
+    "professional_fee": "3,276.00"
+  },
+  {
+    "rvs_code": "69433",
+    "description": "TYMPANOSTOMY (REQUIRING INSERTION OF VENTILATING TUBE), LOCAL OR TOPICAL ANESTHESIA",
+    "first_case_rate": "10,738.00",
+    "health_facility_fee": "6,370.00",
+    "professional_fee": "4,368.00"
+  },
+  {
+    "rvs_code": "69436",
+    "description": "TYMPANOSTOMY (REQUIRING INSERTION OF VENTILATING TUBE), W/ GENERAL ANESTHESIA",
+    "first_case_rate": "10,738.00",
+    "health_facility_fee": "6,370.00",
+    "professional_fee": "4,368.00"
+  },
+  {
+    "rvs_code": "69440",
+    "description": "MIDDLE EAR EXPLORATION THROUGH POSTAURICULAR OR EAR CANAL INCISION",
+    "first_case_rate": "23,400.00",
+    "health_facility_fee": "12,480.00",
+    "professional_fee": "10,920.00"
+  },
+  {
+    "rvs_code": "69450",
+    "description": "TYMPANOLYSIS, TRANSCANAL",
+    "first_case_rate": "12,610.00",
+    "health_facility_fee": "7,150.00",
+    "professional_fee": "5,460.00"
+  },
+  {
+    "rvs_code": "69501",
+    "description": "TRANSMASTOID ANTROTOMY ('SIMPLE' MASTOIDECTOMY)",
+    "first_case_rate": "27,274.00",
+    "health_facility_fee": "14,170.00",
+    "professional_fee": "13,104.00"
+  },
+  {
+    "rvs_code": "69502",
+    "description": "MASTOIDECTOMY; COMPLETE",
+    "first_case_rate": "30,290.00",
+    "health_facility_fee": "13,910.00",
+    "professional_fee": "16,380.00"
+  },
+  {
+    "rvs_code": "69505",
+    "description": "MASTOIDECTOMY; MODIFIED RADICAL",
+    "first_case_rate": "30,290.00",
+    "health_facility_fee": "13,910.00",
+    "professional_fee": "16,380.00"
+  },
+  {
+    "rvs_code": "69511",
+    "description": "MASTOIDECTOMY; RADICAL",
+    "first_case_rate": "30,290.00",
+    "health_facility_fee": "13,910.00",
+    "professional_fee": "16,380.00"
+  },
+  {
+    "rvs_code": "69530",
+    "description": "PETROUS APICECTOMY INCLUDING RADICAL MASTOIDECTOMY",
+    "first_case_rate": "30,290.00",
+    "health_facility_fee": "13,910.00",
+    "professional_fee": "16,380.00"
+  },
+  {
+    "rvs_code": "69535",
+    "description": "RESECTION TEMPORAL BONE, EXTERNAL APPROACH",
+    "first_case_rate": "60,450.00",
+    "health_facility_fee": "27,690.00",
+    "professional_fee": "32,760.00"
+  },
+  {
+    "rvs_code": "69540",
+    "description": "EXCISION AURAL POLYP",
+    "first_case_rate": "10,426.00",
+    "health_facility_fee": "7,150.00",
+    "professional_fee": "3,276.00"
+  },
+  {
+    "rvs_code": "69550",
+    "description": "EXCISION AURAL GLOMUS TUMOR; TRANSCANAL",
+    "first_case_rate": "39,390.00",
+    "health_facility_fee": "17,550.00",
+    "professional_fee": "21,840.00"
+  },
+  {
+    "rvs_code": "69552",
+    "description": "EXCISION AURAL GLOMUS TUMOR; TRANSMASTOID",
+    "first_case_rate": "39,390.00",
+    "health_facility_fee": "17,550.00",
+    "professional_fee": "21,840.00"
+  },
+  {
+    "rvs_code": "69554",
+    "description": "EXCISION AURAL GLOMUS TUMOR; EXTENDED (EXTRATEMPORAL)",
+    "first_case_rate": "39,390.00",
+    "health_facility_fee": "17,550.00",
+    "professional_fee": "21,840.00"
+  },
+  {
+    "rvs_code": "69601",
+    "description": "REVISION MASTOIDECTOMY; RESULTING IN COMPLETE MASTOIDECTOMY",
+    "first_case_rate": "30,290.00",
+    "health_facility_fee": "13,910.00",
+    "professional_fee": "16,380.00"
+  },
+  {
+    "rvs_code": "69602",
+    "description": "REVISION MASTOIDECTOMY; RESULTING IN MODIFIED RADICAL MASTOIDECTOMY",
+    "first_case_rate": "41,054.00",
+    "health_facility_fee": "22,490.00",
+    "professional_fee": "18,564.00"
+  },
+  {
+    "rvs_code": "69603",
+    "description": "REVISION MASTOIDECTOMY; RESULTING IN RADICAL MASTOIDECTOMY",
+    "first_case_rate": "30,290.00",
+    "health_facility_fee": "13,910.00",
+    "professional_fee": "16,380.00"
+  },
+  {
+    "rvs_code": "69604",
+    "description": "REVISION MASTOIDECTOMY; RESULTING IN TYMPANOPLASTY",
+    "first_case_rate": "30,290.00",
+    "health_facility_fee": "13,910.00",
+    "professional_fee": "16,380.00"
+  },
+  {
+    "rvs_code": "69605",
+    "description": "REVISION MASTOIDECTOMY; W/ APICECTOMY",
+    "first_case_rate": "30,290.00",
+    "health_facility_fee": "13,910.00",
+    "professional_fee": "16,380.00"
+  },
+  {
+    "rvs_code": "69610",
+    "description": "TYMPANIC MEMBRANE REPAIR, W/ OR W/O SITE PREPARATION OR PERFORATION FOR CLOSURE, W/ OR W/O PATCH",
+    "first_case_rate": "15,756.00",
+    "health_facility_fee": "7,020.00",
+    "professional_fee": "8,736.00"
+  },
+  {
+    "rvs_code": "69620",
+    "description": "MYRINGOPLASTY (SURGERY CONFINED TO DRUMHEAD AND DONOR AREA)",
+    "first_case_rate": "27,274.00",
+    "health_facility_fee": "14,170.00",
+    "professional_fee": "13,104.00"
+  },
+  {
+    "rvs_code": "69631",
+    "description": "TYMPANOPLASTY W/O MASTOIDECTOMY (INCLUDING CANALPLASTY, ATTICOTOMY AND/ OR MIDDLE EAR SURGERY), INITIAL OR REVISION; W/O OSSICULAR CHAIN RECONSTRUCTION",
+    "first_case_rate": "39,962.00",
+    "health_facility_fee": "22,490.00",
+    "professional_fee": "17,472.00"
+  },
+  {
+    "rvs_code": "69632",
+    "description": "TYMPANOPLASTY W/O MASTOIDECTOMY (INCLUDING CANALPLASTY, ATTICOTOMY AND/ OR MIDDLE EAR SURGERY), INITIAL OR REVISION; W/ OSSICULAR CHAIN RECONSTRUCTION (E.G., POSTFENESTRATION)",
+    "first_case_rate": "39,962.00",
+    "health_facility_fee": "22,490.00",
+    "professional_fee": "17,472.00"
+  },
+  {
+    "rvs_code": "69633",
+    "description": "TYMPANOPLASTY W/O MASTOIDECTOMY (INCLUDING CANALPLASTY, ATTICOTOMY AND/ OR MIDDLE EAR SURGERY), INITIAL OR REVISION; W/ OSSICULAR CHAIN RECONSTRUCTION AND SYNTHETIC PROSTHESIS (E.G., PARTIAL OSSICULAR REPLACEMENT PROSTHESIS, (PORP), TOTAL OSSICULAR REPLACEMENT PROSTHESIS)",
+    "first_case_rate": "39,962.00",
+    "health_facility_fee": "22,490.00",
+    "professional_fee": "17,472.00"
+  },
+  {
+    "rvs_code": "69635",
+    "description": "TYMPANOPLASTY W/ ANTROTOMY OR MASTOIDOTOMY (INCLUDING CANALPLASTY, ATTICOTOMY, MIDDLE EAR SURGERY, AND/ OR TYMPANIC MEMBRANE REPAIR); W/O OSSICULAR CHAIN RECONSTRUCTION",
+    "first_case_rate": "60,450.00",
+    "health_facility_fee": "27,690.00",
+    "professional_fee": "32,760.00"
+  },
+  {
+    "rvs_code": "69636",
+    "description": "TYMPANOPLASTY W/ ANTROTOMY OR MASTOIDOTOMY (INCLUDING CANALPLASTY, ATTICOTOMY, MIDDLE EAR SURGERY, AND/ OR TYMPANIC MEMBRANE REPAIR); W/ OSSICULAR CHAIN RECONSTRUCTION",
+    "first_case_rate": "61,542.00",
+    "health_facility_fee": "27,690.00",
+    "professional_fee": "33,852.00"
+  },
+  {
+    "rvs_code": "69637",
+    "description": "TYMPANOPLASTY W/ ANTROTOMY OR MASTOIDOTOMY (INCLUDING CANALPLASTY, ATTICOTOMY, MIDDLE EAR SURGERY, AND/ OR TYMPANIC MEMBRANE REPAIR); W/ OSSICULAR CHAIN RECONSTRUCTION AND SYNTHETIC PROSTHESIS (E.G. PARTIAL OSSICULAR REPLACEMENT PROSTHESIS, (PORP), TOTAL OSSICULAR REPLACEMENT PROSTHESIS)",
+    "first_case_rate": "61,542.00",
+    "health_facility_fee": "27,690.00",
+    "professional_fee": "33,852.00"
+  },
+  {
+    "rvs_code": "69641",
+    "description": "TYMPANOPLASTY W/ MASTOIDECTOMY (INCLUDING CANALPLASTY, MIDDLE EAR SURGERY, TYMPANIC MEMBRANE REPAIR); W/O OSSICULAR CHAIN RECONSTRUCTION",
+    "first_case_rate": "60,450.00",
+    "health_facility_fee": "27,690.00",
+    "professional_fee": "32,760.00"
+  },
+  {
+    "rvs_code": "69642",
+    "description": "TYMPANOPLASTY W/ MASTOIDECTOMY (INCLUDING CANALPLASTY, MIDDLE EAR SURGERY, TYMPANIC MEMBRANE REPAIR); W/ OSSICULAR CHAIN RECONSTRUCTION",
+    "first_case_rate": "61,542.00",
+    "health_facility_fee": "27,690.00",
+    "professional_fee": "33,852.00"
+  },
+  {
+    "rvs_code": "69643",
+    "description": "TYMPANOPLASTY W/ MASTOIDECTOMY (INCLUDING CANALPLASTY, MIDDLE EAR SURGERY, TYMPANIC MEMBRANE REPAIR); W/ INTACT OR RECONSTRUCTED WALL, W/O OSSICULAR CHAIN RECONSTRUCTION",
+    "first_case_rate": "62,634.00",
+    "health_facility_fee": "27,690.00",
+    "professional_fee": "34,944.00"
+  },
+  {
+    "rvs_code": "69644",
+    "description": "TYMPANOPLASTY W/ MASTOIDECTOMY (INCLUDING CANALPLASTY, MIDDLE EAR SURGERY, TYMPANIC MEMBRANE REPAIR); W/ INTACT OR RECONSTRUCTED CANAL WALL, W/ OSSICULAR CHAIN RECONSTRUCTION",
+    "first_case_rate": "63,726.00",
+    "health_facility_fee": "27,690.00",
+    "professional_fee": "36,036.00"
+  },
+  {
+    "rvs_code": "69645",
+    "description": "TYMPANOPLASTY W/ MASTOIDECTOMY (INCLUDING CANALPLASTY, MIDDLE EAR SURGERY, TYMPANIC MEMBRANE REPAIR); RADICAL OR COMPLETE, W/O OSSICULAR CHAIN RECONSTRUCTION",
+    "first_case_rate": "60,450.00",
+    "health_facility_fee": "27,690.00",
+    "professional_fee": "32,760.00"
+  },
+  {
+    "rvs_code": "69646",
+    "description": "TYMPANOPLASTY W/ MASTOIDECTOMY (INCLUDING CANALPLASTY, MIDDLE EAR SURGERY, TYMPANIC MEMBRANE REPAIR); RADICAL OR COMPLETE, W/ OSSICULAR CHAIN RECONSTRUCTION",
+    "first_case_rate": "60,450.00",
+    "health_facility_fee": "27,690.00",
+    "professional_fee": "32,760.00"
+  },
+  {
+    "rvs_code": "69650",
+    "description": "STAPES MOBILIZATION",
+    "first_case_rate": "49,140.00",
+    "health_facility_fee": "21,840.00",
+    "professional_fee": "27,300.00"
+  },
+  {
+    "rvs_code": "69660",
+    "description": "STAPEDECTOMY OR STAPEDOTOMY W/ REESTABLISHMENT OF OSSICULAR CONTINUITY, W/ OR W/O USE OF FOREIGN MATERIAL",
+    "first_case_rate": "50,232.00",
+    "health_facility_fee": "21,840.00",
+    "professional_fee": "28,392.00"
+  },
+  {
+    "rvs_code": "69661",
+    "description": "STAPEDECTOMY OR STAPEDOTOMY W/ REESTABLISHMENT OF OSSICULAR CONTINUITY, W/ OR W/O USE OF FOREIGN MATERIAL; W/ FOOTPLATE DRILL OUT",
+    "first_case_rate": "50,232.00",
+    "health_facility_fee": "21,840.00",
+    "professional_fee": "28,392.00"
+  },
+  {
+    "rvs_code": "69662",
+    "description": "REVISION OF STAPEDECTOMY OR STAPEDOTOMY",
+    "first_case_rate": "50,232.00",
+    "health_facility_fee": "21,840.00",
+    "professional_fee": "28,392.00"
+  },
+  {
+    "rvs_code": "69666",
+    "description": "REPAIR OVAL WINDOW FISTULA",
+    "first_case_rate": "50,232.00",
+    "health_facility_fee": "21,840.00",
+    "professional_fee": "28,392.00"
+  },
+  {
+    "rvs_code": "69667",
+    "description": "REPAIR ROUND WINDOW FISTULA",
+    "first_case_rate": "50,232.00",
+    "health_facility_fee": "21,840.00",
+    "professional_fee": "28,392.00"
+  },
+  {
+    "rvs_code": "69670",
+    "description": "MASTOID OBLITERATION",
+    "first_case_rate": "41,054.00",
+    "health_facility_fee": "22,490.00",
+    "professional_fee": "18,564.00"
+  },
+  {
+    "rvs_code": "69676",
+    "description": "TYMPANIC NEURECTOMY",
+    "first_case_rate": "39,390.00",
+    "health_facility_fee": "17,550.00",
+    "professional_fee": "21,840.00"
+  },
+  {
+    "rvs_code": "69700",
+    "description": "CLOSURE POSTAURICULAR FISTULA, MASTOID",
+    "first_case_rate": "13,702.00",
+    "health_facility_fee": "7,150.00",
+    "professional_fee": "6,552.00"
+  },
+  {
+    "rvs_code": "69720",
+    "description": "DECOMPRESSION FACIAL NERVE, INTRATEMPORAL; LATERAL TO GENICULATE GANGLION",
+    "first_case_rate": "39,390.00",
+    "health_facility_fee": "17,550.00",
+    "professional_fee": "21,840.00"
+  },
+  {
+    "rvs_code": "69725",
+    "description": "DECOMPRESSION FACIAL NERVE, INTRATEMPORAL; INCLUDING MEDIAL TO GENICULATE GANGLION",
+    "first_case_rate": "39,390.00",
+    "health_facility_fee": "17,550.00",
+    "professional_fee": "21,840.00"
+  },
+  {
+    "rvs_code": "69740",
+    "description": "SUTURE FACIAL NERVE, INTRATEMPORAL, W/ OR W/O GRAFT OR DECOMPRESSION; LATERAL TO GENICULATE GANGLION",
+    "first_case_rate": "49,140.00",
+    "health_facility_fee": "21,840.00",
+    "professional_fee": "27,300.00"
+  },
+  {
+    "rvs_code": "69745",
+    "description": "SUTURE FACIAL NERVE, INTRATEMPORAL, W/ OR W/O GRAFT OR DECOMPRESSION; INCLUDING MEDIAL TO GENICULATE GANGLION",
+    "first_case_rate": "49,140.00",
+    "health_facility_fee": "21,840.00",
+    "professional_fee": "27,300.00"
+  },
+  {
+    "rvs_code": "69801",
+    "description": "LABYRINTHOTOMY, W/ OR W/O CRYOSURGERY INCLUDING OTHER NONEXCISIONAL DESTRUCTIVE PROCEDURES OR PERFUSION OF VESTBULOACTIVE DRUGS (SINGLE OR MULTIPLE PERFUSIONS); TRANSCANAL",
+    "first_case_rate": "50,232.00",
+    "health_facility_fee": "21,840.00",
+    "professional_fee": "28,392.00"
+  },
+  {
+    "rvs_code": "69802",
+    "description": "LABYRINTHOTOMY, W/ OR W/O CRYOSURGERY INCLUDING OTHER NONEXCISIONAL DESTRUCTIVE PROCEDURES OR PERFUSION OF VESTBULOACTIVE DRUGS (SINGLE OR MULTIPLE PERFUSIONS); W/ MASTOIDECTOMY",
+    "first_case_rate": "51,324.00",
+    "health_facility_fee": "21,840.00",
+    "professional_fee": "29,484.00"
+  },
+  {
+    "rvs_code": "69805",
+    "description": "ENDOLYMPHATIC SAC OPERATION; W/O SHUNT",
+    "first_case_rate": "60,450.00",
+    "health_facility_fee": "27,690.00",
+    "professional_fee": "32,760.00"
+  },
+  {
+    "rvs_code": "69806",
+    "description": "ENDOLYMPHATIC SAC OPERATION; W/ SHUNT",
+    "first_case_rate": "69,420.00",
+    "health_facility_fee": "31,200.00",
+    "professional_fee": "38,220.00"
+  },
+  {
+    "rvs_code": "69820",
+    "description": "FENESTRATION SEMICIRCULAR CANAL",
+    "first_case_rate": "60,450.00",
+    "health_facility_fee": "27,690.00",
+    "professional_fee": "32,760.00"
+  },
+  {
+    "rvs_code": "69840",
+    "description": "REVISION FENESTRATION OPERATION",
+    "first_case_rate": "69,420.00",
+    "health_facility_fee": "31,200.00",
+    "professional_fee": "38,220.00"
+  },
+  {
+    "rvs_code": "69905",
+    "description": "LABYRINTHECTOMY; TRANSCANAL",
+    "first_case_rate": "60,450.00",
+    "health_facility_fee": "27,690.00",
+    "professional_fee": "32,760.00"
+  },
+  {
+    "rvs_code": "69910",
+    "description": "LABYRINTHECTOMY; W/ MASTOIDECTOMY",
+    "first_case_rate": "69,420.00",
+    "health_facility_fee": "31,200.00",
+    "professional_fee": "38,220.00"
+  },
+  {
+    "rvs_code": "69915",
+    "description": "VESTIBULAR NERVE SECTION, TRANSLABYRINTHINE APPROACH",
+    "first_case_rate": "69,420.00",
+    "health_facility_fee": "31,200.00",
+    "professional_fee": "38,220.00"
+  },
+  {
+    "rvs_code": "69930",
+    "description": "COCHLEAR DEVICE IMPLANTATION, W/ OR W/O MASTOIDECTOMY",
+    "first_case_rate": "71,500.00",
+    "health_facility_fee": "27,820.00",
+    "professional_fee": "43,680.00"
+  },
+  {
+    "rvs_code": "69950",
+    "description": "VESTIBULAR NERVE SECTION, TRANSCRANIAL APPROACH",
+    "first_case_rate": "71,500.00",
+    "health_facility_fee": "27,820.00",
+    "professional_fee": "43,680.00"
+  },
+  {
+    "rvs_code": "69955",
+    "description": "TOTAL FACIAL NERVE DECOMPRESSION AND/OR REPAIR (MAY INCLUDE GRAFT)",
+    "first_case_rate": "71,500.00",
+    "health_facility_fee": "27,820.00",
+    "professional_fee": "43,680.00"
+  },
+  {
+    "rvs_code": "69960",
+    "description": "DECOMPRESSION INTERNAL AUDITORY CANAL",
+    "first_case_rate": "69,420.00",
+    "health_facility_fee": "31,200.00",
+    "professional_fee": "38,220.00"
+  },
+  {
+    "rvs_code": "69970",
+    "description": "REMOVAL OF TUMOR, TEMPORAL BONE",
+    "first_case_rate": "60,450.00",
+    "health_facility_fee": "27,690.00",
+    "professional_fee": "32,760.00"
+  },
+  {
+    "rvs_code": "70010",
+    "description": "MYELOGRAPHY, BRAIN, INCLUDING SPINAL PUNCTURE AND RADIOLOGICAL SUPERVISION AND INTERPRETATION",
+    "first_case_rate": "10,426.00",
+    "health_facility_fee": "7,150.00",
+    "professional_fee": "3,276.00"
+  },
+  {
+    "rvs_code": "70390",
+    "description": "SIALOGRAPHY; INCLUDING DUCT CATHETERIZATION AND RADIOLOGICAL SUPERVISION AND INTERPRETATION",
+    "first_case_rate": "10,426.00",
+    "health_facility_fee": "7,150.00",
+    "professional_fee": "3,276.00"
+  },
+  {
+    "rvs_code": "71090",
+    "description": "INSERTION PACEMAKER, FLUOROSCOPY AND RADIOGRAPHY, RADIOLOGICAL SUPERVISION AND INTERPRETATION",
+    "first_case_rate": "10,426.00",
+    "health_facility_fee": "7,150.00",
+    "professional_fee": "3,276.00"
+  },
+  {
+    "rvs_code": "72240",
+    "description": "MYELOGRAPHY, SPINE, INCLUDING SPINAL PUNCTURE AND RADIOLOGICAL SUPERVISION AND INTERPRETATION",
+    "first_case_rate": "10,426.00",
+    "health_facility_fee": "7,150.00",
+    "professional_fee": "3,276.00"
+  },
+  {
+    "rvs_code": "74300",
+    "description": "CHOLANGIOGRAPHY AND/OR PANCREATOGRAPHY, INTRAOPERATIVE, RADIOLOGICAL SUPERVISION AND INTERPRETATION",
+    "first_case_rate": "10,426.00",
+    "health_facility_fee": "7,150.00",
+    "professional_fee": "3,276.00"
+  },
+  {
+    "rvs_code": "74328",
+    "description": "ENDOSCOPIC CATHETERIZATION OF THE BILIARY DUCTAL SYSTEM, RADIOLOGICAL SUPERVISION AND INTERPRETATION",
+    "first_case_rate": "10,426.00",
+    "health_facility_fee": "7,150.00",
+    "professional_fee": "3,276.00"
+  },
+  {
+    "rvs_code": "74329",
+    "description": "ENDOSCOPIC CATHETERIZATION OF THE PANCREATIC DUCTAL SYSTEM, RADIOLOGICAL SUPERVISION AND INTERPRETATION",
+    "first_case_rate": "10,426.00",
+    "health_facility_fee": "7,150.00",
+    "professional_fee": "3,276.00"
+  },
+  {
+    "rvs_code": "74330",
+    "description": "COMBINED ENDOSCOPIC CATHETERIZATION OF THE BILIARY AND PANCREATIC DUCTAL SYSTEM, RADIOLOGICAL SUPERVISION AND INTERPRETATION",
+    "first_case_rate": "10,426.00",
+    "health_facility_fee": "7,150.00",
+    "professional_fee": "3,276.00"
+  },
+  {
+    "rvs_code": "74340",
+    "description": "INTRODUCTION OF LONG GASTROINTESTINAL TUBE (E.G., MILLER-ABBOTT ), RADIOLOGICAL SUPERVISION AND INTERPRETATION",
+    "first_case_rate": "12,610.00",
+    "health_facility_fee": "7,150.00",
+    "professional_fee": "5,460.00"
+  },
+  {
+    "rvs_code": "74350",
+    "description": "PERCUTANEOUS PLACEMENT OF GASTROSTOMY TUBE, RADIOLOGICAL SUPERVISION AND INTERPRETATION",
+    "first_case_rate": "12,610.00",
+    "health_facility_fee": "7,150.00",
+    "professional_fee": "5,460.00"
+  },
+  {
+    "rvs_code": "74355",
+    "description": "PERCUTANEOUS PLACEMENT OF ENTEROCLYSIS TUBE, RADIOLOGICAL SUPERVISION AND INTERPRETATION",
+    "first_case_rate": "12,610.00",
+    "health_facility_fee": "7,150.00",
+    "professional_fee": "5,460.00"
+  },
+  {
+    "rvs_code": "74360",
+    "description": "INTRALUMINAL DILATION OF STRICTURES AND/OR OBSTRUCTIONS, RADIOLOGICAL SUPERVISION AND INTERPRETATION",
+    "first_case_rate": "12,610.00",
+    "health_facility_fee": "7,150.00",
+    "professional_fee": "5,460.00"
+  },
+  {
+    "rvs_code": "74363",
+    "description": "PERCUTANEOUS TRANSHEPATIC DILATION OF SBILIARY DUCT STRICTURE, RADIOLOGICAL SUPERVISION AND INTERPRETATION",
+    "first_case_rate": "23,400.00",
+    "health_facility_fee": "12,480.00",
+    "professional_fee": "10,920.00"
+  },
+  {
+    "rvs_code": "74475",
+    "description": "INTRODUCTION OF INTRACATHETER OR CATHETER INTO RENAL PELVIS FOR DRAINAGE AND/OR INJECTION, PERCUTANEOUS, RADIOLOGICAL SUPERVISION AND INTERPRETATION",
+    "first_case_rate": "23,400.00",
+    "health_facility_fee": "12,480.00",
+    "professional_fee": "10,920.00"
+  },
+  {
+    "rvs_code": "74480",
+    "description": "INTRODUCTION OF URETERAL CATHETER OR STENT INTO URETER THROUGH RENAL PELVIS FOR DRAINAGE AND/OR INJECTION, PERCUTANEOUS, RADIOLOGICAL SUPERVISION AND INTERPRETATION",
+    "first_case_rate": "23,400.00",
+    "health_facility_fee": "12,480.00",
+    "professional_fee": "10,920.00"
+  },
+  {
+    "rvs_code": "74742",
+    "description": "TRANSCERVICAL CATHETERIZATION OF FALLOPIAN TUBE, RADIOLOGICAL SUPERVISION AND INTERPRETATION",
+    "first_case_rate": "10,426.00",
+    "health_facility_fee": "7,150.00",
+    "professional_fee": "3,276.00"
+  },
+  {
+    "rvs_code": "75600",
+    "description": "AORTOGRAPHY, THORACIC, RADIOLOGICAL SUPERVISION AND INTERPRETATION",
+    "first_case_rate": "12,610.00",
+    "health_facility_fee": "7,150.00",
+    "professional_fee": "5,460.00"
+  },
+  {
+    "rvs_code": "75625",
+    "description": "AORTOGRAPHY, ABDOMINAL, RADIOLOGICAL SUPERVISION AND INTERPRETATION",
+    "first_case_rate": "12,610.00",
+    "health_facility_fee": "7,150.00",
+    "professional_fee": "5,460.00"
+  },
+  {
+    "rvs_code": "75630",
+    "description": "AORTOGRAPHY, ABDOMINAL PLUS BILATERAL ILIOFEMORAL LOWER EXTREMITY, RADIOLOGICAL SUPERVISION AND INTERPRETATION",
+    "first_case_rate": "12,610.00",
+    "health_facility_fee": "7,150.00",
+    "professional_fee": "5,460.00"
+  },
+  {
+    "rvs_code": "75635",
+    "description": "COMPUTED TOMOGRAPHIC ANGIOGRAPHY, ABDOMINAL AORTA AND BILATERAL ILIOFEMORAL LOWER EXTREMITY, RADIOLOGICAL SUPERVISION AND INTERPRETATION",
+    "first_case_rate": "12,610.00",
+    "health_facility_fee": "7,150.00",
+    "professional_fee": "5,460.00"
+  },
+  {
+    "rvs_code": "75650",
+    "description": "ANGIOGRAPHY, CERVICOCEREBRAL, RADIOLOGICAL SUPERVISION AND INTERPRETATION",
+    "first_case_rate": "12,610.00",
+    "health_facility_fee": "7,150.00",
+    "professional_fee": "5,460.00"
+  },
+  {
+    "rvs_code": "75658",
+    "description": "ANGIOGRAPHY, BRACHIAL RETROGRADE, RADIOLOGICAL SUPERVISION AND INTERPRETATION",
+    "first_case_rate": "12,610.00",
+    "health_facility_fee": "7,150.00",
+    "professional_fee": "5,460.00"
+  },
+  {
+    "rvs_code": "75660",
+    "description": "ANGIOGRAPHY, EXTERNAL CAROTID, UNILATERAL, SELECTIVE, RADIOLOGICAL SUPERVISION AND INTERPRETATION",
+    "first_case_rate": "12,610.00",
+    "health_facility_fee": "7,150.00",
+    "professional_fee": "5,460.00"
+  },
+  {
+    "rvs_code": "75662",
+    "description": "ANGIOGRAPHY, EXTERNAL CAROTID, BILATERAL, SELECTIVE, RADIOLOGICAL SUPERVISION AND INTERPRETATION",
+    "first_case_rate": "12,610.00",
+    "health_facility_fee": "7,150.00",
+    "professional_fee": "5,460.00"
+  },
+  {
+    "rvs_code": "75665",
+    "description": "ANGIOGRAPHY, CEREBRAL, RADIOLOGICAL SUPERVISION AND INTERPRETATION",
+    "first_case_rate": "12,610.00",
+    "health_facility_fee": "7,150.00",
+    "professional_fee": "5,460.00"
+  },
+  {
+    "rvs_code": "75671",
+    "description": "ANGIOGRAPHY, CAROTID, CEREBRAL, BILATERAL, RADIOLOGICAL SUPERVISION AND INTERPRETATION",
+    "first_case_rate": "12,610.00",
+    "health_facility_fee": "7,150.00",
+    "professional_fee": "5,460.00"
+  },
+  {
+    "rvs_code": "75676",
+    "description": "ANGIOGRAPHY, CAROTID, CERVICAL, UNILATERAL, RADIOLOGICAL SUPERVISION AND INTERPRETATION",
+    "first_case_rate": "12,610.00",
+    "health_facility_fee": "7,150.00",
+    "professional_fee": "5,460.00"
+  },
+  {
+    "rvs_code": "75680",
+    "description": "ANGIOGRAPHY, CAROTID, CERVICAL, BILATERAL, RADIOLOGICAL SUPERVISION AND INTERPRETATION",
+    "first_case_rate": "12,610.00",
+    "health_facility_fee": "7,150.00",
+    "professional_fee": "5,460.00"
+  },
+  {
+    "rvs_code": "75685",
+    "description": "ANGIOGRAPHY, VERTEBRAL, CERVICAL AND/OR INTRACRANIAL, RADIOLOGICAL SUPERVISION AND INTERPRETATION",
+    "first_case_rate": "12,610.00",
+    "health_facility_fee": "7,150.00",
+    "professional_fee": "5,460.00"
+  },
+  {
+    "rvs_code": "75705",
+    "description": "ANGIOGRAPHY, SPINAL, RADIOLOGICAL SUPERVISION AND INTERPRETATION",
+    "first_case_rate": "12,610.00",
+    "health_facility_fee": "7,150.00",
+    "professional_fee": "5,460.00"
+  },
+  {
+    "rvs_code": "75710",
+    "description": "ANGIOGRAPHY, EXTREMITY, UNILATERAL, RADIOLOGICAL SUPERVISION AND INTERPRETATION",
+    "first_case_rate": "12,610.00",
+    "health_facility_fee": "7,150.00",
+    "professional_fee": "5,460.00"
+  },
+  {
+    "rvs_code": "75716",
+    "description": "ANGIOGRAPHY, EXTREMITY, BILATERAL, RADIOLOGICAL SUPERVISION AND INTERPRETATION",
+    "first_case_rate": "12,610.00",
+    "health_facility_fee": "7,150.00",
+    "professional_fee": "5,460.00"
+  },
+  {
+    "rvs_code": "75722",
+    "description": "ANGIOGRAPHY, RENAL, UNILATERAL, RADIOLOGICAL SUPERVISION AND INTERPRETATION",
+    "first_case_rate": "12,610.00",
+    "health_facility_fee": "7,150.00",
+    "professional_fee": "5,460.00"
+  },
+  {
+    "rvs_code": "75724",
+    "description": "ANGIOGRAPHY, RENAL, BILATERAL, RADIOLOGICAL SUPERVISION AND INTERPRETATION",
+    "first_case_rate": "12,610.00",
+    "health_facility_fee": "7,150.00",
+    "professional_fee": "5,460.00"
+  },
+  {
+    "rvs_code": "75726",
+    "description": "ANGIOGRAPHY, VISCERAL, RADIOLOGICAL SUPERVISION AND INTERPRETATION",
+    "first_case_rate": "12,610.00",
+    "health_facility_fee": "7,150.00",
+    "professional_fee": "5,460.00"
+  },
+  {
+    "rvs_code": "75731",
+    "description": "ANGIOGRAPHY, ADRENAL, UNILATERAL, RADIOLOGICAL SUPERVISION AND INTERPRETATION",
+    "first_case_rate": "12,610.00",
+    "health_facility_fee": "7,150.00",
+    "professional_fee": "5,460.00"
+  },
+  {
+    "rvs_code": "75733",
+    "description": "ANGIOGRAPHY, ADRENAL, BILATERAL, RADIOLOGICAL SUPERVISION AND INTERPRETATION",
+    "first_case_rate": "12,610.00",
+    "health_facility_fee": "7,150.00",
+    "professional_fee": "5,460.00"
+  },
+  {
+    "rvs_code": "75736",
+    "description": "ANGIOGRAPHY, PELVIS, RADIOLOGICAL SUPERVISION AND INTERPRETATION",
+    "first_case_rate": "12,610.00",
+    "health_facility_fee": "7,150.00",
+    "professional_fee": "5,460.00"
+  },
+  {
+    "rvs_code": "75741",
+    "description": "ANGIOGRAPHY, PULMONARY, UNILATERAL, RADIOLOGICAL SUPERVISION AND INTERPRETATION",
+    "first_case_rate": "12,610.00",
+    "health_facility_fee": "7,150.00",
+    "professional_fee": "5,460.00"
+  },
+  {
+    "rvs_code": "75743",
+    "description": "ANGIOGRAPHY, PULMONARY, BILATERAL, RADIOLOGICAL SUPERVISION AND INTERPRETATION",
+    "first_case_rate": "12,610.00",
+    "health_facility_fee": "7,150.00",
+    "professional_fee": "5,460.00"
+  },
+  {
+    "rvs_code": "75746",
+    "description": "ANGIOGRAPHY, PULMONARY, NONSELECTIVE, RADIOLOGICAL SUPERVISION AND INTERPRETATION",
+    "first_case_rate": "12,610.00",
+    "health_facility_fee": "7,150.00",
+    "professional_fee": "5,460.00"
+  },
+  {
+    "rvs_code": "75756",
+    "description": "ANGIOGRAPHY, INTERNAL MAMMARY, RADIOLOGICAL SUPERVISION AND INTERPRETATION",
+    "first_case_rate": "12,610.00",
+    "health_facility_fee": "7,150.00",
+    "professional_fee": "5,460.00"
+  },
+  {
+    "rvs_code": "75757",
+    "description": "ANGIOGRAPHY, FLUORESCEIN (EYE)",
+    "first_case_rate": "4,550.00",
+    "health_facility_fee": "3,900.00",
+    "professional_fee": "650.00"
+  },
+  {
+    "rvs_code": "75757",
+    "description": "ANGIOGRAPHY, FLUORESCEIN (EYE)",
+    "first_case_rate": "4,550.00",
+    "health_facility_fee": "3,900.00",
+    "professional_fee": "650.00"
   }
 ]

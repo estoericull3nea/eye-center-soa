@@ -421,13 +421,19 @@ export default function DashboardPage() {
                   <TableHead className='w-[200px]'>Particulars</TableHead>
                   <TableHead className='w-[150px]'>Actual Charges</TableHead>
                   <TableHead className='w-[150px]'>12% VAT</TableHead>
-                  <TableHead className='w-[150px]'>20% SC Discount</TableHead>
+                  <TableHead className='w-[150px]'>
+                    20% SC/PWD Discount
+                  </TableHead>
                   <TableHead className='w-[150px]'>
                     32% Non-SC Discount
                   </TableHead>
+                  <TableHead className='w-[150px]'>Other Discount</TableHead>
                   <TableHead className='w-[150px]'>First Case Amount</TableHead>
                   <TableHead className='w-[150px]'>
                     Second Case Amount
+                  </TableHead>
+                  <TableHead className='w-[150px]'>
+                    Co-pay Amount Payable
                   </TableHead>
                 </TableRow>
               </TableHeader>
@@ -650,7 +656,7 @@ export default function DashboardPage() {
 
                 {/* Separator after Professional Fees */}
                 <TableRow>
-                  <TableCell colSpan={7}>
+                  <TableCell colSpan={9}>
                     <Separator className='my-4' />
                   </TableCell>
                 </TableRow>
@@ -658,7 +664,7 @@ export default function DashboardPage() {
                 {/* GRAND TOTAL Row */}
                 <TableRow>
                   <TableCell className='font-medium'>GRAND TOTAL</TableCell>
-                  <TableCell colSpan={6}>
+                  <TableCell colSpan={9}>
                     <Input type='text' />
                   </TableCell>
                 </TableRow>
