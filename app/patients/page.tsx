@@ -67,6 +67,27 @@ export default function Page() {
     fetchData()
   }, [])
 
+  useEffect(() => {
+    // Only bind the event listener if the modal is open
+    if (open) {
+      const handleKeyDown = (e: KeyboardEvent) => {
+        // Check if the pressed key is "Enter"
+        if (e.key === 'Enter') {
+          e.preventDefault() // Prevent default action (if any)
+          handleAddPatient() // Trigger the Add Patient function
+        }
+      }
+
+      // Add event listener for keydown
+      window.addEventListener('keydown', handleKeyDown)
+
+      // Cleanup the event listener when the modal closes
+      return () => {
+        window.removeEventListener('keydown', handleKeyDown)
+      }
+    }
+  }, [open]) // Re-run this effect whenever the modal state (`open`) changes
+
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target
     setFormData((prev) => ({ ...prev, [name]: value }))
@@ -103,19 +124,8 @@ export default function Page() {
 
   const handleAddPatient = async () => {
     try {
-      const age = parseInt(formData.age, 10)
-      if (isNaN(age)) {
-        toast({
-          title: 'Invalid age',
-          description: 'Please enter a valid number for age.',
-          variant: 'destructive',
-        })
-        return
-      }
-
       const response = await axios.post('/api/patients', {
         ...formData,
-        age,
       })
 
       if (response.status === 201) {
@@ -124,7 +134,7 @@ export default function Page() {
         })
 
         setData((prev) => [...prev, response.data.data])
-        setOpen(false)
+        setOpen(false) // Close the modal
 
         // Reset the form
         setFormData({
@@ -135,13 +145,26 @@ export default function Page() {
           zipCode: '',
         })
       }
-    } catch (error) {
-      console.error('Error adding patient:', error)
-      toast({
-        title: 'Error',
-        description: 'An error occurred while adding the patient.',
-        variant: 'destructive',
-      })
+    } catch (error: unknown) {
+      if (axios.isAxiosError(error)) {
+        // AxiosError type guard
+        console.log(error.response?.data?.message)
+        toast({
+          title: 'Error',
+          description:
+            error.response?.data?.message ||
+            'An error occurred while adding the patient.',
+          variant: 'destructive',
+        })
+      } else {
+        // For other types of errors
+        console.log('Unexpected error:', error)
+        toast({
+          title: 'Error',
+          description: 'An unexpected error occurred.',
+          variant: 'destructive',
+        })
+      }
     }
   }
 

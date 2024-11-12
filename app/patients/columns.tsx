@@ -14,6 +14,7 @@ import {
   AlertDialogTitle,
   AlertDialogTrigger,
 } from '@/components/ui/alert-dialog'
+import { useToast } from '@/hooks/use-toast'
 
 // Define columns for the DataTable component
 export const columns = (
@@ -52,17 +53,24 @@ export const columns = (
         setEditOpen(true) // Open the edit modal
       }
 
+      const { toast } = useToast()
       const handleDelete = async () => {
         try {
-          await axios.delete(`/api/patients?id=${patient._id}`)
-          setData((prevData) => prevData.filter((p) => p._id !== patient._id))
+          const res = await axios.delete(`/api/patients?id=${patient._id}`)
+          console.log(res)
+          if (res.status === 200) {
+            setData((prevData) => prevData.filter((p) => p._id !== patient._id))
+            toast({
+              title: 'Patient has been deleted successfully',
+            })
+          }
         } catch (error) {
           console.error('Error deleting patient:', error)
         }
       }
 
       return (
-        <div className='flex space-x-2'>
+        <div className='flex space-x-2 items-center justify-center'>
           <Button variant='ghost' size='sm' onClick={handleEdit}>
             <Edit className='w-4 h-4' />
           </Button>

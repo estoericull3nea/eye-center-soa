@@ -8,16 +8,37 @@ await connectToDatabase()
 export async function POST(req: NextRequest) {
   try {
     const body = await req.json()
-    const { firstName, lastName, age, address, zipCode } = body
+    let { firstName, lastName, age, address, zipCode } = body
 
+    if (!age) {
+      age = 0
+    }
+    // Validate required fields
+    if (!firstName || !lastName || !age) {
+      return NextResponse.json(
+        { message: 'Missing required fields: firstName, lastName, and/or age' },
+        { status: 400 }
+      )
+    }
+
+    // Validate age (must be a valid number)
+    if (isNaN(age) || age <= 0) {
+      return NextResponse.json(
+        { message: 'Invalid age, it must be a positive number' },
+        { status: 400 }
+      )
+    }
+
+    // Create a new Patient instance
     const data = new Patient({
       firstName,
       lastName,
       age,
-      address,
-      zipCode,
+      address, // Address is optional
+      zipCode, // zipCode is optional
     })
 
+    // Save the patient to the database
     await data.save()
 
     return NextResponse.json({ data }, { status: 201 })

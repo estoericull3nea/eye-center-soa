@@ -664,6 +664,7 @@ export default function DashboardPage() {
                 </TableRow>
               </TableBody>
             </Table>
+            <Button>Print</Button>
           </div>
         </div>
       </div>

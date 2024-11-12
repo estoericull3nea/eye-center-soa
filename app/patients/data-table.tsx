@@ -118,7 +118,7 @@ export function DataTable<TData, TValue>({
             {table.getHeaderGroups().map((headerGroup) => (
               <TableRow key={headerGroup.id}>
                 {headerGroup.headers.map((header) => (
-                  <TableHead key={header.id}>
+                  <TableHead key={header.id} className='w-[200px] text-center'>
                     {header.isPlaceholder
                       ? null
                       : flexRender(
@@ -151,9 +151,9 @@ export function DataTable<TData, TValue>({
               <TableRow>
                 <TableCell
                   colSpan={columns.length}
-                  className='h-24 text-center'
+                  className='h-24 text-center text-red-600 font-semibold'
                 >
-                  No results.
+                  No patients found matching that
                 </TableCell>
               </TableRow>
             )}
