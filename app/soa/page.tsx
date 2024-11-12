@@ -12,6 +12,7 @@ import { Label } from '@/components/ui/label'
 import { useToast } from '@/hooks/use-toast'
 
 import { Separator } from '@/components/ui/separator'
+import caseRates from './procedure.json'
 
 import {
   Table,
@@ -27,6 +28,44 @@ const poppins = Poppins({
   weight: '400',
   subsets: ['latin'],
 })
+
+// const caseRates = [
+//   {
+//     rvs_code: '57265',
+//     desc: 'COMBINED ANTEROPOSTERIOR COLPORRHAPHY; W/ ENTEROCELE REPAIR',
+//     case_rate: 39390.0,
+//     health_facility_fee: 17550.0,
+//     professional_fee: 21840.0,
+//   },
+//   {
+//     rvs_code: '57268',
+//     desc: 'REPAIR OF ENTEROCELE, VAGINAL APPROACH',
+//     case_rate: 30290.0,
+//     health_facility_fee: 13910.0,
+//     professional_fee: 16380.0,
+//   },
+//   {
+//     rvs_code: '57270',
+//     desc: 'REPAIR OF ENTEROCELE, ABDOMINAL APPROACH',
+//     case_rate: 35256.0,
+//     health_facility_fee: 15600.0,
+//     professional_fee: 19656.0,
+//   },
+//   {
+//     rvs_code: '57280',
+//     desc: 'COLPOPEXY, ABDOMINAL APPROACH',
+//     case_rate: 35256.0,
+//     health_facility_fee: 15600.0,
+//     professional_fee: 19656.0,
+//   },
+//   {
+//     rvs_code: '57282',
+//     desc: 'SACROSPINOUS LIGAMENT FIXATION FOR PROLAPSE OF VAGINA',
+//     case_rate: 35256.0,
+//     health_facility_fee: 15600.0,
+//     professional_fee: 19656.0,
+//   },
+// ]
 
 type FeeRow = {
   name: string
@@ -57,6 +96,12 @@ export default function DashboardPage() {
   // State for patient data and patient name
   const [patientData, setPatientData] = useState<IPatient | null>(null)
   const [patientName, setPatientName] = useState('')
+
+  const [admittingDiagnosis, setAdmittingDiagnosis] = useState('')
+  const [dischargeDiagnosis, setDischargeDiagnosis] = useState('')
+  const [firstCaseRate, setFirstCaseRate] = useState('')
+  const [secondCaseRate, setSecondCaseRate] = useState('')
+  const [professionalFees, setProfessionalFees] = useState('')
 
   useEffect(() => {
     const token = localStorage.getItem('authToken')
@@ -216,6 +261,28 @@ export default function DashboardPage() {
     fetchPatientData(name) // Fetch data as the name is typed
   }
 
+  const handleFirstCaseRateChange = (
+    e: React.ChangeEvent<HTMLInputElement>
+  ) => {
+    const selectedCaseRate = e.target.value
+    setFirstCaseRate(selectedCaseRate)
+
+    const selectedCase = caseRates.find(
+      (caseRate) => caseRate.rvs_code.toString() === selectedCaseRate // Convert case_rate to string for comparison
+    )
+
+    if (selectedCase) {
+      // Autofill corresponding fields
+      setAdmittingDiagnosis(selectedCase.description) // Assuming "desc" is the admitting diagnosis
+      setDischargeDiagnosis(selectedCase.description) // You can customize this logic if needed
+      setProfessionalFees(selectedCase.professional_fee.toString()) // Set professional fee
+    } else {
+      setAdmittingDiagnosis('') // Assuming "desc" is the admitting diagnosis
+      setDischargeDiagnosis('') // You can customize this logic if needed
+      setProfessionalFees('')
+    }
+  }
+
   return (
     <div className={`${poppins.className} flex ml-36 mb-10`}>
       <div className='flex flex-col text-center w-full items-center'>
@@ -297,6 +364,8 @@ export default function DashboardPage() {
                 className=' '
                 type='text'
                 id='first_case_rate_label'
+                value={firstCaseRate}
+                onChange={handleFirstCaseRateChange} // Handle case rate change
                 placeholder='67031'
               />
             </div>
@@ -304,7 +373,12 @@ export default function DashboardPage() {
               <Label className='mb-10' htmlFor='second_case_rate_label'>
                 Second case rate:
               </Label>
-              <Input type='text' id='second_case_rate_label' />
+              <Input
+                type='text'
+                id='second_case_rate_label'
+                value={secondCaseRate}
+                onChange={(e) => setSecondCaseRate(e.target.value)} // Handle second case rate change
+              />
             </div>
           </div>
 
@@ -313,15 +387,26 @@ export default function DashboardPage() {
               <Label className='mb-10' htmlFor='admitting_diagnosis_label'>
                 Admitting Diagnosis
               </Label>
-              <Input type='text' id='admitting_diagnosis_label' />
+              <Input
+                type='text'
+                id='admitting_diagnosis_label'
+                value={admittingDiagnosis}
+                onChange={(e) => setAdmittingDiagnosis(e.target.value)} // Allow manual update if needed
+              />
             </div>
           </div>
+
           <div className='flex gap-3 w-full'>
             <div className='text-start w-full'>
               <Label className='mb-10' htmlFor='discharge_diagnosis_label'>
                 Discharge Diagnosis
               </Label>
-              <Input type='text' id='discharge_diagnosis_label' />
+              <Input
+                type='text'
+                id='discharge_diagnosis_label'
+                value={dischargeDiagnosis}
+                onChange={(e) => setDischargeDiagnosis(e.target.value)} // Allow manual update if needed
+              />
             </div>
           </div>
 
@@ -498,16 +583,8 @@ export default function DashboardPage() {
                 {professionalFeeRows.map((row, index) => (
                   <TableRow key={index}>
                     <TableCell className='font-medium'>{row.name}</TableCell>
-                    <TableCell>
-                      <Input
-                        type='text'
-                        value={row.amount}
-                        onChange={(e) => {
-                          const updatedRows = [...professionalFeeRows]
-                          updatedRows[index].amount = e.target.value
-                          setProfessionalFeeRows(updatedRows)
-                        }}
-                      />
+                    <TableCell className='font-medium'>
+                      {professionalFees || 0}
                     </TableCell>
                     <TableCell>
                       <button
