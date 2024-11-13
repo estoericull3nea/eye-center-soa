@@ -63,6 +63,9 @@ export default function DashboardPage() {
   const [firstCaseRate, setFirstCaseRate] = useState('')
   const [secondCaseRate, setSecondCaseRate] = useState('')
   const [professionalFees, setProfessionalFees] = useState('')
+  const [newFeePrice, setNewFeePrice] = useState('')
+  const [totalHciFees, setTotalHciFees] = useState('')
+  const [dynamicRows, setDynamicRows] = useState<FeeRow[]>([])
 
   useEffect(() => {
     const token = localStorage.getItem('authToken')
@@ -71,8 +74,15 @@ export default function DashboardPage() {
     }
   }, [router])
 
+  useEffect(() => {
+    const total = dynamicRows.reduce((acc, row) => {
+      const price = parseFloat(row.actualCharges) || 0
+      return acc + price
+    }, 0)
+    setTotalHciFees(total.toLocaleString()) // Format with commas
+  }, [dynamicRows])
+
   // State to hold dynamic rows for HCI Fees
-  const [dynamicRows, setDynamicRows] = useState<FeeRow[]>([])
 
   // State for dynamic rows of Professional Fees
   const [professionalFeeRows, setProfessionalFeeRows] = useState<
@@ -90,19 +100,19 @@ export default function DashboardPage() {
 
   // Function to add a new row for HCI Fees
   const handleAddRow = () => {
-    if (newFeeName.trim() === '') {
+    if (newFeeName.trim() === '' || newFeePrice.trim() === '') {
       toast.toast({
-        title: 'Please enter a fee name',
+        title: 'Please enter both a fee name and a price',
       })
       return
     }
 
-    // Add the new row to the dynamicRows state
+    // Add the new row with both name and price
     setDynamicRows([
       ...dynamicRows,
       {
         name: newFeeName,
-        actualCharges: '',
+        actualCharges: newFeePrice,
         vat: '',
         discountSC: '',
         discountNonSC: '',
@@ -111,8 +121,9 @@ export default function DashboardPage() {
       },
     ])
 
-    // Reset the fee name and hide the input field
+    // Reset the fee name and price, and hide the input fields
     setNewFeeName('')
+    setNewFeePrice('')
     setShowNewFeeInput(false)
   }
 
@@ -555,11 +566,18 @@ export default function DashboardPage() {
                           onChange={(e) => setNewFeeName(e.target.value)}
                           placeholder='Enter Fee Name'
                         />
+                        <Input
+                          type='text'
+                          value={newFeePrice}
+                          onChange={(e) => setNewFeePrice(e.target.value)}
+                          placeholder='Enter Fee Price'
+                        />
                         <Button onClick={handleAddRow}>Add Fee</Button>
                         <Button
                           onClick={() => {
                             setShowNewFeeInput(false)
                             setNewFeeName('')
+                            setNewFeePrice('')
                           }}
                         >
                           Cancel
@@ -575,7 +593,7 @@ export default function DashboardPage() {
                     Total HCI Fees
                   </TableCell>
                   <TableCell>
-                    <Input type='text' readOnly />
+                    <Input type='text' value={totalHciFees} readOnly />
                   </TableCell>
                 </TableRow>
 
@@ -591,15 +609,16 @@ export default function DashboardPage() {
                   <TableCell className='font-medium'>
                     PROFESSIONAL FEES
                   </TableCell>
+                  <TableCell className='font-medium'>
+                    {professionalFees || 0}
+                  </TableCell>
                 </TableRow>
 
                 {/* Render dynamic rows for each Professional fee */}
                 {professionalFeeRows.map((row, index) => (
                   <TableRow key={index}>
                     <TableCell className='font-medium'>{row.name}</TableCell>
-                    <TableCell className='font-medium'>
-                      {professionalFees || 0}
-                    </TableCell>
+
                     <TableCell>
                       <button
                         onClick={() => handleRemoveProfessionalFeeRow(index)}
