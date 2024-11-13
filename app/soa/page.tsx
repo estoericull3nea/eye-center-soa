@@ -73,6 +73,8 @@ export default function DashboardPage() {
   const [healthFacilityFee, setHealthFacilityFee] = useState('')
   const [newProfessionalFeePrice, setNewProfessionalFeePrice] = useState('')
   const [totalPfFees, setTotalPfFees] = useState('')
+  const [nonScDiscountAmount, setNonScDiscountAmount] = useState('')
+
   const [secondCaseDischargeDiagnosis, setSecondCaseDischargeDiagnosis] =
     useState('')
 
@@ -347,7 +349,16 @@ export default function DashboardPage() {
     console.log('secondAmount:', secondAmount)
 
     // Calculate the co-pay amount based on the provided values
-    const coPay = totalFees - vat - scDiscount - firstAmount - secondAmount
+    let coPay = totalFees - vat - scDiscount - firstAmount - secondAmount
+
+    // If age is below 60, apply a 32% discount on total HCI fees
+    if (parseInt(patientData?.age || '0') < 60) {
+      const discount32Percent = totalFees * 0.32
+      setNonScDiscountAmount(discount32Percent.toLocaleString())
+      coPay -= discount32Percent
+    } else {
+      setNonScDiscountAmount('') // Clear discount if age is 60 or above
+    }
 
     // Format the result with commas and set it to the coPayAmount state
     setCoPayAmount(coPay.toFixed(0))
@@ -671,7 +682,18 @@ export default function DashboardPage() {
                       style={{ color: scDiscountAmount ? 'red' : 'inherit' }}
                     />
                   </TableCell>
-                  <TableCell>here</TableCell>
+                  <TableCell>
+                    <Input
+                      type='text'
+                      value={
+                        nonScDiscountAmount ? `-${nonScDiscountAmount}` : 'N/A'
+                      }
+                      readOnly
+                      placeholder='N/A'
+                      style={{ color: nonScDiscountAmount ? 'red' : 'inherit' }}
+                    />
+                  </TableCell>
+
                   <TableCell>
                     <Input type='text' value={healthFacilityFee} readOnly />
                   </TableCell>
