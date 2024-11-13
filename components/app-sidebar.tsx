@@ -1,3 +1,6 @@
+'use client'
+
+import { useRouter } from 'next/navigation'
 import {
   AiOutlineHome,
   AiOutlineInbox,
@@ -49,12 +52,22 @@ const items = [
   },
   {
     title: 'Logout',
-    url: '/logout',
     icon: AiOutlineLogout,
   },
 ]
 
 export function AppSidebar() {
+  const router = useRouter()
+
+  // Function to handle logout
+  const handleLogout = () => {
+    // Clear authToken from localStorage
+    localStorage.removeItem('authToken')
+
+    // Optionally, redirect user to the login page or home page
+    router.push('/login') // or '/' for the homepage
+  }
+
   return (
     <Sidebar className={poppins.className}>
       <SidebarContent>
@@ -69,14 +82,38 @@ export function AppSidebar() {
           <SidebarGroupLabel className='font-medium'>Menu</SidebarGroupLabel>
           <SidebarGroupContent>
             <SidebarMenu>
-              {items.map((item) => (
-                <SidebarMenuItem key={item.title} className='font-medium'>
-                  <SidebarMenuButton asChild>
-                    <a href={item.url} className='flex items-center space-x-2 '>
-                      <item.icon className='w-5 h-5' /> {/* Icon */}
-                      <span>{item.title}</span>
-                    </a>
-                  </SidebarMenuButton>
+              {items.map((item, index) => (
+                <SidebarMenuItem
+                  key={item.title + index}
+                  className='font-medium'
+                >
+                  {item.title === 'Logout' ? (
+                    // Logout item with the click handler
+                    <SidebarMenuButton asChild>
+                      <a
+                        href='#'
+                        className='flex items-center space-x-2'
+                        onClick={(e) => {
+                          e.preventDefault() // Prevent default link behavior
+                          handleLogout() // Trigger logout
+                        }}
+                      >
+                        <item.icon className='w-5 h-5' /> {/* Icon */}
+                        <span>{item.title}</span>
+                      </a>
+                    </SidebarMenuButton>
+                  ) : (
+                    // Regular menu items (Dashboard, SOA, etc.)
+                    <SidebarMenuButton asChild>
+                      <a
+                        href={item.url}
+                        className='flex items-center space-x-2'
+                      >
+                        <item.icon className='w-5 h-5' /> {/* Icon */}
+                        <span>{item.title}</span>
+                      </a>
+                    </SidebarMenuButton>
+                  )}
                 </SidebarMenuItem>
               ))}
             </SidebarMenu>

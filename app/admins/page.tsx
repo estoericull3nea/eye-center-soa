@@ -13,6 +13,8 @@ import {
 } from '@/components/ui/table'
 import { Poppins } from 'next/font/google'
 
+import { useRouter } from 'next/navigation'
+
 interface Admin {
   _id: string
   username: string
@@ -33,6 +35,14 @@ const poppins = Poppins({
 export default function AdminTable() {
   const [admins, setAdmins] = useState<Admin[]>([])
   const [loading, setLoading] = useState(true)
+  const router = useRouter()
+
+  useEffect(() => {
+    const token = localStorage.getItem('authToken')
+    if (!token) {
+      router.push('/login')
+    }
+  }, [router])
 
   // Fetch all admins on component mount
   useEffect(() => {
@@ -60,7 +70,7 @@ export default function AdminTable() {
           <TableCaption>Loading...</TableCaption>
           <TableHeader>
             <TableRow>
-              <TableHead className='w-[100px]'>
+              <TableHead className='w-[200px]'>
                 <Skeleton className='h-6 w-24' />
               </TableHead>
               <TableHead>
@@ -76,7 +86,7 @@ export default function AdminTable() {
           </TableHeader>
           <TableBody>
             <TableRow>
-              <TableCell className='font-medium'>
+              <TableCell className='font-medium border'>
                 <Skeleton className='h-6 w-24' />
               </TableCell>
               <TableCell>
@@ -103,13 +113,13 @@ export default function AdminTable() {
             <TableCaption>A list of your recent admins.</TableCaption>
             <TableHeader>
               <TableRow>
-                <TableHead className='w-[100px]'>Username</TableHead>
+                <TableHead className='w-[300px] '>Username</TableHead>
               </TableRow>
             </TableHeader>
             <TableBody>
               {admins.map((admin) => (
                 <TableRow key={admin._id}>
-                  <TableCell className='font-medium'>
+                  <TableCell className='font-medium text-start'>
                     {admin.username}
                   </TableCell>
                 </TableRow>

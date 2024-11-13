@@ -37,7 +37,7 @@ export default function Page() {
     const token = localStorage.getItem('authToken')
     if (token) {
       // Redirect to the dashboard if the token is present
-      router.push('/dashboard')
+      router.push('/')
     }
   }, [router])
 
@@ -61,7 +61,7 @@ export default function Page() {
         setPassword('')
 
         // Redirect to dashboard or appropriate page on successful login
-        router.push('/dashboard')
+        router.push('/')
       }
     } catch (error: any) {
       const errorMessage =

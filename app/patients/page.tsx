@@ -19,6 +19,8 @@ import {
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
 
+import { useRouter } from 'next/navigation'
+
 const poppins = Poppins({
   weight: '400',
   subsets: ['latin'],
@@ -42,6 +44,14 @@ export default function Page() {
   const [open, setOpen] = useState(false) // Modal open state
   const [editOpen, setEditOpen] = useState(false) // Edit modal state
   const [editPatientData, setEditPatientData] = useState<Patient | null>(null) // Data for patient being edited
+  const router = useRouter()
+
+  useEffect(() => {
+    const token = localStorage.getItem('authToken')
+    if (!token) {
+      router.push('/login')
+    }
+  }, [router])
 
   const [formData, setFormData] = useState({
     firstName: '',
