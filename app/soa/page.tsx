@@ -82,6 +82,7 @@ export default function DashboardPage() {
     useState('')
   const [secondCaseHealthFacilityFee, setSecondCaseHealthFacilityFee] =
     useState('')
+  const [coPayAmount, setCoPayAmount] = useState('')
 
   // State for dynamic rows of Professional Fees
   const [professionalFeeRows, setProfessionalFeeRows] = useState<
@@ -101,16 +102,16 @@ export default function DashboardPage() {
       return acc + price
     }, 0)
     // Set `totalHciFees` with comma formatting
-    setTotalHciFees(total.toLocaleString())
+    setTotalHciFees(total.toFixed(0))
 
     if (parseInt(patientData?.age || '0') >= 60) {
       const vat = total * 0.12 // Calculate 12% VAT as negative
-      setVatAmount(vat.toLocaleString()) // Format VAT with commas
+      setVatAmount(vat.toFixed(0)) // Format VAT with commas
 
       // Calculate 20% SC/PWD discount on (Total HCI Fees - VAT)
       const discountedTotal = total + vat
       const scDiscount = discountedTotal * 0.2 // Make discount negative
-      setScDiscountAmount(scDiscount.toLocaleString()) // Format with commas
+      setScDiscountAmount(scDiscount.toFixed(0)) // Format with commas
     } else {
       setVatAmount('') // Clear VAT if age is below 60
       setScDiscountAmount('') // Clear SC/PWD discount if age is below 60
@@ -127,7 +128,7 @@ export default function DashboardPage() {
       const price = parseFloat(row.amount) || 0
       return acc + price
     }, 0)
-    setTotalPfFees(total.toLocaleString()) // Format with commas
+    setTotalPfFees(total.toFixed(0)) // Format with commas
   }, [professionalFeeRows])
 
   // State to hold dynamic rows for HCI Fees
@@ -298,7 +299,8 @@ export default function DashboardPage() {
     if (selectedCase) {
       setAdmittingDiagnosis(selectedCase.description)
       setProfessionalFees(selectedCase.professional_fee.toString())
-      setHealthFacilityFee(selectedCase.health_facility_fee.toLocaleString()) // Format health facility fee with commas
+      const converted = selectedCase.health_facility_fee.replaceAll(',', '')
+      setHealthFacilityFee(parseFloat(converted).toFixed(0))
     } else {
       setAdmittingDiagnosis('')
       setProfessionalFees('')
@@ -319,15 +321,37 @@ export default function DashboardPage() {
     if (selectedCase) {
       setSecondCaseAdmittingDiagnosis(selectedCase.description)
       setSecondCaseProfessionalFees(selectedCase.professional_fee.toString())
-      setSecondCaseHealthFacilityFee(
-        selectedCase.health_facility_fee.toLocaleString()
-      )
+      setSecondCaseHealthFacilityFee(selectedCase.health_facility_fee)
+
+      const converted = selectedCase.health_facility_fee.replaceAll(',', '')
+      setSecondCaseHealthFacilityFee(parseFloat(converted).toFixed(0))
     } else {
       setSecondCaseAdmittingDiagnosis('')
       setSecondCaseProfessionalFees('')
       setSecondCaseHealthFacilityFee('')
     }
   }
+
+  useEffect(() => {
+    // Parse the required fields as numbers, defaulting to 0 if they are empty
+    const totalFees = parseFloat(totalHciFees) || 0
+    const vat = parseFloat(vatAmount) || 0
+    const scDiscount = parseFloat(scDiscountAmount) || 0
+    const firstAmount = parseFloat(healthFacilityFee) || 0
+    const secondAmount = parseFloat(secondCaseHealthFacilityFee) || 0
+
+    console.log('totalFees:', totalFees)
+    console.log('vat:', vat)
+    console.log('scDiscount:', scDiscount)
+    console.log('firstAmount:', firstAmount)
+    console.log('secondAmount:', secondAmount)
+
+    // Calculate the co-pay amount based on the provided values
+    const coPay = totalFees - vat - scDiscount - firstAmount - secondAmount
+
+    // Format the result with commas and set it to the coPayAmount state
+    setCoPayAmount(coPay.toFixed(0))
+  }, [totalHciFees, vatAmount, scDiscountAmount, firstCaseRate, secondCaseRate])
 
   return (
     <div className={`${poppins.className} flex ml-36 mb-10`}>
@@ -530,7 +554,6 @@ export default function DashboardPage() {
                   <TableHead className='w-[150px]'>Actual Charges</TableHead>
                   <TableHead className='w-[150px]'>12% VAT</TableHead>
                   <TableHead className='w-[150px]'>20% SC/PWD</TableHead>
-                  <TableHead className='w-[150px]'>32% Non-SC</TableHead>
                   <TableHead className='w-[150px]'>Other Discount</TableHead>
                   <TableHead className='w-[150px]'>First Case Amount</TableHead>
                   <TableHead className='w-[150px]'>
@@ -648,8 +671,7 @@ export default function DashboardPage() {
                       style={{ color: scDiscountAmount ? 'red' : 'inherit' }}
                     />
                   </TableCell>
-                  <TableCell></TableCell>
-                  <TableCell></TableCell>
+                  <TableCell>here</TableCell>
                   <TableCell>
                     <Input type='text' value={healthFacilityFee} readOnly />
                   </TableCell>
@@ -659,6 +681,9 @@ export default function DashboardPage() {
                       value={secondCaseHealthFacilityFee}
                       readOnly
                     />
+                  </TableCell>
+                  <TableCell>
+                    <Input type='text' value={coPayAmount} readOnly />
                   </TableCell>
                 </TableRow>
 
