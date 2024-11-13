@@ -29,44 +29,6 @@ const poppins = Poppins({
   subsets: ['latin'],
 })
 
-// const caseRates = [
-//   {
-//     rvs_code: '57265',
-//     desc: 'COMBINED ANTEROPOSTERIOR COLPORRHAPHY; W/ ENTEROCELE REPAIR',
-//     case_rate: 39390.0,
-//     health_facility_fee: 17550.0,
-//     professional_fee: 21840.0,
-//   },
-//   {
-//     rvs_code: '57268',
-//     desc: 'REPAIR OF ENTEROCELE, VAGINAL APPROACH',
-//     case_rate: 30290.0,
-//     health_facility_fee: 13910.0,
-//     professional_fee: 16380.0,
-//   },
-//   {
-//     rvs_code: '57270',
-//     desc: 'REPAIR OF ENTEROCELE, ABDOMINAL APPROACH',
-//     case_rate: 35256.0,
-//     health_facility_fee: 15600.0,
-//     professional_fee: 19656.0,
-//   },
-//   {
-//     rvs_code: '57280',
-//     desc: 'COLPOPEXY, ABDOMINAL APPROACH',
-//     case_rate: 35256.0,
-//     health_facility_fee: 15600.0,
-//     professional_fee: 19656.0,
-//   },
-//   {
-//     rvs_code: '57282',
-//     desc: 'SACROSPINOUS LIGAMENT FIXATION FOR PROLAPSE OF VAGINA',
-//     case_rate: 35256.0,
-//     health_facility_fee: 15600.0,
-//     professional_fee: 19656.0,
-//   },
-// ]
-
 type FeeRow = {
   name: string
   actualCharges: string
@@ -80,9 +42,8 @@ type FeeRow = {
 interface IPatient {
   name: string
   age: string
-  address: string
-  zipCode: string
-  // Add other fields if needed based on your API response
+  address?: string
+  zipCode?: string
 }
 
 type ProfessionalFeeRow = {
@@ -131,7 +92,7 @@ export default function DashboardPage() {
   const handleAddRow = () => {
     if (newFeeName.trim() === '') {
       toast.toast({
-        description: 'Please enter a fee name',
+        title: 'Please enter a fee name',
       })
       return
     }
@@ -232,10 +193,10 @@ export default function DashboardPage() {
     }
   }
 
-  // Fetch patient data by name or create the patient if not found
+  // Update fetchPatientData to clear fields if no patient is found
   const fetchPatientData = async (name: string) => {
     if (!name.trim()) {
-      setPatientData(null) // Clear the data if the name is empty
+      setPatientData(null) // Clear data if the name is empty
       return
     }
 
@@ -246,19 +207,24 @@ export default function DashboardPage() {
       if (data.length > 0) {
         setPatientData(data[0]) // Use the first patient in the list if found
       } else {
-        // If no patient found, create a new patient
-        await createPatient(name) // Create a new patient
+        setPatientData({ name: '', age: '', address: '', zipCode: '' }) // Clear fields if no patient found
       }
     } catch (error) {
       console.error('Error fetching patient data:', error)
+      setPatientData({ name: '', age: '', address: '', zipCode: '' }) // Clear fields on error
     }
   }
 
-  // Handle patient name input change
+  // Update handlePatientNameChange to fetch data as user types
   const handlePatientNameChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const name = e.target.value
     setPatientName(name)
-    fetchPatientData(name) // Fetch data as the name is typed
+
+    if (name.trim()) {
+      fetchPatientData(name) // Fetch patient data if name exists
+    } else {
+      setPatientData({ name: '', age: '', address: '', zipCode: '' }) // Clear fields if name is cleared
+    }
   }
 
   const handleFirstCaseRateChange = (
@@ -272,13 +238,11 @@ export default function DashboardPage() {
     )
 
     if (selectedCase) {
-      // Autofill corresponding fields
+      // Autofill only the admitting diagnosis and professional fees
       setAdmittingDiagnosis(selectedCase.description) // Assuming "desc" is the admitting diagnosis
-      setDischargeDiagnosis(selectedCase.description) // You can customize this logic if needed
       setProfessionalFees(selectedCase.professional_fee.toString()) // Set professional fee
     } else {
-      setAdmittingDiagnosis('') // Assuming "desc" is the admitting diagnosis
-      setDischargeDiagnosis('') // You can customize this logic if needed
+      setAdmittingDiagnosis('') // Clear if no matching case found
       setProfessionalFees('')
     }
   }
@@ -314,7 +278,6 @@ export default function DashboardPage() {
                 id='patient_label'
                 value={patientName}
                 onChange={handlePatientNameChange} // Handle name change
-                placeholder='Enter patient name'
               />
             </div>
             <div className='text-start w-full'>
@@ -324,7 +287,14 @@ export default function DashboardPage() {
               <Input
                 type='text'
                 id='age_label'
-                value={patientData?.age || ''}
+                value={patientData?.age || ''} // Make sure age is displayed correctly, or empty if undefined
+                onChange={(e) => {
+                  setPatientData({
+                    ...patientData, // Spread the existing state
+                    name: patientData?.name || '', // Ensure name is always a string
+                    age: e.target.value, // Update age based on the input field value
+                  })
+                }} // Editable
               />
             </div>
           </div>
@@ -336,8 +306,15 @@ export default function DashboardPage() {
               <Input
                 type='text'
                 id='address_label'
-                value={patientData?.address || ''}
-                // readOnly={!!patientData} // Make field readonly if autofilled
+                value={patientData?.address || ''} // Display the address or an empty string if undefined
+                onChange={(e) => {
+                  setPatientData({
+                    ...patientData, // Keep existing patient data
+                    name: patientData?.name || '', // Ensure the name property is always a string
+                    address: e.target.value, // Update address with the input value
+                    age: patientData?.age ?? '', // Use nullish coalescing to ensure age is a string
+                  })
+                }} // Editable
               />
             </div>
             <div className='text-start w-full'>
@@ -347,11 +324,21 @@ export default function DashboardPage() {
               <Input
                 type='text'
                 id='zip_code_label'
-                value={patientData?.zipCode || ''}
-                // readOnly={!!patientData} // Make field readonly if autofilled
+                value={patientData?.zipCode || ''} // Display the zipCode or an empty string if undefined
+                onChange={(e) => {
+                  setPatientData({
+                    ...patientData, // Keep existing patient data
+                    name: patientData?.name || '', // Ensure the name property is always a string
+                    address: patientData?.address || '', // Ensure the name property is always a string
+                    zipCode: e.target.value, // Update address with the input value
+                    age: patientData?.age ?? '', // Use nullish coalescing to ensure age is a string
+                  })
+                }} // Editable
               />
             </div>
           </div>
+
+          <Separator className='border border-black' />
 
           {/* Case Rates and Diagnosis */}
           <div className='flex gap-3 w-full'>
@@ -368,23 +355,12 @@ export default function DashboardPage() {
                 placeholder='67031'
               />
             </div>
-            <div className='text-start w-full'>
-              <Label className='mb-10' htmlFor='second_case_rate_label'>
-                Second case rate:
-              </Label>
-              <Input
-                type='text'
-                id='second_case_rate_label'
-                value={secondCaseRate}
-                onChange={(e) => setSecondCaseRate(e.target.value)} // Handle second case rate change
-              />
-            </div>
           </div>
 
           <div className='flex gap-3 w-full'>
             <div className='text-start w-full'>
               <Label className='mb-10' htmlFor='admitting_diagnosis_label'>
-                Admitting Diagnosis
+                Admitting Diagnosis (First Case Rate)
               </Label>
               <Input
                 type='text'
@@ -398,7 +374,7 @@ export default function DashboardPage() {
           <div className='flex gap-3 w-full'>
             <div className='text-start w-full'>
               <Label className='mb-10' htmlFor='discharge_diagnosis_label'>
-                Discharge Diagnosis
+                Discharge Diagnosis (First Case Rate)
               </Label>
               <Input
                 type='text'
@@ -406,6 +382,39 @@ export default function DashboardPage() {
                 value={dischargeDiagnosis}
                 onChange={(e) => setDischargeDiagnosis(e.target.value)} // Allow manual update if needed
               />
+            </div>
+          </div>
+
+          <Separator className='border border-black' />
+
+          <div className='text-start w-full'>
+            <Label className='mb-10' htmlFor='second_case_rate_label'>
+              Second case rate:
+            </Label>
+            <Input
+              type='text'
+              id='second_case_rate_label'
+              value={secondCaseRate}
+              onChange={(e) => setSecondCaseRate(e.target.value)} // Handle second case rate change
+              placeholder='67036'
+            />
+          </div>
+
+          <div className='flex gap-3 w-full'>
+            <div className='text-start w-full'>
+              <Label className='mb-10' htmlFor='admitting_diagnosis_label_2'>
+                Admitting Diagnosis (Second Case Rate)
+              </Label>
+              <Input type='text' id='admitting_diagnosis_label_2' />
+            </div>
+          </div>
+
+          <div className='flex gap-3 w-full'>
+            <div className='text-start w-full'>
+              <Label className='mb-10' htmlFor='discharge_diagnosis_label_2'>
+                Discharge Diagnosis (Second Case Rate)
+              </Label>
+              <Input type='text' id='discharge_diagnosis_label_2' />
             </div>
           </div>
 
@@ -572,7 +581,7 @@ export default function DashboardPage() {
 
                 {/* Separator after Laser Fee, Supplies, and Medicines */}
                 <TableRow>
-                  <TableCell colSpan={7}>
+                  <TableCell colSpan={9}>
                     <Separator className='my-4' />
                   </TableCell>
                 </TableRow>
