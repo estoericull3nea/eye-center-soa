@@ -70,6 +70,7 @@ export default function DashboardPage() {
   const [isAddHciFeeEnabled, setIsAddHciFeeEnabled] = useState(false)
   const [vatAmount, setVatAmount] = useState('')
   const [scDiscountAmount, setScDiscountAmount] = useState('')
+  const [healthFacilityFee, setHealthFacilityFee] = useState('')
 
   useEffect(() => {
     const token = localStorage.getItem('authToken')
@@ -268,16 +269,17 @@ export default function DashboardPage() {
     setFirstCaseRate(selectedCaseRate)
 
     const selectedCase = caseRates.find(
-      (caseRate) => caseRate.rvs_code.toString() === selectedCaseRate // Convert case_rate to string for comparison
+      (caseRate) => caseRate.rvs_code.toString() === selectedCaseRate
     )
 
     if (selectedCase) {
-      // Autofill only the admitting diagnosis and professional fees
-      setAdmittingDiagnosis(selectedCase.description) // Assuming "desc" is the admitting diagnosis
-      setProfessionalFees(selectedCase.professional_fee.toString()) // Set professional fee
+      setAdmittingDiagnosis(selectedCase.description)
+      setProfessionalFees(selectedCase.professional_fee.toString())
+      setHealthFacilityFee(selectedCase.health_facility_fee.toLocaleString()) // Format health facility fee with commas
     } else {
-      setAdmittingDiagnosis('') // Clear if no matching case found
+      setAdmittingDiagnosis('')
       setProfessionalFees('')
+      setHealthFacilityFee('') // Clear if no matching case found
     }
   }
 
@@ -584,7 +586,9 @@ export default function DashboardPage() {
                   </TableCell>
                   <TableCell></TableCell>
                   <TableCell></TableCell>
-                  <TableCell>Put the health_facility_fee here</TableCell>
+                  <TableCell>
+                    <Input type='text' value={healthFacilityFee} readOnly />
+                  </TableCell>
                 </TableRow>
 
                 {/* Separator after Laser Fee, Supplies, and Medicines */}
@@ -600,7 +604,12 @@ export default function DashboardPage() {
                     PROFESSIONAL FEES
                   </TableCell>
                   <TableCell className='font-medium'>
-                    {professionalFees || 0}
+                    <Input
+                      type='text'
+                      value={professionalFees || ''}
+                      onChange={(e) => setProfessionalFees(e.target.value)} // Update professionalFees state on change
+                      placeholder='Enter Professional Fees'
+                    />
                   </TableCell>
                 </TableRow>
 
