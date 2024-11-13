@@ -66,6 +66,9 @@ export default function DashboardPage() {
   const [newFeePrice, setNewFeePrice] = useState('')
   const [totalHciFees, setTotalHciFees] = useState('')
   const [dynamicRows, setDynamicRows] = useState<FeeRow[]>([])
+  const [editingIndex, setEditingIndex] = useState<number | null>(null)
+  const [isAddHciFeeEnabled, setIsAddHciFeeEnabled] = useState(false)
+  const [vatAmount, setVatAmount] = useState('')
 
   useEffect(() => {
     const token = localStorage.getItem('authToken')
@@ -79,8 +82,22 @@ export default function DashboardPage() {
       const price = parseFloat(row.actualCharges) || 0
       return acc + price
     }, 0)
-    setTotalHciFees(total.toLocaleString()) // Format with commas
-  }, [dynamicRows])
+    // Set `totalHciFees` with comma formatting
+    setTotalHciFees(total.toLocaleString())
+
+    // Calculate 12% VAT only if age is 60 or higher
+    if (parseInt(patientData?.age || '0') >= 60) {
+      const vat = total * -0.12 // Multiply by -0.12 to make it negative
+      setVatAmount(vat.toLocaleString()) // Format VAT with commas
+    } else {
+      setVatAmount('') // Clear VAT if age is below 60
+    }
+  }, [dynamicRows, patientData?.age])
+
+  useEffect(() => {
+    // Enable the button if `age` has a value; disable it otherwise
+    setIsAddHciFeeEnabled(!!patientData?.age)
+  }, [patientData?.age])
 
   // State to hold dynamic rows for HCI Fees
 
@@ -440,12 +457,8 @@ export default function DashboardPage() {
                   <TableHead className='w-[200px]'>Particulars</TableHead>
                   <TableHead className='w-[150px]'>Actual Charges</TableHead>
                   <TableHead className='w-[150px]'>12% VAT</TableHead>
-                  <TableHead className='w-[150px]'>
-                    20% SC/PWD Discount
-                  </TableHead>
-                  <TableHead className='w-[150px]'>
-                    32% Non-SC Discount
-                  </TableHead>
+                  <TableHead className='w-[150px]'>20% SC/PWD</TableHead>
+                  <TableHead className='w-[150px]'>32% Non-SC</TableHead>
                   <TableHead className='w-[150px]'>Other Discount</TableHead>
                   <TableHead className='w-[150px]'>First Case Amount</TableHead>
                   <TableHead className='w-[150px]'>
@@ -477,61 +490,7 @@ export default function DashboardPage() {
                         }}
                       />
                     </TableCell>
-                    <TableCell>
-                      <Input
-                        type='text'
-                        value={row.vat}
-                        onChange={(e) => {
-                          const updatedRows = [...dynamicRows]
-                          updatedRows[index].vat = e.target.value
-                          setDynamicRows(updatedRows)
-                        }}
-                      />
-                    </TableCell>
-                    <TableCell>
-                      <Input
-                        type='text'
-                        value={row.discountSC}
-                        onChange={(e) => {
-                          const updatedRows = [...dynamicRows]
-                          updatedRows[index].discountSC = e.target.value
-                          setDynamicRows(updatedRows)
-                        }}
-                      />
-                    </TableCell>
-                    <TableCell>
-                      <Input
-                        type='text'
-                        value={row.discountNonSC}
-                        onChange={(e) => {
-                          const updatedRows = [...dynamicRows]
-                          updatedRows[index].discountNonSC = e.target.value
-                          setDynamicRows(updatedRows)
-                        }}
-                      />
-                    </TableCell>
-                    <TableCell>
-                      <Input
-                        type='text'
-                        value={row.firstCaseAmount}
-                        onChange={(e) => {
-                          const updatedRows = [...dynamicRows]
-                          updatedRows[index].firstCaseAmount = e.target.value
-                          setDynamicRows(updatedRows)
-                        }}
-                      />
-                    </TableCell>
-                    <TableCell>
-                      <Input
-                        type='text'
-                        value={row.secondCaseAmount}
-                        onChange={(e) => {
-                          const updatedRows = [...dynamicRows]
-                          updatedRows[index].secondCaseAmount = e.target.value
-                          setDynamicRows(updatedRows)
-                        }}
-                      />
-                    </TableCell>
+
                     <TableCell>
                       <button
                         onClick={() => handleRemoveRow(index)}
@@ -548,7 +507,12 @@ export default function DashboardPage() {
                   <TableCell colSpan={7}>
                     <button
                       onClick={() => setShowNewFeeInput(true)}
-                      className='text-blue-500 underline'
+                      className={`text-blue-500 underline ${
+                        isAddHciFeeEnabled
+                          ? ''
+                          : 'opacity-50 cursor-not-allowed'
+                      }`}
+                      disabled={!isAddHciFeeEnabled} // Disable button when `isAddHciFeeEnabled` is false
                     >
                       + Add New HCI Fee
                     </button>
@@ -587,13 +551,21 @@ export default function DashboardPage() {
                   </TableRow>
                 )}
 
-                {/* Total HCI Fees */}
                 <TableRow>
                   <TableCell className='font-bold text-green-700'>
                     Total HCI Fees
                   </TableCell>
                   <TableCell>
                     <Input type='text' value={totalHciFees} readOnly />
+                  </TableCell>
+                  <TableCell>
+                    <Input
+                      type='text'
+                      value={vatAmount ? `-${vatAmount}` : 'N/A'} // Add negative sign if vatAmount exists
+                      readOnly
+                      placeholder='N/A'
+                      style={{ color: vatAmount ? 'red' : 'inherit' }} // Display in red if vatAmount exists
+                    />
                   </TableCell>
                 </TableRow>
 
