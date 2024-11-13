@@ -69,6 +69,7 @@ export default function DashboardPage() {
   const [editingIndex, setEditingIndex] = useState<number | null>(null)
   const [isAddHciFeeEnabled, setIsAddHciFeeEnabled] = useState(false)
   const [vatAmount, setVatAmount] = useState('')
+  const [scDiscountAmount, setScDiscountAmount] = useState('')
 
   useEffect(() => {
     const token = localStorage.getItem('authToken')
@@ -85,12 +86,17 @@ export default function DashboardPage() {
     // Set `totalHciFees` with comma formatting
     setTotalHciFees(total.toLocaleString())
 
-    // Calculate 12% VAT only if age is 60 or higher
     if (parseInt(patientData?.age || '0') >= 60) {
-      const vat = total * -0.12 // Multiply by -0.12 to make it negative
+      const vat = total * 0.12 // Calculate 12% VAT as negative
       setVatAmount(vat.toLocaleString()) // Format VAT with commas
+
+      // Calculate 20% SC/PWD discount on (Total HCI Fees - VAT)
+      const discountedTotal = total + vat
+      const scDiscount = discountedTotal * 0.2 // Make discount negative
+      setScDiscountAmount(scDiscount.toLocaleString()) // Format with commas
     } else {
       setVatAmount('') // Clear VAT if age is below 60
+      setScDiscountAmount('') // Clear SC/PWD discount if age is below 60
     }
   }, [dynamicRows, patientData?.age])
 
@@ -561,12 +567,24 @@ export default function DashboardPage() {
                   <TableCell>
                     <Input
                       type='text'
-                      value={vatAmount ? `-${vatAmount}` : 'N/A'} // Add negative sign if vatAmount exists
+                      value={vatAmount ? `-${vatAmount}` : 'N/A'}
                       readOnly
                       placeholder='N/A'
-                      style={{ color: vatAmount ? 'red' : 'inherit' }} // Display in red if vatAmount exists
+                      style={{ color: vatAmount ? 'red' : 'inherit' }}
                     />
                   </TableCell>
+                  <TableCell>
+                    <Input
+                      type='text'
+                      value={scDiscountAmount ? `-${scDiscountAmount}` : 'N/A'}
+                      readOnly
+                      placeholder='N/A'
+                      style={{ color: scDiscountAmount ? 'red' : 'inherit' }}
+                    />
+                  </TableCell>
+                  <TableCell></TableCell>
+                  <TableCell></TableCell>
+                  <TableCell>Put the health_facility_fee here</TableCell>
                 </TableRow>
 
                 {/* Separator after Laser Fee, Supplies, and Medicines */}
