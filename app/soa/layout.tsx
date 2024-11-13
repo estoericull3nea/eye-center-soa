@@ -1,14 +1,13 @@
-import { SidebarProvider, SidebarTrigger } from '@/components/ui/sidebar'
-import { AppSidebar } from '@/components/app-sidebar'
+import { SidebarTrigger } from '@/components/ui/sidebar'
 
-export default function Layout({ children }: { children: React.ReactNode }) {
+// Make sure you do NOT include AppSidebar here, as it's already in RootLayout
+
+export default function SoaLayout({ children }: { children: React.ReactNode }) {
   return (
-    <SidebarProvider>
-      <AppSidebar />
-      <main>
-        <SidebarTrigger />
-        {children}
-      </main>
-    </SidebarProvider>
+    <div>
+      {/* No need to wrap AppSidebar again, just include SidebarTrigger if needed */}
+      <SidebarTrigger /> {/* Only use SidebarTrigger if necessary */}
+      {children}
+    </div>
   )
 }

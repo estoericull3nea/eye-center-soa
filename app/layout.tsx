@@ -2,6 +2,8 @@ import { Toaster } from '@/components/ui/toaster'
 import type { Metadata } from 'next'
 import localFont from 'next/font/local'
 import './globals.css'
+import { SidebarProvider } from '@/components/ui/sidebar'
+import { AppSidebar } from '@/components/app-sidebar'
 
 const geistSans = localFont({
   src: './fonts/GeistVF.woff',
@@ -34,7 +36,10 @@ export default function RootLayout({
       >
         <Toaster />
 
-        {children}
+        <SidebarProvider>
+          <AppSidebar /> {/* Only render the sidebar once here */}
+          <main>{children}</main>
+        </SidebarProvider>
       </body>
     </html>
   )

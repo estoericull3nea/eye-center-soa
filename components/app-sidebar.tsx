@@ -29,7 +29,7 @@ const poppins = Poppins({
 const items = [
   {
     title: 'Dashboard',
-    url: '/dashboard',
+    url: '/',
     icon: AiOutlineHome,
   },
   {
