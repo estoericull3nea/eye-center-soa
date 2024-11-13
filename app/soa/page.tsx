@@ -325,7 +325,6 @@ export default function DashboardPage() {
                 type='text'
                 id='age_label'
                 value={patientData?.age || ''}
-                // readOnly={!!patientData} // Make field readonly if autofilled
               />
             </div>
           </div>
