@@ -73,6 +73,16 @@ export default function DashboardPage() {
   const [healthFacilityFee, setHealthFacilityFee] = useState('')
   const [newProfessionalFeePrice, setNewProfessionalFeePrice] = useState('')
   const [totalPfFees, setTotalPfFees] = useState('')
+  const [secondCaseDischargeDiagnosis, setSecondCaseDischargeDiagnosis] =
+    useState('')
+
+  const [secondCaseAdmittingDiagnosis, setSecondCaseAdmittingDiagnosis] =
+    useState('')
+  const [secondCaseProfessionalFees, setSecondCaseProfessionalFees] =
+    useState('')
+  const [secondCaseHealthFacilityFee, setSecondCaseHealthFacilityFee] =
+    useState('')
+
   // State for dynamic rows of Professional Fees
   const [professionalFeeRows, setProfessionalFeeRows] = useState<
     ProfessionalFeeRow[]
@@ -296,6 +306,29 @@ export default function DashboardPage() {
     }
   }
 
+  const handleSecondCaseRateChange = (
+    e: React.ChangeEvent<HTMLInputElement>
+  ) => {
+    const selectedCaseRate = e.target.value
+    setSecondCaseRate(selectedCaseRate)
+
+    const selectedCase = caseRates.find(
+      (caseRate) => caseRate.rvs_code.toString() === selectedCaseRate
+    )
+
+    if (selectedCase) {
+      setSecondCaseAdmittingDiagnosis(selectedCase.description)
+      setSecondCaseProfessionalFees(selectedCase.professional_fee.toString())
+      setSecondCaseHealthFacilityFee(
+        selectedCase.health_facility_fee.toLocaleString()
+      )
+    } else {
+      setSecondCaseAdmittingDiagnosis('')
+      setSecondCaseProfessionalFees('')
+      setSecondCaseHealthFacilityFee('')
+    }
+  }
+
   return (
     <div className={`${poppins.className} flex ml-36 mb-10`}>
       <div className='flex flex-col text-center w-full items-center'>
@@ -435,26 +468,37 @@ export default function DashboardPage() {
           </div>
 
           <Separator className='border border-black' />
-
-          <div className='text-start w-full'>
-            <Label className='mb-10' htmlFor='second_case_rate_label'>
-              Second case rate:
-            </Label>
-            <Input
-              type='text'
-              id='second_case_rate_label'
-              value={secondCaseRate}
-              onChange={(e) => setSecondCaseRate(e.target.value)} // Handle second case rate change
-              placeholder='67036'
-            />
+          <div className='flex gap-3 w-full'>
+            <div className='text-start w-full'>
+              <Label className='mb-10' htmlFor='second_case_rate_label'>
+                Second case rate:
+              </Label>
+              <Input
+                type='text'
+                id='second_case_rate_label'
+                value={secondCaseRate}
+                onChange={handleSecondCaseRateChange} // Handle second case rate change
+                placeholder='67036'
+              />
+            </div>
           </div>
 
           <div className='flex gap-3 w-full'>
             <div className='text-start w-full'>
-              <Label className='mb-10' htmlFor='admitting_diagnosis_label_2'>
+              <Label
+                className='mb-10'
+                htmlFor='second_case_admitting_diagnosis_label'
+              >
                 Admitting Diagnosis (Second Case Rate)
               </Label>
-              <Input type='text' id='admitting_diagnosis_label_2' />
+              <Input
+                type='text'
+                id='second_case_admitting_diagnosis_label'
+                value={secondCaseAdmittingDiagnosis}
+                onChange={(e) =>
+                  setSecondCaseAdmittingDiagnosis(e.target.value)
+                } // Allow manual update if needed
+              />
             </div>
           </div>
 
@@ -463,7 +507,14 @@ export default function DashboardPage() {
               <Label className='mb-10' htmlFor='discharge_diagnosis_label_2'>
                 Discharge Diagnosis (Second Case Rate)
               </Label>
-              <Input type='text' id='discharge_diagnosis_label_2' />
+              <Input
+                type='text'
+                id='discharge_diagnosis_label_2'
+                value={secondCaseDischargeDiagnosis}
+                onChange={(e) =>
+                  setSecondCaseDischargeDiagnosis(e.target.value)
+                } // Reuse the dischargeDiagnosis state if applicable
+              />
             </div>
           </div>
 
@@ -601,6 +652,13 @@ export default function DashboardPage() {
                   <TableCell></TableCell>
                   <TableCell>
                     <Input type='text' value={healthFacilityFee} readOnly />
+                  </TableCell>
+                  <TableCell>
+                    <Input
+                      type='text'
+                      value={secondCaseHealthFacilityFee}
+                      readOnly
+                    />
                   </TableCell>
                 </TableRow>
 
