@@ -71,6 +71,12 @@ export default function DashboardPage() {
   const [vatAmount, setVatAmount] = useState('')
   const [scDiscountAmount, setScDiscountAmount] = useState('')
   const [healthFacilityFee, setHealthFacilityFee] = useState('')
+  const [newProfessionalFeePrice, setNewProfessionalFeePrice] = useState('')
+  const [totalPfFees, setTotalPfFees] = useState('')
+  // State for dynamic rows of Professional Fees
+  const [professionalFeeRows, setProfessionalFeeRows] = useState<
+    ProfessionalFeeRow[]
+  >([{ name: 'DR AUREO FRANCIS C. SANCHEZ', amount: '5000' }])
 
   useEffect(() => {
     const token = localStorage.getItem('authToken')
@@ -106,12 +112,15 @@ export default function DashboardPage() {
     setIsAddHciFeeEnabled(!!patientData?.age)
   }, [patientData?.age])
 
-  // State to hold dynamic rows for HCI Fees
+  useEffect(() => {
+    const total = professionalFeeRows.reduce((acc, row) => {
+      const price = parseFloat(row.amount) || 0
+      return acc + price
+    }, 0)
+    setTotalPfFees(total.toLocaleString()) // Format with commas
+  }, [professionalFeeRows])
 
-  // State for dynamic rows of Professional Fees
-  const [professionalFeeRows, setProfessionalFeeRows] = useState<
-    ProfessionalFeeRow[]
-  >([{ name: 'DR AUREO FRANCIS C. SANCHEZ', amount: '' }])
+  // State to hold dynamic rows for HCI Fees
 
   // State to control the visibility of the new fee input field
   const [showNewFeeInput, setShowNewFeeInput] = useState(false)
@@ -153,24 +162,28 @@ export default function DashboardPage() {
 
   // Function to add a new row for Professional Fees
   const handleAddProfessionalFeeRow = () => {
-    if (newProfessionalFeeName.trim() === '') {
+    if (
+      newProfessionalFeeName.trim() === '' ||
+      newProfessionalFeePrice.trim() === ''
+    ) {
       toast.toast({
-        description: 'Please enter a professional fee name',
+        description: 'Please enter both a professional fee name and a price',
       })
       return
     }
 
-    // Add the new row to the professionalFeeRows state
+    // Add the new row with both name and price
     setProfessionalFeeRows([
       ...professionalFeeRows,
       {
         name: newProfessionalFeeName,
-        amount: '',
+        amount: newProfessionalFeePrice,
       },
     ])
 
-    // Reset the professional fee name and hide the input field
+    // Reset the name and price, and hide the input fields
     setNewProfessionalFeeName('')
+    setNewProfessionalFeePrice('')
     setShowNewProfessionalFeeInput(false)
   }
 
@@ -603,20 +616,26 @@ export default function DashboardPage() {
                   <TableCell className='font-medium'>
                     PROFESSIONAL FEES
                   </TableCell>
-                  <TableCell className='font-medium'>
-                    <Input
-                      type='text'
-                      value={professionalFees || ''}
-                      onChange={(e) => setProfessionalFees(e.target.value)} // Update professionalFees state on change
-                      placeholder='Enter Professional Fees'
-                    />
-                  </TableCell>
                 </TableRow>
 
+                {/* Render dynamic rows for each Professional fee */}
                 {/* Render dynamic rows for each Professional fee */}
                 {professionalFeeRows.map((row, index) => (
                   <TableRow key={index}>
                     <TableCell className='font-medium'>{row.name}</TableCell>
+
+                    <TableCell className='font-medium'>
+                      <Input
+                        type='text'
+                        value={row.amount || ''}
+                        onChange={(e) => {
+                          const updatedRows = [...professionalFeeRows]
+                          updatedRows[index].amount = e.target.value // Update the specific row's amount
+                          setProfessionalFeeRows(updatedRows)
+                        }}
+                        placeholder='Enter Professional Fee Amount'
+                      />
+                    </TableCell>
 
                     <TableCell>
                       <button
@@ -644,7 +663,7 @@ export default function DashboardPage() {
                 {/* Input field to add a new professional fee */}
                 {showNewProfessionalFeeInput && (
                   <TableRow>
-                    <TableCell colSpan={2}>
+                    <TableCell colSpan={7}>
                       <div className='flex gap-2'>
                         <Input
                           type='text'
@@ -654,6 +673,14 @@ export default function DashboardPage() {
                           }
                           placeholder='Enter Professional Fee Name'
                         />
+                        <Input
+                          type='text'
+                          value={newProfessionalFeePrice}
+                          onChange={(e) =>
+                            setNewProfessionalFeePrice(e.target.value)
+                          }
+                          placeholder='Enter Professional Fee Price'
+                        />
                         <Button onClick={handleAddProfessionalFeeRow}>
                           Add Fee
                         </Button>
@@ -661,6 +688,7 @@ export default function DashboardPage() {
                           onClick={() => {
                             setShowNewProfessionalFeeInput(false)
                             setNewProfessionalFeeName('')
+                            setNewProfessionalFeePrice('')
                           }}
                         >
                           Cancel
@@ -676,7 +704,7 @@ export default function DashboardPage() {
                     Total PF Fees
                   </TableCell>
                   <TableCell>
-                    <Input type='text' readOnly />
+                    <Input type='text' value={totalPfFees} readOnly />
                   </TableCell>
                 </TableRow>
 
